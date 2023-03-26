@@ -21,17 +21,17 @@
     </head>
    <body class="font-sans antialiased">
    <div class="flex">
-            <div class="w-50 bg-slate-200 shadow-md h-screen">
+            <div class="w-56 bg-blue-200 shadow-md h-screen">
                 <div class="my-5">
                     <img src="images/0123.png "class="w-10/12 bg-white mx-auto py-3 rounded-lg" alt="">
                 </div>
                 <div class="mt-12">
-                    <a href="{{route('dashboard')}}" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white ">Dashboard</a>
-                    <a href="{{route('rooms.index')}}" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white ">View Room</a>
-                    <a href="" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white ">View Booking</a>
-                    <a href="" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white ">View Payment</a>
-                    <a href="" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white ">View Users</a>
-                    <a href="/login" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white ">Logout</a>
+                    <a href="{{route('dashboard')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Dashboard</a>
+                    <a href="{{route('rooms.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">View Rooms</a>
+                    <a href="" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">View Booking</a>
+                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">View Payment</a>
+                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">View Users</a>
+                    <a href="/login" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">Logout</a>
                     
                 </div>
             </div>

@@ -27,11 +27,14 @@ Route::get('/gallery',[PagesController::class,'gallery']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard',[dashboardcontroller::class,'index'])->name('dashboard');
+
     Route::get('/rooms',[RoomController::class,'index'])->name('rooms.index');
     Route::get('/rooms/create',[RoomController::class,'create'])->name('rooms.create');
     Route::POST('/rooms/store',[RoomController::class,'store'])->name('rooms.store');
+    Route::get('/rooms/{id}/edit',[RoomController::class,'edit'])->name('rooms.edit');
+    Route::post('/rooms/{id}/update',[RoomController::class,'update'])->name('rooms.update');
+    Route::post('/rooms/delete',[RoomController::class,'delete'])->name('rooms.delete');
 
-    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

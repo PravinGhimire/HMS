@@ -1,17 +1,23 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
+@extends('layouts.app')
+@section('content')
+
+
+<h2 class="text-4xl font bold border-b-4 text-red-500 border-blue"> Admin Dashboard</h2>  
+
+<div class="grid grid-cols-3 gap-8 my-6">      
+    <div class="p-4 flex justify-between bg-green-600 text-white rounded-lg">
+        <span class="text-xl font-bold">Total Reviews</span>
+        <span class="text-5xl font-bold">3905</span>
     </div>
-</x-app-layout>
+    <div class="p-4 flex justify-between bg-blue-600 text-white rounded-lg">
+        <span class="text-xl font-bold">Total feedback </span>
+        <span class="text-5xl font-bold">3565</span>
+    </div>
+    <div class="p-4 flex justify-between bg-red-600 text-white rounded-lg">
+        <span class="text-xl font-bold">Total visits</span>
+        <span class="text-5xl font-bold">5000</span>
+    </div>
+</div>
+
+@endsection

@@ -49,13 +49,13 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
+          <a class="nav-link" href="about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#room">Our Room</a>
+          <a class="nav-link" href="room">Our Room</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#gallery">Gallery</a>
+          <a class="nav-link" href="gallery">Gallery</a>
         </li>
       </ul>
         <div class=" btn-group ">
@@ -152,10 +152,10 @@
                         <h3>Group Room</h3>
                         <h4>$120</h4>
                         
-                        <a class="btn btn-primary btn-lg" href="room" role="button">View Room</a>
+                        <a class="btn btn-primary btn-lg" href="/signup" role="button">View Room</a>
 
                      </div>
-                  </div>
+                  </div>  
                </div>
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
@@ -329,45 +329,45 @@
    <!-- end contact -->
    <!--  footer -->
    <footer>
-      <div class="footer">
-         <div class="container con-div">
-            <div class="row">
-               <div class=" col-md-4">
-                  <h3>Contact US</h3>
-                  <ul class="conta">
-                     <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
-                     <li><i class="fa fa-mobile" aria-hidden="true"></i> +977 1234569540</li>
-                     <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
-                  </ul>
-               </div>
-               <div class="col-md-4">
-                  <h3>Menu Link</h3>
-                  <ul class="link_menu">
-                     <li class="active"><a href="#">Home</a></li>
-                     <li><a href="about.php"> About</a></li>
-                     <li><a href="room.php">Our Room</a></li>
-                     <li><a href="gallery.php">Gallery</a></li>
-                   
-                
-                  </ul>
-               </div>
-               <div class="col-md-4">
-             
-                  <ul class="social_icon">
-                  <li><a href="#"><i class="fa-brands fa-facebook" style="color: #0f60eb;"></i></a></li>
+   <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class=" col-md-4">
+                     <h3>Contact US</h3>
+                     <ul class="conta">
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
+                        <li><i class="fa fa-mobile" aria-hidden="true"></i> +977 1234569540</li>
+                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-4">
+                     <h3>Menu Link</h3>
+                     <ul  class="link_menu">
+                        <li><a href="index.php">Home</a></li>
+                        <li  class="active"><a href="about.php"> About</a></li>
+                        <li><a href="room.php">Our Room</a></li>
+                        <li><a href="gallery.php">Gallery</a></li>
+                      
+                        
+                     </ul>
+                  </div>
+                  <div class="col-md-4">
+                  <h3>Soci al Link</h3>
+                     <ul class="social_icon">
+                     <li><a href="#"><i class="fa-brands fa-facebook" style="color: #0f60eb;"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-twitter" style="color: #0659ea;"></i></a></li>
                         <li><a href="#"><i class="fa-brands fa-linkedin" style="color: #065ff9;"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-pinterest" style#ec0909;"></i></a></li>
-                  </ul>
-               </div>
-               <div class="col-md-10 offset-md-1">
+                        <li><a href="#"><i class="fa-brands fa-pinterest" style="color: #ec0909;"></i></a></li>
+                     </ul>
+                  </div>
+                  <div class="col-md-10 offset-md-1">
                      <p class="p">
-                        © 2019 All Rights Reserved. Design by PG Groups                        
-                     </p>
-                  </div>   
-            </div>
+                        © 2019 All Rights Reserved. Design by PG Groups
+                    </p>
+                  </div>
+               </div>           
          </div>
-      </div>
+      </div> 
    </footer>
    <!-- end footer -->
    <!-- <script>

@@ -31,8 +31,12 @@
                     <a href="" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">View Booking</a>
                     <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">View Payment</a>
                     <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">View Users</a>
-                    <a href="/login" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">Logout</a>
-                    
+                    <form action="{{route('logout')}}" method="POST" class=" block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">
+                        @csrf
+                        <!-- <i class="ri-logout-circle-line"></i>  -->
+                       <button type="submit">Logout</button>
+                    </form>
+                   
                 </div>
             </div>
             <div class="flex-1 p-6">

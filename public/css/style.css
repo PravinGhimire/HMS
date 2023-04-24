@@ -33,6 +33,8 @@
      max-width: max-content;
      margin-top: 2px;
      margin-bottom: 2px;
+     margin-left: 40px;
+     justify-content: center;
 }
 
 .header {
@@ -707,7 +709,7 @@ ul.social_icon li a:hover {
 /**  inner page css **/
 .back_re {
      background-color: #0f1521;
-     margin-top: 6px;
+     margin-top: 35px;
 }
 
 .back_re .title {

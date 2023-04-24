@@ -1,48 +1,41 @@
-<x-guest-layout>
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-    <Script src="https://cdn.tailwindcss.com ">
-            </script>
-    <form method="POST" action="{{ route('login') }}">
-        @csrf
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+          <!-- Scripts -->
+          @vite(['resources/css/app.css', 'resources/js/app.js'])
+    </head>
+    <body>
+        <div class="grid grid-cols-1   h-full bg-gradient-to-r from-green-400 to-blue-500">
+           
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-       <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            @if (Route::has('password.request'))
-                <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
-                    {{ __('Forgot your password?') }}
+        <div class=" flex h-full p-12 justify-center items-center  ">
+          <div class=" bg-green-200 p-11 rounded-lg">
+            
+        <form action="{{route('login')}}" method="POST">
+            @csrf
+            <div class=" text-center items-center justify-center">
+            <img src="{{asset('images/logo3.png')}}" class=" rounded-full h-32  m-auto" alt="">
+            <h2 class="ml-1">Please Login!!!</h2>
+           </div>
+           <input type="email" name="email" class="border-0 block w-auto mx-10 my-2.5 p-3.5 rounded-lg " placeholder="Enter Email">
+       
+           <input type="password" name="password" class="border-0 block w-auto mx-10 my-2.5 p-3.5 rounded-lg" placeholder="Enter Password">
+      
+            <input type="submit" value="Login" class=" bg-blue-600 text-white ml-3.5 mr-1 my-2.5 px-10 py-2 rounded-lg cursor-pointer items-center" >
+            <a class="underline text-sm text-red-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                    {{('Forgot your password?') }}
                 </a>
-            @endif
-
-            <x-primary-button class="ml-3">
-                {{ __('Log in') }}
-            </x-primary-button>
+                <div class="mt-4  text-justify items-center">
+                <a class="underline text-sm text-red-500 ml-4 hover:text-gray-900 rounded-md  px-12 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                {{('Doesnt have an account?') }}
+            </a>
+                </div>
+        </form> 
         </div>
-    </form>
-</x-guest-layout>
+        </div>
+        </div>
+    </body>
+</html>

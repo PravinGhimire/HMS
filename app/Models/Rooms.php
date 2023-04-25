@@ -7,9 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Rooms extends Model
 {
-    protected $fillable = [
-        'room_type',
-        'rate',
-        'priority'
-    ];
+    protected $guarded=[];
 }

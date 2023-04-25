@@ -18,6 +18,10 @@
         <span class="text-xl font-bold">Total visits</span>
         <span class="text-5xl font-bold">5000</span>
     </div>
+    <div class="p-4 flex justify-between bg-slate-600 text-white rounded-lg">
+        <span class="text-xl font-bold">Total Rooms</span>
+        <span class="text-5xl font-bold">{{$totalrooms}}</span>
+    </div>
 </div>
 
 @endsection

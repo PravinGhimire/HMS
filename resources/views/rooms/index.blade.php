@@ -11,16 +11,18 @@
         <th>Order</th>
         <th>Room Category</th>
         <th>Rate</th>
+        <th>Picture</th>
         <th>Action</th>
     </thead>
     <tbody>
-        @foreach($roommss as $roomss)
+        @foreach($rooms as $rooms)
         <tr>
-            <td>{{$roomss->priority}}</td>
-            <td>{{$roomss->room_type}}</td>
-            <td>{{$roomss->rate}}</td>
-            <td>  <a href="{{route('rooms.edit',$roomss->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
-                <a onclick="showDelete('{{$roomss->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a></td>
+            <td>{{$rooms->priority}}</td>
+            <td>{{$rooms->room_type}}</td>
+            <td>{{$rooms->rate}}</td>
+            <td><img class="w-32" src="{{asset('images/rooms/'.$rooms->photopath)}}" alt=""></td>
+            <td>  <a href="{{route('rooms.edit',$rooms->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
+                <a onclick="showDelete('{{$rooms->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a></td>
         </tr>
         @endforeach
     </tbody>

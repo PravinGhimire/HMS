@@ -5,6 +5,7 @@ use App\Http\Controllers\dashboardcontroller;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\signupcontroller;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/rooms/{id}/edit',[RoomController::class,'edit'])->name('rooms.edit');
     Route::post('/rooms/{id}/update',[RoomController::class,'update'])->name('rooms.update');
     Route::post('/rooms/delete',[RoomController::class,'delete'])->name('rooms.delete');
+//users
+    Route::get('/user',[UserController::class,'index'])->name('user.index');
+    Route::get('/user/create',[UserController::class,'create'])->name('user.create');
+    Route::post('/user/store',[UserController::class,'store'])->name('user.store');
+    Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
+    Route::post('/user/{user}/update',[UserController::class,'update'])->name('user.update');
+    Route::post('/user/delete',[UserController::class,'delete'])->name('user.delete');
+    
+
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

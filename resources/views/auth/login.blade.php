@@ -11,7 +11,7 @@
         <div class="grid grid-cols-1   h-full bg-gradient-to-r from-green-400 to-blue-500">
            
 
-        <div class=" flex h-full p-12 justify-center items-center  ">
+        <div class=" flex h-full p-14 justify-center items-center  ">
           <div class=" bg-green-200 p-11 shadow-2xl rounded-2xl">
             
         <form action="{{route('login')}}" method="POST">
@@ -20,9 +20,9 @@
             <img src="{{asset('images/logo3.png')}}" class=" rounded-full h-32  m-auto" alt="">
             <h2 class="ml-1">Please Login!!!</h2>
            </div>
-           <input type="email" name="email" class="border-0 block  box-content w-auto mx-10 my-2.5 p-3.5 rounded-lg " placeholder="Enter Email">
+           <input type="email" name="email" class="border-0 block  box-content w-auto mx-10 my-3 p-2 rounded-lg " placeholder="Enter Email">
        
-           <input type="password" name="password" class="border-0 block w-auto mx-10 my-2.5 p-3.5 rounded-lg" placeholder="Enter Password">
+           <input type="password" name="password" class="border-0 block w-auto mx-10 my-3 p-2 rounded-lg" placeholder="Enter Password">
       
             <input type="submit" value="Login" class=" bg-blue-600 hover:bg-gray-900 text-white ml-3.5 mr-1 my-2.5 px-10 py-2 rounded-lg cursor-pointer items-center" >
             <a class="underline text-sm text-red-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">

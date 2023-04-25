@@ -63,11 +63,11 @@
                 <i class='far fa-user' style='font-size:20px' href="#"></i>
                </button>
                   <ul class="dropdown-menu dropdown-menu-end">
-                     <li><a class="dropdown-item" href="#">Login</a></li>
+                     <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                      <li><a class="dropdown-item" href="#">View Booking Record</a></li>
                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                      <li><hr class="dropdown-divider"></li>
-                     <li><a class="dropdown-item" href="#">Logout</a></li>
+                     <li><a class="dropdown-item" href="">Logout</a></li>
                   </ul>
              </div>
     </div>

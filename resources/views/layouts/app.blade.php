@@ -20,18 +20,19 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
    <body class="font-sans antialiased">
-   <div class="flex">
+   <div class="flex ">
             <div class="w-56 bg-blue-200 shadow-md h-screen">
-                <div class="my-5">
-                    <img src="images/0123.png "class="w-10/12 bg-white mx-auto py-3 rounded-lg" alt="">
-                </div>
-                <div class="mt-12">
+                 <div class="my-1">
+                    <img src="images/logo3.png "class="w-10/12 bg-white mt-2 mx-auto  rounded-2xl" alt="">
+                </div> 
+                <div class="mt-12 ">
+                <p class="text-center font-bold text-lg">Hello, {{auth()->user()->name}}</p>
                     <a href="{{route('dashboard')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Dashboard</a>
-                    <a href="{{route('rooms.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">View Rooms</a>
-                    <a href="" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">View Booking</a>
-                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">View Payment</a>
-                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">View Users</a>
-                    <form action="{{route('logout')}}" method="POST" class=" block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">
+                    <a href="{{route('rooms.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Rooms</a>
+                    <a href="" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">Booking</a>
+                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">Payment</a>
+                    <a href="{{route('user.index')}}" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">Users</a>
+                    <form action="{{route('logout')}}" method="POST" class=" block pl-4  cursor-pointer border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">
                         @csrf
                         <!-- <i class="ri-logout-circle-line"></i>  -->
                        <button type="submit">Logout</button>

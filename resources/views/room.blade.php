@@ -103,7 +103,7 @@
                      <div class="bed_room">
                         <h3>Group Room</h3>
                         <p><h3>$120</h3></p>
-                        <button class="book_btn ">Book Now</button>
+                        <button class="book_btn " >Book Now</button>
 
                      </div>
                   </div>

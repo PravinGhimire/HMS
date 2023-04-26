@@ -69,7 +69,7 @@
                      </button>
                         <ul class="dropdown-menu">
                            <li><a class="dropdown-item" href="#">Login</a></li>
-                           <li><a class="dropdown-item" href="#">View Booking Record</a></li>
+                           <li><a class="dropdown-item" href="{{route('book.index')}}">View Booking Record</a></li>
                            <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                            <li><hr class="dropdown-divider"></li>
                            <li><a class="dropdown-item" href="#">Logout</a></li>

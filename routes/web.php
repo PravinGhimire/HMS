@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\dashboardcontroller;
 use App\Http\Controllers\PagesController;
@@ -43,6 +44,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/user/{user}/update',[UserController::class,'update'])->name('user.update');
     Route::post('/user/delete',[UserController::class,'delete'])->name('user.delete');
     
+    Route::get('/book',[BookingsController::class,'index'])->name('book.index');
 
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

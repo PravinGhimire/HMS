@@ -447,11 +447,16 @@ button {
      text-align: center;
      background-color: #fff;
      margin-bottom: 30px;
+     padding: 50px 5px 30px 0;
      transition: ease-in all 0.5s;
 }
 
 .our_room .room .room_img {
+     position: relative;
      overflow: hidden;
+     display: flex;
+     align-items: center;
+     height: 230px;
 }
 
 .our_room .room .room_img figure {

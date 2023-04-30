@@ -59,15 +59,19 @@
         </li>
       </ul>
         <div class=" btn-group ">
-                 <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class='far fa-user' style='font-size:20px' href="#"></i>
+        
+                 <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class='	far fa-user-circle' style='font-size:30px margin-right=1px' href="#"></i>
                </button>
                   <ul class="dropdown-menu dropdown-menu-end">
+                     @if(!auth()->check())
                      <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
-                     <li><a class="dropdown-item" href="#">View Booking Record</a></li>
+                     @else
+                     <li><a class="dropdown-item" href="{{route('login')}}">{{auth()->user()->name}}</a></li>
+                     <li><a class="dropdown-item" href="{{route('books.index')}}">View Bookings</a></li>
+                     <li><a class="dropdown-item" href="logout">Logout</a></li>
+                     @endif
                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                     <li><hr class="dropdown-divider"></li>
-                     <li><a class="dropdown-item" href="">Logout</a></li>
                   </ul>
              </div>
     </div>
@@ -134,7 +138,7 @@
    <!-- our_room -->
    
    <div  class="our_room" id="room">
-         <div class="container con-div">
+         <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="titlepage">
@@ -143,20 +147,20 @@
                </div>
             </div>
             <div class="row">
+            @foreach($rooms as $room)
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">
-                        <figure><img src="images/room1.jpg" alt="#"/></figure>
+                        <figure><img src="{{asset('images/rooms/'.$room->photopath)}}" alt="#"/></figure>
                      </div>
                      <div class="bed_room">
-                        <h3>Group Room</h3>
-                        <h4>$120</h4>
-                        
-                        <a class="btn btn-primary btn-lg" href="/signup" role="button">View Room</a>
-
+                        <h3>{{$room->room_type}}</h3>
+                        <p><h4>${{$room->rate}}</h4></p>
+                        <a class="btn btn-primary btn-lg" href="room" role="button">View Room</a>
                      </div>
-                  </div>  
+                  </div>
                </div>
+               @endforeach
                <div class="col-md-4 col-sm-6">
                   <div id="serv_hover"  class="room">
                      <div class="room_img">

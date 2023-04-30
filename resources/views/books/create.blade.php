@@ -1,19 +1,16 @@
- @extends('layouts.app')
+@extends('layouts.app')
 @section('content')
 
 <h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500"> Create New Room</h2>
-<form action="{{route('rooms.store')}}" method="POST" class="my-10" enctype="multipart/form-data">
+<form action="{{route('books.store')}}" method="POST" class="my-10" enctype="multipart/form-data">
     @csrf
    
     <select class="w-full p-2 rounded-lg mt-2" name="room type">
           <option value="select">---Select---</option>
-            <option value="Single Room">Single Room</option>
-            <option value="Deluxe Room">Deluxe Room</option>
-            <option value="Double Bed Room">Double Bed Room</option>
-            <option value="Suit Room">Suit Room</option>
-            <option value="VIP Room">VIP Room</option>
-            <option value="Luxurious Room">Luxurious Room</option>
-            <option value="Apartment">Apartment</option>
+            <option value="single">Single</option>
+            <option value="double">Double</option>
+            <option value="suit">Suit</option>
+            <option value="vip">VIP</option>
         </select>
     @error('room type')
         <p class="text-red-600 text-sm">* {{$message}}</p>

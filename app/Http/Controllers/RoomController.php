@@ -13,7 +13,7 @@ class RoomController extends Controller
     Public function index(){
         $rooms=Rooms::all();
 
-        return view('rooms.index',compact('rooms'));
+        return view('rooms.index', compact('rooms'));
     }
     public function create(){
         return view('rooms.create');

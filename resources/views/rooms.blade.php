@@ -103,7 +103,7 @@
                      </div>
                      <div class="bed_room">
                         <h3>{{$room->room_type}}</h3>
-                        <p><h3>${{$room->rate}}</h3></p>
+                        <p><h3>{{$room->rate}}</h3></p>
                         <button class="book_btn " >Book Now</button>
 
                      </div>

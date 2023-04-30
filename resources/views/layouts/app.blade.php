@@ -28,10 +28,14 @@
                 <div class="mt-12 ">
                 <p class="text-center font-bold text-lg">Hello, {{auth()->user()->name}}</p>
                     <a href="{{route('dashboard')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Dashboard</a>
+                    @if(auth()->user()->role=='admin')
                     <a href="{{route('rooms.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Rooms</a>
-                    <a href="{{route('book.index')}}" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">Booking</a>
-                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">Payment</a>
+                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">Gallery</a>
                     <a href="{{route('user.index')}}" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">Users</a>
+                    @endif
+                    
+                    <a href="{{route('books.index')}}" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">Booking</a>
+                    <a href="" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">View Site</a>
                     <form action="{{route('logout')}}" method="POST" class=" block pl-4  cursor-pointer border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">
                         @csrf
                         <!-- <i class="ri-logout-circle-line"></i>  -->

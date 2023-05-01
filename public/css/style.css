@@ -517,8 +517,11 @@ button {
 }
 
 .gallery .gallery_img {
+     position: relative;
      overflow: hidden;
-     margin-bottom: 30px;
+     display: flex;
+     align-items: center;
+     height: 250px;
 }
 
 .gallery .gallery_img figure {

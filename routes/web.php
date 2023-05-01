@@ -3,6 +3,7 @@
 use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\dashboardcontroller;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\signupcontroller;
@@ -17,17 +18,20 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
 | be assigned to the "web" middleware group. Make something great!
-|
+|/
 */
 
 Route::get('/',[PagesController::class,'index']);
+Route::get('/header',[PagesController::class,'header']);
+Route::get('/footer',[PagesController::class,'footer']);
 Route::get('/about',[PagesController::class,'about']);
 Route::get('/room',[PagesController::class,'room']);
-Route::get('/gallery',[PagesController::class,'gallery']);
+Route::get('/gallerys',[PagesController::class,'gallerys']);
 
 
 
 Route::middleware('auth')->group(function () {
+   
     Route::get('/dashboard',[dashboardcontroller::class,'index'])->name('dashboard');
 
     Route::get('/rooms',[RoomController::class,'index'])->name('rooms.index');
@@ -43,6 +47,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
     Route::post('/user/{user}/update',[UserController::class,'update'])->name('user.update');
     Route::post('/user/delete',[UserController::class,'delete'])->name('user.delete');
+    //Gallery
+Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
+Route::get('/gallery/create',[GalleryController::class,'create'])->name('gallery.create');
+Route::post('/gallery/store',[GalleryController::class,'store'])->name('gallery.store');
+Route::get('/gallery/{gallery}/edit',[GalleryController::class,'edit'])->name('gallery.edit');
+Route::post('/gallery/{gallery}/update',[GalleryController::class,'update'])->name('gallery.update');
+Route::post('/gallery/delete',[GalleryController::class,'delete'])->name('gallery.delete');
     
     Route::get('/books',[BookingsController::class,'index'])->name('books.index');
     Route::post('/books',[BookingsController::class,'create'])->name('books.create');

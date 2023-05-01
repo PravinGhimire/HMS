@@ -37,47 +37,7 @@
   
    <!-- header -->
    <header>
- <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">New Era</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="room">Our Room</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="gallery">Gallery</a>
-        </li>
-      </ul>
-        <div class=" btn-group ">
-        
-                 <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class='	far fa-user-circle' style='font-size:30px margin-right=1px' href="#"></i>
-               </button>
-                  <ul class="dropdown-menu dropdown-menu-end">
-                     @if(!auth()->check())
-                     <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
-                     @else
-                     <li><a class="dropdown-item" href="{{route('login')}}">{{auth()->user()->name}}</a></li>
-                     <li><a class="dropdown-item" href="{{route('books.index')}}">View Bookings</a></li>
-                     <li><a class="dropdown-item" href="logout">Logout</a></li>
-                     @endif
-                     <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
-                  </ul>
-             </div>
-    </div>
-  </div>
-</nav> 
-
+      @include('header')
    </header>
    <!-- end header inner -->
    <!-- end header -->
@@ -236,12 +196,14 @@
             </div>
          </div>
          <div class="row">
-            <div class="col-md-4">
-               <div class="gallery_img">
-                  <figure><img src="images/gallery1.jpg" alt="#" /></figure>
+         @foreach($galleries as $gallery)
+               <div class="col-md-3 ">
+                  <div class="gallery_img">
+                     <figure><img src="{{asset('images/gallery/'.$gallery->photopath)}} "alt="#"/></figure>
+                  </div>
                </div>
-            </div>
-            <div class="col-md-4">
+               @endforeach
+            <!-- <div class="col-md-4">
                <div class="gallery_img">
                   <figure><img src="images/gallery2.jpg" alt="#" /></figure>
                </div>
@@ -280,7 +242,7 @@
                <div class="gallery_img">
                   <figure><img src="images/gallery1.jpg" alt="#" /></figure>
                </div>
-            </div>
+            </div> -->
          </div>
       </div>
    </div>
@@ -333,57 +295,9 @@
    <!-- end contact -->
    <!--  footer -->
    <footer>
-   <div class="footer">
-            <div class="container">
-               <div class="row">
-                  <div class=" col-md-4">
-                     <h3>Contact US</h3>
-                     <ul class="conta">
-                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> Address</li>
-                        <li><i class="fa fa-mobile" aria-hidden="true"></i> +977 1234569540</li>
-                        <li> <i class="fa fa-envelope" aria-hidden="true"></i><a href="#"> demo@gmail.com</a></li>
-                     </ul>
-                  </div>
-                  <div class="col-md-4">
-                     <h3>Menu Link</h3>
-                     <ul  class="link_menu">
-                        <li><a href="index.php">Home</a></li>
-                        <li  class="active"><a href="about.php"> About</a></li>
-                        <li><a href="room.php">Our Room</a></li>
-                        <li><a href="gallery.php">Gallery</a></li>
-                      
-                        
-                     </ul>
-                  </div>
-                  <div class="col-md-4">
-                  <h3>Soci al Link</h3>
-                     <ul class="social_icon">
-                     <li><a href="#"><i class="fa-brands fa-facebook" style="color: #0f60eb;"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-twitter" style="color: #0659ea;"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-linkedin" style="color: #065ff9;"></i></a></li>
-                        <li><a href="#"><i class="fa-brands fa-pinterest" style="color: #ec0909;"></i></a></li>
-                     </ul>
-                  </div>
-                  <div class="col-md-10 offset-md-1">
-                     <p class="p">
-                        © 2019 All Rights Reserved. Design by PG Groups
-                    </p>
-                  </div>
-               </div>           
-         </div>
-      </div> 
+      @include('footer')
    </footer>
    <!-- end footer -->
-   <!-- <script>
-   const buttons = document.querySelectorAll('.btn btn-warning');
-buttons.forEach(button => {
-	button.addEventListener('click', () => {
-		window.location.href = "room.blade.php";
-	});
-});
- </script> -->
-   <!-- Javascript files-->
-    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    

@@ -7,6 +7,7 @@ use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\signupcontroller;
+use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -44,17 +45,24 @@ Route::middleware('auth')->group(function () {
     Route::get('/user',[UserController::class,'index'])->name('user.index');
     Route::get('/user/create',[UserController::class,'create'])->name('user.create');
     Route::post('/user/store',[UserController::class,'store'])->name('user.store');
-    Route::get('/user/{user}/edit',[UserController::class,'edit'])->name('user.edit');
-    Route::post('/user/{user}/update',[UserController::class,'update'])->name('user.update');
+    Route::get('/user/{id}/edit',[UserController::class,'edit'])->name('user.edit');
+    Route::post('/user/{id}/update',[UserController::class,'update'])->name('user.update');
     Route::post('/user/delete',[UserController::class,'delete'])->name('user.delete');
     //Gallery
-Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
-Route::get('/gallery/create',[GalleryController::class,'create'])->name('gallery.create');
-Route::post('/gallery/store',[GalleryController::class,'store'])->name('gallery.store');
-Route::get('/gallery/{gallery}/edit',[GalleryController::class,'edit'])->name('gallery.edit');
-Route::post('/gallery/{gallery}/update',[GalleryController::class,'update'])->name('gallery.update');
-Route::post('/gallery/delete',[GalleryController::class,'delete'])->name('gallery.delete');
-    
+    Route::get('/gallery',[GalleryController::class,'index'])->name('gallery.index');
+    Route::get('/gallery/create',[GalleryController::class,'create'])->name('gallery.create');
+    Route::post('/gallery/store',[GalleryController::class,'store'])->name('gallery.store');
+    Route::get('/gallery/{gallery}/edit',[GalleryController::class,'edit'])->name('gallery.edit');
+    Route::post('/gallery/{gallery}/update',[GalleryController::class,'update'])->name('gallery.update');
+    Route::post('/gallery/delete',[GalleryController::class,'delete'])->name('gallery.delete');
+    //sliders
+    Route::get('/slider',[SliderController::class,'index'])->name('slider.index');
+    Route::get('/slider/create',[SliderController::class,'create'])->name('slider.create');
+    Route::post('/slider/store',[SliderController::class,'store'])->name('slider.store');
+    Route::get('/slider/{slider}/edit',[SliderController::class,'edit'])->name('slider.edit');
+    Route::post('/slider/{slider}/update',[SliderController::class,'update'])->name('slider.update');
+    Route::post('/slider/delete',[SliderController::class,'delete'])->name('slider.delete');
+
     Route::get('/books',[BookingsController::class,'index'])->name('books.index');
     Route::post('/books',[BookingsController::class,'create'])->name('books.create');
 

@@ -30,6 +30,7 @@
                     <a href="{{route('dashboard')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Dashboard</a>
                     @if(auth()->user()->role=='admin')
                     <a href="{{route('rooms.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white ">Rooms</a>
+                    <a href="{{route('slider.index')}}" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">Sliders</a>
                     <a href="{{route('gallery.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ">Gallery</a>
                     <a href="{{route('user.index')}}" class="block pl-4 border-b-2 border-blue-500 ml-2 text-xl py-2 hover:bg-blue-600 hover:text-white">Users</a>
                     @endif

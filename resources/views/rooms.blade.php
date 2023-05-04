@@ -91,90 +91,27 @@
          </div>
       </div>
       <!-- our_room -->
-      <div  class="our_room">
-         <div class="container">
-         
-            <div class="row">
-               @foreach($rooms as $room)
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="{{asset('images/rooms/'.$room->photopath)}}" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>{{$room->room_type}}</h3>
-                        <p><h3>{{$room->rate}}</h3></p>
-                        <button class="book_btn " >Book Now</button>
-
-                     </div>
-                  </div>
+                  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active" data-bs-interval="10000">
+                  <img src="images/banner1.png" class="d-block w-70" alt="...">
                </div>
-               @endforeach
-               <!-- <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room2.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Deluxe Room</h3>
-                        <p><h3>$100</h3> </p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
+               <div class="carousel-item" data-bs-interval="2000">
+                  <img src="images/banner1.png" class="d-block w-100" alt="...">
                </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room3.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Superior Room</h3>
-                        <p><h3>$110</h3></p>
-                       
-                        <button class="book_btn ">Book Now</button>
-                       
-                     </div>
-                  </div>
+               <div class="carousel-item">
+                  <img src="images/banner2.png" class="d-block w-100" alt="...">
                </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room4.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>single Room</h3>
-                        <p><h3>$50 </h3></p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room5.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Suite Room</h3>
-                        <p><h3>$30</h3> </p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room6.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Triple Room</h3>
-                        <p><h3>$60</h3></p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div> -->
             </div>
-         </div>
-      </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Next</span>
+            </button>
+            </div>
       <!-- end our_room -->
      
       <!--  footer -->

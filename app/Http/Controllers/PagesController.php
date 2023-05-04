@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Gallery;
 use App\Models\Rooms;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,7 +12,8 @@ class PagesController extends Controller
     public function index(){
         $rooms=Rooms::all();
         $galleries=Gallery::all();
-        return view ('welcome',compact('rooms','galleries'));
+        $sliders=Slider::all();
+        return view ('welcome',compact('rooms','galleries','sliders'));
     }
     public function about(){
         return view('about');

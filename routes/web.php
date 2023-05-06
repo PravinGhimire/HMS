@@ -27,6 +27,7 @@ Route::get('/header',[PagesController::class,'header']);
 Route::get('/footer',[PagesController::class,'footer']);
 Route::get('/about',[PagesController::class,'about']);
 Route::get('/room',[PagesController::class,'room']);
+Route::get('/rums',[PagesController::class,'rums']);
 Route::get('/gallerys',[PagesController::class,'gallerys']);
 
 

@@ -68,7 +68,7 @@
                      <div class="bed_room">
                         <h3>{{$room->room_type}}</h3>
                         <p><h3>${{$room->rate}}</h3></p>
-                        <button class="book_btn " >Book Now</button>
+                        <button class="book_btn "  >Book Now</button>
 
                      </div>
                   </div>
@@ -156,12 +156,12 @@
       <!-- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script> -->
    </body>
- <script>
+   <script>
    const buttons = document.querySelectorAll('.book_btn');
 buttons.forEach(button => {
 	button.addEventListener('click', () => {
-		window.location.href = "{{route('books.create')}}";
+		window.location.href = "rums";
 	});
 });
- </script>
+ </script> 
 </html>

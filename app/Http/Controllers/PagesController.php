@@ -32,4 +32,7 @@ class PagesController extends Controller
     public function footer(){
         return view('footer');
     }
+    public function rums(){
+        return view('rums');
+    }
 }

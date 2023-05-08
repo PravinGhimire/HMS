@@ -42,6 +42,7 @@
    <!-- end header inner -->
    <!-- end header -->
    <!-- banner -->
+   @foreach($sliders as $slider)
    <section class="banner_main" id="#">
    
 <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel">
@@ -52,24 +53,22 @@
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" ></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" ></button>
   </div>
-
+ 
   <div class="carousel-inner">
-  @foreach($sliders as $slider)
+  
     <div class="carousel-item active">
-    
-      <img src="{{asset('images/slider/'.$slider->photopath)}}" class=" w-100" alt="slide">
-      
+      <img src="{{asset('images/slider/'.$slider->photopath)}}" class=" w-100" alt="">
     </div>
-   @endforeach
+  
      <!-- <div class="carousel-item">
       <img src="{{asset('images/slider/'.$slider->photopath)}}" class=" w-100" alt="...">
     </div>
     <div class="carousel-item">
       <img src="{{asset('images/slider/'.$slider->photopath)}}" class=" w-100" alt="...">
     </div>  -->
- 
+    
   </div>
- 
+  
  
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -84,6 +83,7 @@
 
  
    </section>
+   @endforeach
    <!-- end banner -->
    <!-- about -->
    <div class="about" id="about">

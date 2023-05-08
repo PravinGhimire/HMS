@@ -21,7 +21,7 @@
         <input type="password" class="w-full p-2 rounded-lg mt-2" name="password_confirmation" placeholder="Re-Enter Password">
 
         <select class="w-full p-2 rounded-lg mt-2" name="role">
-            <option value="editor">Editor</option>
+            <option value="Costumer">Costumer</option>
             <option value="admin">Admin</option>
         </select>
         @error('role')

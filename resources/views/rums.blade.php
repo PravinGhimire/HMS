@@ -79,13 +79,15 @@
                         <span class="visually-hidden">Next</span>
                      </button>
                      </div>
+                     @foreach($rooms as $room)
                         <div>
-                           <h2 class="text-xl m-1  ">Description</h2>
+                           <h2 class="text-xl m-1  ">{{$room->id}}</h2>
                            <p class="m-2 text-black  overflow-hidden text-justify">Welcome to our hotel New Era! Our hotel is located in a quiet and peaceful neighborhood, providing
                            a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable
                            rooms to suit your needs, including single, double, and twin rooms, all of which 
                            are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. </p>
                         </div>
+                        @endforeach
                         <div>
                         <h2 class="text-xl m-1">Overview</h2>
                         <div class="col-lg-6 m-2">
@@ -98,11 +100,65 @@
 								</div>
                         </div>
                   </div>
-                  <div class="col-4">
-                     
+                  <div class="col-4 ">
+                <div class="card shadow-2-strong card-registration " style="border-radius: 15px; background-color:bisque">
+     <div class="card-body p-3 p-md-5">
+                  
+                     <form action="" method="post">
+                        @csrf
+                     <div class="row">
+                <div class="col-md-6 mb-4">
+
+                  <div class="form-outline">
+                    <input type="text" id="firstName" class="form-control form-control-sm" placeholder="First Name" />
+                   
+                  </div>
+
+                </div>
+                <div class="col-md-6 mb-4">
+                 <div class="form-outline">
+                    <input type="text" id="lastName" class="form-control form-control-sm"  placeholder="Last Name"/>
+                  </div>
+                </div>
+              </div>
                        
-                       
-                      
+              <div class="row">
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="email" id="emailAddress" class="form-control form-control-sm" placeholder="Email"/>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4 pb-2">
+                  <div class="form-outline">
+                    <input type="tel" id="phoneNumber" class="form-control form-control-sm"  placeholder="Phone No"/>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12">
+
+                  <select class="select form-control-sm">
+                  <option value="select">---Select---</option>
+                  <option value="Single Room">Single Room</option>
+                  <option value="Deluxe Room">Deluxe Room</option>
+                  <option value="Double Bed Room">Double Bed Room</option>
+                  <option value="Suit Room">Suit Room</option>
+                  <option value="VIP Room">VIP Room</option>
+                  <option value="Luxurious Room">Luxurious Room</option>
+                  <option value="Apartment">Apartment</option>
+                  </select>
+                </div>
+               
+
+              </div>
+              <div class=" mr-5 mt-4 pt-2">
+               <input class="btn btn-primary btn-sm " type="submit" value="Reserve" />
+              </div>
+              </form> 
+                   </div>
+                   </div>
+            
+        
                   </div>
                      </div>
          
@@ -116,5 +172,6 @@
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
      
    </body>
+  
 
 </html>

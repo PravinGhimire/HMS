@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Gallery extends Model
 {
     use HasFactory;
+    // protected $table="table if table name is different from model name";
     protected $guarded=[];
 }

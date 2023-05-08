@@ -6,6 +6,7 @@ use App\Http\Controllers\dashboardcontroller;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoomDetailsController;
 use App\Http\Controllers\signupcontroller;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
@@ -27,12 +28,13 @@ Route::get('/header',[PagesController::class,'header']);
 Route::get('/footer',[PagesController::class,'footer']);
 Route::get('/about',[PagesController::class,'about']);
 Route::get('/room',[PagesController::class,'room']);
-Route::get('/rums',[PagesController::class,'rums']);
+Route::get('{id}/rums/',[PagesController::class,'rums'])->name('rums');
 Route::get('/gallerys',[PagesController::class,'gallerys']);
 
 
 
 Route::middleware('auth')->group(function () {
+    // Route::get('/',[PagesController::class,'index']);
    
     Route::get('/dashboard',[dashboardcontroller::class,'index'])->name('dashboard');
 
@@ -63,6 +65,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/slider/{slider}/edit',[SliderController::class,'edit'])->name('slider.edit');
     Route::post('/slider/{slider}/update',[SliderController::class,'update'])->name('slider.update');
     Route::post('/slider/delete',[SliderController::class,'delete'])->name('slider.delete');
+//roomdetails
+        Route::get('/roomdetails',[RoomDetailsController::class,'index'])->name('roomdetails.index');
+        Route::get('/roomdetails/create',[RoomDetailsController::class,'create'])->name('roomdetails.create');
+        Route::post('/roomdetails/store',[RoomDetailsController::class,'store'])->name('roomdetails.store');
+        Route::get('/roomdetails/{roomdetails}/edit',[RoomDetailsController::class,'edit'])->name('roomdetails.edit');
+        Route::post('/roomdetails/{roomdetails}/update',[RoomDetailsController::class,'update'])->name('roomdetails.update');
+        Route::post('/roomdetails/delete',[RoomDetailsController::class,'delete'])->name('roomdetails.delete');
 
     Route::get('/books',[BookingsController::class,'index'])->name('books.index');
     Route::post('/books',[BookingsController::class,'create'])->name('books.create');

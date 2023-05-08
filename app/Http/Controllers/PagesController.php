@@ -33,6 +33,7 @@ class PagesController extends Controller
         return view('footer');
     }
     public function rums(){
-        return view('rums');
+        $rooms=Rooms::all();
+        return view('rums',compact('rooms'));
     }
 }

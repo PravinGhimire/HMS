@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Roomdetails;
+use App\Models\Rooms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as FacadesFile;
 
@@ -21,7 +22,8 @@ class RoomDetailsController extends Controller
      */
     public function create()
     {
-        return view('roomdetails.create');
+        $rooms = Rooms::all();
+        return view('roomdetails.create',compact('rooms'));
     }
 
     /**
@@ -34,7 +36,8 @@ class RoomDetailsController extends Controller
         'photopath' => 'required|mimes:jpg,png',
         'room_size'=>'required',
         'bed_size'=>'required',
-        'view'=>'required'
+        'view'=>'required',
+        'room_id' => 'required',
     ]);
        
         

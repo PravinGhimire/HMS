@@ -59,12 +59,15 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                      </div>
+                    
                      <div class="carousel-inner">
+                    
                         <div class="carousel-item active">
-                           <img src="https://static01.nyt.com/images/2019/03/24/travel/24trending-shophotels1/24trending-shophotels1-superJumbo.jpg" class=" w-100" alt="...">
+                           <img src="{{asset('images/rooms/'.$room->photopath)}}" class=" w-100" alt="...">
                         </div>
+                       
                         <div class="carousel-item">
-                           <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/3e/d6/f9/rooms-hotel-kazbegi.jpg?w=700&h=-1&s=1" class="  w-90 " alt="...">
+                        <img src="https://rooms-hotel-kazbegi.booked.net/data/Photos/OriginalPhoto/4972/497240/497240235/Rooms-Hotel-Kazbegi-Exterior.JPEG" class=" w-100" alt="...">
                         </div>
                         <div class="carousel-item">
                            <img src="https://rooms-hotel-kazbegi.booked.net/data/Photos/OriginalPhoto/4972/497240/497240235/Rooms-Hotel-Kazbegi-Exterior.JPEG" class=" w-100" alt="...">
@@ -79,15 +82,13 @@
                         <span class="visually-hidden">Next</span>
                      </button>
                      </div>
-                     @foreach($rooms as $room)
+                  
+                    
                         <div>
-                           <h2 class="text-xl m-1  ">{{$room->id}}</h2>
-                           <p class="m-2 text-black  overflow-hidden text-justify">Welcome to our hotel New Era! Our hotel is located in a quiet and peaceful neighborhood, providing
-                           a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable
-                           rooms to suit your needs, including single, double, and twin rooms, all of which 
-                           are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. </p>
+                           <h2 class="text-xl m-1">Description</h2>
+                           <p class="m-2 text-black  overflow-hidden text-justify">{{$roomdetail->description}} </p>
                         </div>
-                        @endforeach
+                        
                         <div>
                         <h2 class="text-xl m-1">Overview</h2>
                         <div class="col-lg-6 m-2">
@@ -99,6 +100,7 @@
                            <p><strong class="color-black">Room service:</strong> Yes</p>	
 								</div>
                         </div>
+                       
                   </div>
                   <div class="col-4 ">
                 <div class="card shadow-2-strong card-registration " style="border-radius: 15px; background-color:bisque">
@@ -137,16 +139,11 @@
               <div class="row">
                 <div class="col-12">
 
-                  <select class="select form-control-sm">
-                  <option value="select">---Select---</option>
-                  <option value="Single Room">Single Room</option>
-                  <option value="Deluxe Room">Deluxe Room</option>
-                  <option value="Double Bed Room">Double Bed Room</option>
-                  <option value="Suit Room">Suit Room</option>
-                  <option value="VIP Room">VIP Room</option>
-                  <option value="Luxurious Room">Luxurious Room</option>
-                  <option value="Apartment">Apartment</option>
-                  </select>
+                <select class="w-full p-2 rounded-lg mt-2" name="category_id" id="">
+            
+            <option value="{{$room->id}}">{{$room->room_type}}</option>
+         
+        </select>
                 </div>
                
 

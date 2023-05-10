@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gallery;
+use App\Models\Roomdetails;
 use App\Models\Rooms;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -32,8 +33,9 @@ class PagesController extends Controller
     public function footer(){
         return view('footer');
     }
-    public function rums(){
-        $rooms=Rooms::all();
-        return view('rums',compact('rooms'));
+    public function rums($id){
+        $room=Rooms::find($id);
+        $roomdetail=Roomdetails::where('room_id',$id)->first();
+        return view('rums',compact('room','roomdetail'));
     }
 }

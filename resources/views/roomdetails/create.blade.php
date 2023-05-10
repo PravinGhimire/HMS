@@ -8,6 +8,12 @@
     @error('priority')
         <p class="text-red-600 text-sm">* {{$message}}</p>
     @enderror
+    <select class="w-full p-2 rounded-lg mt-2" name="room_id" id="">
+            @foreach($rooms as $room)
+            <option value="{{$room->id}}" >{{$room->room_type}}</option>
+            @endforeach
+        </select>
+
         <input type="text" class="w-full p-2 rounded-lg mt-2" name="description" placeholder="Description" value="{{old('description')}}">
         @error('description')
             <span class="text-red-500 -mt-4">* {{$message}}</span>

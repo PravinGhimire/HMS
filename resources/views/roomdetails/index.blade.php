@@ -14,6 +14,7 @@
             <th>Room_Size</th>
             <th>Bed_Size</th>
             <th>View</th>
+            <th>Room Type</th>
             <th>Action</th>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td>{{$roomdetails->room_size}}</td>
                 <td>{{$roomdetails->bed_size}}</td>
                 <td>{{$roomdetails->view}}</td>
+                <td>{{$roomdetails->room->room_type}}</td>
                 <td>
                     <a href="{{route('roomdetails.edit',$roomdetails->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
                     <a onclick="showDelete('{{$roomdetails->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>

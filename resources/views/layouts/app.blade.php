@@ -37,9 +37,9 @@
                     @endif
                     <a href="{{route('books.index')}}" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300 @if(request()->routeIs('booking.*')) bg-blue-600 text-white @endif">Booking</a>
                     <a href="/" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300 @if(request()->routeIs('viewsite.*')) bg-blue-600 text-white @endif">View Site</a>
-                    <form action="{{route('logout')}}" method="POST" >
+                    <form action="{{route('logout')}}" method="POST"   class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">
                         @csrf
-                       <a class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300" type="submit">Logout</a>
+                       <button  type="submit">Logout</button>
                     </form>
                 </div>
             </div>

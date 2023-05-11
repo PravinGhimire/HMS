@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         User::create([
-            'name' => 'Lumbini ICT Campus',
-            'email' => 'info@lict.edu.np',
+            'name' => 'Pravin Ghimire',
+            'email' => 'ghimireprabin62@gmail.com',
             'password' => bcrypt('12345678'),
             'role' => 'admin',
         ]);

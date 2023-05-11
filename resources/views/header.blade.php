@@ -21,7 +21,9 @@
         </li>
       </ul>
         <div class=" btn-group ">
-        
+        @if(auth()->check())
+        <p class="text-white text-xl m-2">Welcome,{{auth()->user()->name}}</p>
+        @endif
                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class='	far fa-user-circle' style='font-size:30px margin-right=1px' href="#"></i>
                </button>

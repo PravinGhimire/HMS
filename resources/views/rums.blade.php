@@ -67,7 +67,7 @@
                         </div>
                        
                         <div class="carousel-item">
-                        <img src="https://rooms-hotel-kazbegi.booked.net/data/Photos/OriginalPhoto/4972/497240/497240235/Rooms-Hotel-Kazbegi-Exterior.JPEG" class=" w-100" alt="...">
+                        <img src="{{asset('images/roomdetails/'.$roomdetail->photopath)}}" class=" w-100" alt="...">
                         </div>
                         <div class="carousel-item">
                            <img src="https://rooms-hotel-kazbegi.booked.net/data/Photos/OriginalPhoto/4972/497240/497240235/Rooms-Hotel-Kazbegi-Exterior.JPEG" class=" w-100" alt="...">
@@ -92,11 +92,11 @@
                         <div>
                         <h2 class="text-xl m-1">Overview</h2>
                         <div class="col-lg-6 m-2">
-									<p><strong class="color-black">Room size:</strong> 47 - 54 sq m</p>	
+									<p><strong class="color-black">Room size:</strong> {{$roomdetail->room_size}} sq m</p>	
 									<p><strong class="color-black">Occupancy:</strong> Up to 4 adulds</p>	
-									<p><strong class="color-black">View:</strong> Mountain view</p>	
+									<p><strong class="color-black">View:</strong> {{$roomdetail->view}} </p>	
 									<p><strong class="color-black">Smoking:</strong> No smoking</p>	
-                           <p><strong class="color-black">Bed size:</strong> King and regular</p>	
+                           <p><strong class="color-black">Bed size:</strong>{{$roomdetail->bed_size}} </p>	
                            <p><strong class="color-black">Room service:</strong> Yes</p>	
 								</div>
                         </div>

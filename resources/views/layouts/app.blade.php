@@ -47,6 +47,7 @@
                 @yield('content')
             </div>
         </div>
- 
+ <!-- ckeditor
+ tinymce -->
     </body>
 </html>

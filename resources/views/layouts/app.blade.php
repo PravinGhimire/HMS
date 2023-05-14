@@ -21,7 +21,7 @@
     </head>
    <body class="font-sans antialiased">
    <div class="flex ">
-            <div class="w-56 bg-blue-200 shadow-md h-screen">
+            <div class="w-56 bg-blue-200 shadow-md h-100%">
                  <div class="my-1">
                     <img src="images/logo3.png "class="w-10/12 bg-white mt-2 mx-auto  rounded-2xl" alt="">
                 </div> 
@@ -34,6 +34,7 @@
                     <a href="{{route('gallery.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white @if(request()->routeIs('gallery.*')) bg-blue-600 text-white @endif">Gallery</a>
                     <a href="{{route('user.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('user.*')) bg-blue-600 text-white @endif">Users</a>
                     <a href="{{route('roomdetails.index')}}" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('roomdetails.*')) bg-blue-600 text-white @endif">Room Deatils</a>
+                    <a href="" class="block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('Aboutus page.*')) bg-blue-600 text-white @endif">AboutUs Page</a>
                     @endif
                     <a href="{{route('books.index')}}" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300 @if(request()->routeIs('booking.*')) bg-blue-600 text-white @endif">Booking</a>
                     <a href="/" class="  block pl-4 border-b-2 border-green-500 ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300 @if(request()->routeIs('viewsite.*')) bg-blue-600 text-white @endif">View Site</a>

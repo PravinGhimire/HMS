@@ -34,7 +34,6 @@ class GalleryController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'description'=>'required',
             'priority' => 'required',
             //'priority' => 'required|numeric:min=0',
             'photopath' => 'required|mimes:jpg,png'
@@ -74,7 +73,7 @@ class GalleryController extends Controller
     public function update(Request $request, Gallery $gallery)
     {
         $data = $request->validate([
-            'description'=>'required',
+        
             'priority' => 'required',
             'photopath' => 'nullable',
         ]);

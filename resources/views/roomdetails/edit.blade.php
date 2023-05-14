@@ -18,6 +18,12 @@
     @error('photopath')
         <p class="text-red-600 text-sm">* {{$message}}</p>
     @enderror
+    <select class="w-full p-2 rounded-lg mt-2" name="room_id" id="">
+            @foreach($rooms as $room)
+            <option value="{{$room->id}}" >{{$room->room_type}}</option>
+            @endforeach
+        </select>
+
         <input type="text" class="w-full p-2 rounded-lg mt-2" name="room_size" placeholder="Room_size" value="{{$roomdetails->room_size}}" >
     @error('room_size')
         <p class="text-red-600 text-sm">* {{$message}}</p>

@@ -11,18 +11,18 @@
           <a class="nav-link active" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active " href="about">About</a>
+          <a class="nav-link active " href="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="room">Our Room</a>
+          <a class="nav-link active" href="/room">Our Room</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="gallerys">Gallery</a>
+          <a class="nav-link active" href="/gallerys">Gallery</a>
         </li>
       </ul>
         <div class=" btn-group ">
         @if(auth()->check())
-        <p class="text-white text-xl m-2">Welcome,{{auth()->user()->name}}</p>
+        <p class="text-white text-xl m-2 ">Welcome,{{auth()->user()->name}} aalu</p>
         @endif
                  <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class='	far fa-user-circle' style='font-size:30px margin-right=1px' href="#"></i>
@@ -31,9 +31,9 @@
                      @if(!auth()->check())
                      <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                      @else
-                     <li><a class="dropdown-item" href="{{route('login')}}">{{auth()->user()->name}}</a></li>
+                     <!-- <li><a class="dropdown-item" href="{{route('login')}}">{{auth()->user()->name}}</a></li> -->
                      <li><a class="dropdown-item" href="{{route('books.index')}}">View Bookings</a></li>
-                     <li><a class="dropdown-item" href="logout">Logout</a></li>
+                     <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                      @endif
                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                   </ul>

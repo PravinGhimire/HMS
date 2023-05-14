@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('priority');
             $table->longText('description');
-            $table->integer('room_size');
+            $table->string('room_size');
             $table->string('bed_size');
             $table->string('view');
             $table->string('photopath');

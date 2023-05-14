@@ -4,10 +4,7 @@
 
     <form action="{{route('gallery.update',$gallery->id)}}" method="POST" class="my-10" enctype="multipart/form-data">
         @csrf
-        <input type="text" class="w-full p-2 rounded-lg mt-2" name="description" placeholder="description" value="{{$gallery->description}}">
-        @error('description')
-            <span class="text-red-500 -mt-4">* {{$message}}</span>
-        @enderror
+    
         <input type="text" class="w-full p-2 rounded-lg mt-2" name="priority" placeholder="Enter Priority" value="{{$gallery->priority}}">
         @error('priority')
             <span class="text-red-500 -mt-4">* {{$message}}</span>

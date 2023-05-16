@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\dashboardcontroller;
@@ -29,6 +30,7 @@ Route::get('/footer',[PagesController::class,'footer']);
 Route::get('/about',[PagesController::class,'about']);
 Route::get('/room',[PagesController::class,'room']);
 Route::get('{id}/rums/',[PagesController::class,'rums'])->name('rums');
+Route::post('{id}/rums/',[PagesController::class,'rums'])->name('rums');
 Route::get('/gallerys',[PagesController::class,'gallerys']);
 
 
@@ -73,8 +75,8 @@ Route::middleware('auth')->group(function () {
         Route::post('/roomdetails/{roomdetails}/update',[RoomDetailsController::class,'update'])->name('roomdetails.update');
         Route::post('/roomdetails/delete',[RoomDetailsController::class,'delete'])->name('roomdetails.delete');
 
-    Route::get('/books',[BookingsController::class,'index'])->name('books.index');
-    Route::post('/books',[BookingsController::class,'create'])->name('books.create');
+    Route::get('/booking',[BookingController::class,'index'])->name('booking.index');
+    Route::post('/booking/store',[BookingController::class,'store'])->name('booking.store');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

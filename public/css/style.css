@@ -805,9 +805,9 @@ ul.social_icon li a:hover {
 
 .booking-form .default-btn {
     margin-left: 25%;
-    border: none;
+    border-radius: 5px;
     padding: auto;
-    background-color: #ee2255;
+    background-color: #88fa74;
     -webkit-box-shadow: none;
     box-shadow: none;
     width: 45%

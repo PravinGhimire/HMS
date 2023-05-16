@@ -167,7 +167,7 @@
                                        </div>
                                              </div>
                                              <div class="col-lg-12 col-md-12">
-                                             <button type="submit" class="default-btn p-2  ">
+                                             <button type="submit" class="default-btn p-2   ">
                                              Reserve Now
                                              </button>
                                                </div>

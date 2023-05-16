@@ -3,11 +3,9 @@
 @include('layouts.message')
 
 
-<h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500"></h2>
+<h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500">Booking Records</h2>
 
-<div class="my-4 text-right">
-    <a href="" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Photo</a>
-</div>
+
 <table id="example" class="display">
     <thead>
 
@@ -16,7 +14,7 @@
         <th>Check_in</th>
         <th>Check_out</th>
         <th>Room </th>
-        <th>Payment</th>
+        <th>Payment Status</th>
         <th>Action</th>
     </thead>
     <tbody>
@@ -26,10 +24,12 @@
 
             <td>{{$form->name}}</td>
             <td>{{$form->email}}</td>
-            <td>{{$form->Check_in}}</td>
+            <td>{{$form->check_in}}</td>
             <td>{{$form->check_out}}</td>
             <td>{{$form->room->room_type}}</td>
-            <td> </td>
+            <td><span class="bg-yellow-400 text-white text-m font-medium mr-2 px-2.5 py-1 rounded dark:bg-yellow-400">Pending</span>
+
+            </td>
             <td>
                 <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
                 <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>

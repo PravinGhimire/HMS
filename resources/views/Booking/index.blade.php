@@ -6,7 +6,7 @@
 <h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500">Booking Records</h2>
 
 
-<table id="example" class="display">
+<table id="example" class="display border-spacing-1 ">
     <thead>
 
         <th>Name</th>

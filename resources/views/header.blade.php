@@ -32,7 +32,7 @@
                      <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
                      @else
                      <!-- <li><a class="dropdown-item" href="{{route('login')}}">{{auth()->user()->name}}</a></li> -->
-                     <li><a class="dropdown-item" href="{{route('books.index')}}">View Bookings</a></li>
+                     <li><a class="dropdown-item" href="{{route('booking.index')}}">View Bookings</a></li>
                      <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
                      @endif
                      <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->

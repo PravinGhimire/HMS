@@ -8,27 +8,27 @@
 <div class="my-4 text-right">
     <a href="" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Photo</a>
 </div>
-<table id="example" class="display"> 
+<table id="example" class="display">
     <thead>
-        <th>Order</th>
-         <th>Name</th>
-         <th>Email</th>
-         <th>Check_in</th>
-         <th>Check_out</th>
-         <th>Room </th>
-         <th>Payment</th>
+
+        <th>Name</th>
+        <th>Email</th>
+        <th>Check_in</th>
+        <th>Check_out</th>
+        <th>Room </th>
+        <th>Payment</th>
         <th>Action</th>
     </thead>
     <tbody>
         @foreach($forms as $form)
-       
+
         <tr>
-            <td>{{$form->priority}}</td>
-            <td>{{$form->Name}}</td>
+
+            <td>{{$form->name}}</td>
             <td>{{$form->email}}</td>
             <td>{{$form->Check_in}}</td>
             <td>{{$form->check_out}}</td>
-            <td>{{$form->room}}</td>
+            <td>{{$form->room->room_type}}</td>
             <td> </td>
             <td>
                 <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
@@ -37,7 +37,7 @@
         </tr>
         @endforeach
 
-       
+
     </tbody>
 </table>
 
@@ -49,7 +49,7 @@
             <form action="{{route('gallery.delete')}}" method="POST">
                 @csrf
                 <input type="hidden" id="dataid" name="dataid" value="">
-                
+
                 <div class="flex mt-10 justify-center">
                     <input type="submit" value="Confirm? Delete" class="bg-blue-600 text-white px-3 py-2 rounded-lg cursor-pointer mx-2">
                     <a onclick="hideDelete()" class="bg-red-600 text-white px-6 py-2 rounded-lg cursor-pointer mx-2">Exit</a>
@@ -61,19 +61,18 @@
 
 
 <script>
-    $(document).ready(function () {
-$('#example').DataTable();
-});
+    $(document).ready(function() {
+        $('#example').DataTable();
+    });
 </script>
 
 <script>
-    function showDelete(id)
-    {
+    function showDelete(id) {
         $('#deletebox').removeClass('hidden');
         $('#dataid').val(id);
     }
-    function hideDelete()
-    {
+
+    function hideDelete() {
         $('#deletebox').addClass('hidden');
     }
 </script>

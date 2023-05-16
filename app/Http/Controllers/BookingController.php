@@ -14,8 +14,9 @@ class BookingController extends Controller
     public function index()
     {
         $rooms = Rooms::all();
-        $form=Booking::all();
-        return view('booking.index',compact('rooms'));
+        $forms = Booking::with('room')->get();
+
+        return view('booking.index', compact('rooms', 'forms'));
     }
 
     /**
@@ -30,18 +31,17 @@ class BookingController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    { 
-        $data= $request->validate([
-        'name'=>'required',
-        'email'=>'required',
-        'check_in'=>'required',
-        'check_out'=>'required',
-        'noofpeople'=>'required',
-        'room_id' => 'required',
+    {
+        $data = $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'check_in' => 'required',
+            'check_out' => 'required',
+            'noofpeople' => 'required',
+            'room_id' => 'required',
         ]);
         Booking::create($data);
-        return redirect(route('/'))->with('success','Room Booked Successfully');
-      
+        return redirect(route('booking.index'))->with('success', 'Room Booked Successfully');
     }
 
     /**

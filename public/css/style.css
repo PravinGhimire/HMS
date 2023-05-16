@@ -763,6 +763,7 @@ ul.social_icon li a:hover {
 
 .booking-form h3 {
     font-size: 26px;
+    margin-left: 19%;
     margin-bottom: 20px
 }
 
@@ -803,11 +804,13 @@ ul.social_icon li a:hover {
 }
 
 .booking-form .default-btn {
-    float: right;
+    margin-left: 25%;
     border: none;
+    padding: auto;
+    background-color: #09f7ff;
     -webkit-box-shadow: none;
     box-shadow: none;
-    width: 100%
+    width: 45%
 }
 
 /* .booking-form .nice-select {

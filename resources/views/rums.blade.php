@@ -20,7 +20,7 @@
       <!-- style css -->
       <link rel="stylesheet" href="{{asset('css/style.css')}}">
       <!-- Responsive-->
-      <!-- <link rel="stylesheet" href="{{asset('css/responsive.css')}}"> -->
+       <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}"> 
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
@@ -102,11 +102,80 @@
                         </div>
                        
                   </div>
-                  <div class="col-4 ">
-                <div class="card shadow-2-strong card-registration " style="border-radius: 15px; background-color:bisque">
-     <div class="card-body p-3 p-md-5">
-                  
-                     <form action="" method="post">
+                  <div class="col-4">
+                  <!-- <div class="shadow-2-strong card-registration ">
+     <div class=" p-3 p-md-5"> -->
+                
+            <div class="booking-form">
+            <h3 class=" items-center">Booking Sheet </h3>
+            <form action="" method="post">
+              @csrf
+            <div class="row align-items-center">
+            <div class="col-lg-6">
+                  <div class="form-group">
+                  <label>Your Name</label>
+                  <input type="text" name="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
+                  <i class='bx bx-user'></i>
+                  </div>
+                     </div>
+            <div class="col-lg-6">
+            <div class="form-group">
+                     <label>Your Email</label>
+                     <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+                     <i class='bx bx-mail-send'></i>
+                     </div>
+                     </div>
+               <div class="col-lg-6">
+                        <div class="form-group">
+                        <label>Check in</label>
+                        <div class="input-group date">
+                        <input id="datetimepicker" type="date" class="form-control" placeholder="09/29/2020">
+                        <span class="input-group-addon"></span>
+               </div>
+                                 <i class='bx bxs-calendar'></i>
+                                 </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="form-group">
+                                 <label>Check Out</label>
+                                    <div class="input-group">
+                                 <input id="datetimepicker-check" type="date" class="form-control" placeholder="09/29/2020">
+                                        <span class="input-group-addon"></span>
+                                 </div>
+                                 <i class='bx bxs-calendar'></i>
+                                 </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                     <div class="form-group">
+                                 <label>Numbers of Persons</label>
+                                    <select class="form-control">
+                                 <option>01</option>
+                                 <option>02</option>
+                                 <option>03</option>
+                                 <option>04</option>
+                                 <option>05</option>
+                                 </select>
+                                 </div>
+                                 </div>
+                                 <div class="col-lg-6">
+                                 <div class="form-group">
+                                 <label> Room Type</label>
+                                       <select class="form-control">
+                                       <option value="{{$room->id}}">{{$room->room_type}}</option>
+                                 
+                                       </select>
+                                       </div>
+                                             </div>
+                                             <div class="col-lg-12 col-md-12">
+                                             <button type="submit" class="default-btn ">
+                                             Book Now
+                                             </button>
+                                               </div>
+                                       </div>
+                                       </form>
+                                       </div>
+                                 </div>
+                  <!-- <form action="" method="post">
                         @csrf
                      <div class="row">
                 <div class="col-md-6 mb-4">
@@ -151,12 +220,13 @@
               <div class=" mr-5 mt-4 pt-2">
                <input class="btn btn-primary btn-sm " type="submit" value="Reserve" />
               </div>
-              </form> 
+              </form>  -->
+                    
                    </div>
                    </div>
             
         
-                  </div>
+                 
                      </div>
          
      

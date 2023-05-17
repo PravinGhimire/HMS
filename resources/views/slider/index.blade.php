@@ -8,15 +8,18 @@
 <div class="my-4 text-right">
     <a href="{{route('slider.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Photo</a>
 </div>
-<table id="example" class="display"> 
-    <thead>
+<div class="table-responsive">
+<table  class="table">
+        <thead>
+            <tr>
         <th>Order</th>
          <th>Picture</th>
         <th>Action</th>
+        </tr>
     </thead>
     <tbody>
         @foreach($sliders as $slider)
-       
+        <tr>
         <tr>
             <td>{{$slider->priority}}</td>
             <td><img  class="w-24" src="{{asset('images/slider/'.$slider->photopath)}}" alt=""></td>
@@ -25,12 +28,11 @@
                 <a onclick="showDelete('{{$slider->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
             </td>
         </tr>
+        </tr>
         @endforeach
-
-       
     </tbody>
 </table>
-
+</div>
 
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">

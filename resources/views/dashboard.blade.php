@@ -1,36 +1,95 @@
 @extends('layouts.app')
 @section('content')
 
-@if(auth()->user()->role=='admin')
-<h2 class="text-4xl font bold border-b-4 text-red-500 border-blue "> Admin Dashboard</h2>
-@else
-<h2 class="text-4xl font bold border-b-4 text-red-500 border-blue ">Costumer's Dashboard</h2>
-@endif
-<div class="grid grid-cols-3 gap-8 my-6 ">
-    <div class="p-4 flex justify-between bg-green-600 text-white rounded-lg">
-        <span class="text-xl font-bold">Total Reviews</span>
-        <span class="text-5xl font-bold">3905</span>
-    </div>
-    <div class="p-4 flex justify-between bg-blue-600 text-white rounded-lg">
-        <span class="text-xl font-bold">Total feedback </span>
-        <span class="text-5xl font-bold">3565</span>
-    </div>
-    <div class="p-4 flex justify-between bg-red-600 text-white rounded-lg">
-        <span class="text-xl font-bold">Total visits</span>
-        <span class="text-5xl font-bold">5000</span>
-    </div>
-    <div class="p-4 flex justify-between bg-slate-600 text-white rounded-lg">
-        <span class="text-xl font-bold">Total Rooms</span>
-        <span class="text-5xl font-bold">{{$totalrooms}}</span>
-    </div>
-    <div class="p-4 flex justify-between bg-pink-800 text-white rounded-lg">
-        <span class="text-xl font-bold">Total Users</span>
-        <span class="text-5xl font-bold">{{$totalusers}}</span>
-    </div>
-    <div class="p-4 flex justify-between bg-slate-900 text-white rounded-lg">
-        <span class="text-xl font-bold">Total Booking</span>
-        <span class="text-5xl font-bold">{{$totalbooking}}</span>
-    </div>
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
 </div>
 
+<!-- Content Row -->
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Users</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalusers}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                           Booking </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalbooking}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-info shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Rooms
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-auto">
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$totalrooms}}</div>
+                            </div>
+                            <div class="col">
+                                <div class="progress progress-sm mr-2">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 
+                        Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Total Visits</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">180</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

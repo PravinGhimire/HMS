@@ -17,37 +17,195 @@
     <script src="{{asset('datatable/datatables.js')}}"></script>
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link href="{{asset('vendorr/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="{{asset('csss/sb-admin-2.min.css')}}" rel="stylesheet">
+
 </head>
 
-<body class="font-sans antialiased">
-    <div class="flex ">
-        <div class="w-56 bg-white shadow-md h-100%">
-            <div class="my-1">
-                <!-- <img src="images/logo3.png " class="w-10/12 h-auto bg-white m-auto mx-auto  rounded-3xl radius-0" alt=""> -->
-            </div>
-            <div class="mt-13 ">
-                <p class="text-center font-bold text-lg">Hello, {{auth()->user()->name}}</p>
-                <a href="{{route('dashboard')}}" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white  @if(request()->routeIs('dashboard')) bg-blue-600 text-white @endif">Dashboard</a>
-                @if(auth()->user()->role=='admin')
-                <a href="{{route('rooms.index')}}" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('rooms.*')) bg-blue-600 text-white @endif">Rooms</a>
-                <a href="{{route('slider.index')}}" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('slider.*')) bg-blue-600 text-white @endif">Sliders</a>
-                <a href="{{route('gallery.index')}}" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white @if(request()->routeIs('gallery.*')) bg-blue-600 text-white @endif">Gallery</a>
-                <a href="{{route('user.index')}}" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('user.*')) bg-blue-600 text-white @endif">Users</a>
-                <a href="{{route('roomdetails.index')}}" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('roomdetails.*')) bg-blue-600 text-white @endif">Room Deatils</a>
-                <a href="" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600 ease-in-out duration-300  hover:text-white @if(request()->routeIs('Aboutus page.*')) bg-blue-600 text-white @endif">AboutUs Page</a>
-                @endif
-                <a href="{{route('booking.index')}}" class="  block pl-4  ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300 @if(request()->routeIs('booking.*')) bg-blue-600 text-white @endif">Booking</a>
-                <a href="/" class="  block pl-4  ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300 @if(request()->routeIs('viewsite.*')) bg-blue-600 text-white @endif">View Site</a>
-                <form action="{{route('logout')}}" method="POST" class="block pl-4  ml-2 text-xl py-2 hover:bg-violet-600  hover:text-white ease-in-out duration-300">
-                    @csrf
-                    <button type="submit">Logout</button>
-                </form>
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+        @if(auth()->user()->role=='admin')
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="far fa-grin-tongue-squint"></i>
+                </div>
+                <div class="sidebar-brand-text mx-1">New Era </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item ">
+                <a class="nav-link " href="/rooms">
+                    <i class="fas fa-bed"></i>
+                    <span>Rooms</span>
+                </a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/roomdetails">
+                    <i class="fas fa-boxes"></i>
+                    <span>Room Details</span>
+                </a>
+            </li>
+
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link " href="/gallery">
+                    <i class="fas fa-images"></i>
+                    <span>Gallery</span>
+                </a>
+
+            </li>
+            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Nav Item - Charts -->
+            <li class="nav-item">
+                <a class="nav-link" href="/user">
+                    <i class="fas fa-user-alt"></i>
+                    <span>Users</span></a>
+            </li>
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/booking">
+                    <i class="fas fa-book-dead"></i>
+                    <span>Bookings</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/slider">
+                    <i class="	fas fa-clone"></i>
+                    <span>Sliders</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <i class="fas fa-arrow-alt-circle-left"></i>
+                    <span>View Site</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Logout</span></a>
+            </li>
+            <!-- Sidebar Toggler (Side ma jane) -->
+            <!-- <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div> -->
+            
+        </ul>
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <div>
+                        @yield('content')
+
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="flex-1 p-6">
-            @yield('content')
-        </div>
+        @endif
     </div>
+
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <!-- <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2021</span>
+                    </div>
+                </div>
+            </footer> -->
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendorr/jquery/jquery.min.js"></script>
+    <script src="vendorr/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendorr/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+
+
 </body>
+
+
 
 </html>

@@ -5,10 +5,10 @@
 
 <h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500">Booking Records</h2>
 
-
-<table id="example" class="display border-spacing-1 ">
+<div class="table-responsive">
+<table  class="table ">
     <thead>
-
+    <tr>
         <th>Name</th>
         <th>Email</th>
         <th>Check_in</th>
@@ -16,10 +16,11 @@
         <th>Room </th>
         <th>Payment Status</th>
         <th>Action</th>
+     </tr>
     </thead>
     <tbody>
         @foreach($forms as $form)
-
+        <tr>
         <tr>
 
             <td>{{$form->name}}</td>
@@ -34,13 +35,11 @@
                 <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a> <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
             </td>
         </tr>
+         </tr>
         @endforeach
-
-
     </tbody>
 </table>
-
-
+</div>
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">
         <div class="bg-white p-10 rounded-lg">

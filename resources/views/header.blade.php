@@ -40,36 +40,7 @@
                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                  <!-- <table id="example" class="display  ">
-                    <thead>
-                      <th>Name</th>
-                      <th>Email</th>
-                      <th>Check_in</th>
-                      <th>Check_out</th>
-                      <th>Room </th>
-                      <th>Payment Status</th>
-                      <th>Action</th>
-                    </thead>
-                    <tbody>
-                      @foreach($forms as $form)
 
-                      <tr>
-                        <td>{{$form->name}}</td>
-                        <td>{{$form->email}}</td>
-                        <td>{{$form->check_in}}</td>
-                        <td>{{$form->check_out}}</td>
-                        <td>{{$form->room->room_type}}</td>
-                        <td><span class="bg-yellow-400 text-white text-m font-medium mr-2 px-2.5 py-1 rounded dark:bg-yellow-400">Pending</span>
-
-                        </td>
-                        <td>
-                          <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
-                          <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
-                        </td>
-                      </tr>
-                      @endforeach
-                    </tbody>
-                  </table> -->
 
                 </div>
               </div>

@@ -22,7 +22,7 @@
         </ul>
         <div class=" btn-group ">
           @if(auth()->check())
-          <p class="text-white text-xl m-2 ">Welcome,{{auth()->user()->name}} aalu</p>
+          <p class="text-white text-xl m-2 ">Welcome,{{auth()->user()->name}}</p>
           @endif
           <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <i class='	far fa-user-circle' style='font-size:30px margin-right=1px' href="#"></i>
@@ -31,7 +31,6 @@
             @if(!auth()->check())
             <li><a class="dropdown-item" href="{{route('login')}}">Login</a></li>
             @else
-            <!-- <li><a class="dropdown-item" href="{{route('login')}}">{{auth()->user()->name}}</a></li> -->
             <li><button class="btn btn-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">View Booking</button>
 
               <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
@@ -40,7 +39,7 @@
                   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-
+               
 
                 </div>
               </div>

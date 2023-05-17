@@ -41,7 +41,7 @@ class BookingController extends Controller
             'room_id' => 'required',
         ]);
         Booking::create($data);
-        return redirect(route(''))->with('success', 'Room Booked Successfully');
+        return redirect()->back()->with('success', 'Room Booked Successfully');
     }
 
     /**

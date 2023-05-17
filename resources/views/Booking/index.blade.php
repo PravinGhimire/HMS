@@ -31,8 +31,7 @@
 
             </td>
             <td>
-                <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
-                <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
+                <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a> <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
             </td>
         </tr>
         @endforeach

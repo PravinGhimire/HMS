@@ -1,9 +1,9 @@
 @extends('layouts.app')
 @section('content')
 @include('layouts.message')
-<h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500">Users</h2>
+<h2 class="text-4xl font-bold border-b-4 text-black">Users</h2>
 
-<div class="my-4 text-right">
+<div class="my-3 text-right">
     <a href="{{route('user.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add User</a>
 </div>
 <div class="table-responsive">

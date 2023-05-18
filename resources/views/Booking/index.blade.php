@@ -3,7 +3,7 @@
 @include('layouts.message')
 
 
-<h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500">Booking Records</h2>
+<h2 class="text-4xl font-bold border-b-4 text-black">Booking Records</h2>
 
 <div class="table-responsive">
 <table  class="table ">
@@ -58,11 +58,11 @@
 </div>
 
 
-<script>
+<!-- <script>
     $(document).ready(function() {
         $('#example').DataTable();
     });
-</script>
+</script> -->
 
 <script>
     function showDelete(id) {

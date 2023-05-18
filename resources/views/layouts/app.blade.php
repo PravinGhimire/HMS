@@ -32,10 +32,10 @@
         @if(auth()->user()->role=='admin')
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion " id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="far fa-grin-tongue-squint"></i>
                 </div>
@@ -55,23 +55,23 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item ">
-                <a class="nav-link " href="/rooms">
+            <li class="nav-item active">
+                <a class="nav-link  " href="/rooms">
                     <i class="fas fa-bed"></i>
                     <span>Rooms</span>
                 </a>
 
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/roomdetails">
+            <li class="nav-item active">
+                <a class="nav-link " href="/roomdetails">
                     <i class="fas fa-boxes"></i>
                     <span>Room Details</span>
                 </a>
             </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link " href="/gallery">
+            <li class="nav-item active">
+                <a class="nav-link  " href="/gallery">
                     <i class="fas fa-images"></i>
                     <span>Gallery</span>
                 </a>
@@ -79,29 +79,29 @@
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="/user">
+            <li class="nav-item active">
+                <a class="nav-link " href="/user">
                     <i class="fas fa-user-alt"></i>
                     <span>Users</span></a>
             </li>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="/booking">
-                    <i class="fas fa-book-dead"></i>
+            <li class="nav-item active">
+                <a class="nav-link " href="/booking">
+                    <i class="fas fa-clipboard"></i>
                     <span>Bookings</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/slider">
                     <i class="	fas fa-clone"></i>
                     <span>Sliders</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/">
                     <i class="fas fa-arrow-alt-circle-left"></i>
                     <span>View Site</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/logout">
                     <i class="fas fa-fw fa-user"></i>
                     <span>Logout</span></a>
@@ -110,7 +110,7 @@
             <!-- <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div> -->
-            
+
         </ul>
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
@@ -124,28 +124,22 @@
                     </button>
 
                     <!-- Topbar Search -->
-                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                            <div class="input-group-append">
-                                <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                </button>
-                            </div>
-                        </div>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     </form>
 
                     <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <!-- <ul class="navbar-nav ml-auto"> -->
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
+                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <!-- <li class="nav-item dropdown no-arrow d-sm-none">
                             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-search fa-fw"></i>
                             </a>
                         </li>
 
-                    </ul>
+                    </ul> -->
 
                 </nav>
                 <!-- End of Topbar -->

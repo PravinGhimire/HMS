@@ -35,7 +35,7 @@ class PagesController extends Controller
     public function header()
     {
         $rooms = Rooms::all();
-        $forms = Booking::with('room')->get();
+        $forms = Booking::all();
         return view('header', compact('rooms', 'forms'));
     }
     public function footer()

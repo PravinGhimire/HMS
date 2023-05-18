@@ -2,8 +2,8 @@
 @section('content')
 @include('layouts.message')
 
-<h2 class="text-4xl font-bold border-b-4  text-red-500 ">Rooms</h2>
-<div class="my-2 text-right">
+<h2 class="text-4xl font-bold border-b-4  text-black ">Rooms</h2>
+<div class="my-3 text-right">
     <a href="{{route('rooms.create')}}" class="bg-green-500 text-white rounded-lg px-2 py-2">Add Room</a>
 </div>
 <div class="table-responsive">
@@ -52,11 +52,11 @@
 
     </div>
 </div>
-<script>
+<!-- <script>
     $(document).ready(function() {
-        $('#example').DataTable();
+        $DataTable();
     });
-</script>
+</script> -->
 
 <script>
     function showDelete(id) {

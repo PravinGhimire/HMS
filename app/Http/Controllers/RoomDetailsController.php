@@ -11,10 +11,9 @@ class RoomDetailsController extends Controller
 {
     public function index()
     {
-        
+
         $roomdetails = Roomdetails::all();
-        return view('roomdetails.index',compact('roomdetails'));
-        
+        return view('roomdetails.index', compact('roomdetails'));
     }
 
     /**
@@ -23,41 +22,40 @@ class RoomDetailsController extends Controller
     public function create()
     {
         $rooms = Rooms::all();
-        return view('roomdetails.create',compact('rooms'));
+        return view('roomdetails.create', compact('rooms'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)  { 
-        $data=$request->validate([
-        'priority' => 'required',
-        'description'=>'required',
-        'photopath' => 'required|mimes:jpg,png',
-        'room_size'=>'required',
-        'bed_size'=>'required',
-        'view'=>'required',
-        'room_id' => 'required',
-    ]);
-       
-        
-        if($request->file('photopath'))
-        {
-            $file=$request->file('photopath');
-            $filename=$file->getClientOriginalName();
-            $photopath =time().'_'.$filename;
-            $file->move(public_path('images/roomdetails/'),$photopath);
-            $data['photopath']=$photopath;
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'priority' => 'required',
+            'description' => 'required',
+            'photopath' => 'required|mimes:jpg,png',
+            'room_size' => 'required',
+            'bed_size' => 'required',
+            'view' => 'required',
+            'room_id' => 'required',
+        ]);
 
+
+        if ($request->file('photopath')) {
+            $file = $request->file('photopath');
+            $filename = $file->getClientOriginalName();
+            $photopath = time() . '_' . $filename;
+            $file->move(public_path('images/roomdetails/'), $photopath);
+            $data['photopath'] = $photopath;
         }
         Roomdetails::create($data);
-        return redirect(route('roomdetails.index'))->with('success','Details added Successfully');
+        return redirect(route('roomdetails.index'))->with('success', 'Details added Successfully');
     }
 
     /**
      * Display the specified resource.
      */
-   
+
 
     /**
      * Show the form for editing the specified resource.
@@ -65,8 +63,8 @@ class RoomDetailsController extends Controller
     public function edit($id)
     {
         $rooms = Rooms::all();
-        $roomdetails=Roomdetails::find($id);
-        return view('roomdetails.edit',compact('roomdetails','rooms'));
+        $roomdetails = Roomdetails::find($id);
+        return view('roomdetails.edit', compact('roomdetails', 'rooms'));
     }
 
     /**
@@ -76,42 +74,36 @@ class RoomDetailsController extends Controller
     {
         $data = $request->validate([
             'priority' => 'required',
-            'description'=>'required',
+            'description' => 'required',
             'photopath' => 'nullable',
-            'room_size'=>'required',
-            'bed_size'=>'required',
-            'view'=>'required',
+            'room_size' => 'required',
+            'bed_size' => 'required',
+            'view' => 'required',
         ]);
-        $data['photopath']=$roomdetails->photopath;
-        if($request->file('photopath'))
-        {
-            $file=$request->file('photopath');
-            $filename=$file->getClientOriginalName();
-            $photopath =time().'_'.$filename;
-            $file->move(public_path('/images/gallery/'),$photopath);
-            FacadesFile::delete(public_path('/images/gallery/'.$roomdetails->photopath));
-            $data['photopath']=$photopath;
-
+        $data['photopath'] = $roomdetails->photopath;
+        if ($request->file('photopath')) {
+            $file = $request->file('photopath');
+            $filename = $file->getClientOriginalName();
+            $photopath = time() . '_' . $filename;
+            $file->move(public_path('/images/gallery/'), $photopath);
+            FacadesFile::delete(public_path('/images/gallery/' . $roomdetails->photopath));
+            $data['photopath'] = $photopath;
         }
         $roomdetails->update($data);
-        return redirect(route('roomdetails.index'))->with('success','Details Updated Successfully');
+        return redirect(route('roomdetails.index'))->with('success', 'Details Updated Successfully');
     }
 
-    
+
 
     /**
      * Remove the specified resource from storage.
      */
-    public function delete(Request $request )
+    public function delete(Request $request)
 
     {
-        $roomdetails =Roomdetails::find($request->dataid);
-        FacadesFile::delete(public_path('/images/gallery/'.$roomdetails->photopath));
+        $roomdetails = Roomdetails::find($request->dataid);
+        FacadesFile::delete(public_path('/images/gallery/' . $roomdetails->photopath));
         $roomdetails->delete();
-        return redirect(route('roomdetails.index'))->with('success','Details Deleted Successfully');
-        
+        return redirect(route('roomdetails.index'))->with('success', 'Details Deleted Successfully');
     }
 }
-
-
-

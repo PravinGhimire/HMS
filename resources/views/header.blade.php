@@ -1,3 +1,5 @@
+
+
 <header>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
     <div class="container ">
@@ -23,59 +25,23 @@
 
         @if(auth()->check())
         <a class="text-white text-sm m-1 ">Welcome,{{auth()->user()->name}}</a>
-        <li><a class="btn text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Booking</a>
-
-          <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Bookings</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-            <div class="table-responsive">
-<table  class="table ">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Check_in</th>
-        <th>Check_out</th>
-        <th>Room </th>
-        <th>Payment Status</th>
-        <th>Action</th>
-     </tr>
-    </thead>
-    <tbody>
-        @foreach($forms as $form)
-        <tr>
-        <tr>
-
-            <td>{{$form->name}}</td>
-            <td>{{$form->email}}</td>
-            <td>{{$form->check_in}}</td>
-            <td>{{$form->check_out}}</td>
-            <td>{{$form->room->room_type}}</td>
-            <td><span class="bg-yellow-400 text-white text-m font-medium mr-2 px-2.5 py-1 rounded dark:bg-yellow-400">Pending</span>
-
-            </td>
-            <td>
-                <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a> <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
-            </td>
-        </tr>
-         </tr>
-        @endforeach
-    </tbody>
-</table>
-</div>
-            </div>
-          </div>
-        </li>
         @endif
         <ul>
           @if(!auth()->check())
           <li><a class="nav-link active" href="{{route('login')}}">Login</a></li>
           @else
 
-          <li><a class="nav-link active" href="{{route('logout')}}">Logout</a></li>
+          <div class="dropdown">
+            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="{{route('bookingview')}}">View Booking</a></li>
+              <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+              <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+            </ul>
+          </div>
+
 
           @endif
         </ul>

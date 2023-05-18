@@ -74,68 +74,6 @@
                   </div>
                </div>
                @endforeach
-               <!-- <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room2.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Deluxe Room</h3>
-                        <p><h3>$100</h3> </p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room3.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Superior Room</h3>
-                        <p><h3>$110</h3></p>
-                       
-                        <button class="book_btn ">Book Now</button>
-                       
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room4.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>single Room</h3>
-                        <p><h3>$50 </h3></p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room5.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Suite Room</h3>
-                        <p><h3>$30</h3> </p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div id="serv_hover"  class="room">
-                     <div class="room_img">
-                        <figure><img src="images/room6.jpg" alt="#"/></figure>
-                     </div>
-                     <div class="bed_room">
-                        <h3>Triple Room</h3>
-                        <p><h3>$60</h3></p>
-                        <button class="book_btn ">Book Now</button>
-                     </div>
-                  </div>
-               </div> -->
             </div>
          </div>
       </div>
@@ -145,24 +83,10 @@
       <footer>
       @include('footer') 
       </footer>
-      <!-- end footer -->
-      <!-- Javascript files-->
-      <!-- <script src="js/jquery.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script> --> 
+    
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-      <!-- sidebar -->
-      <!-- <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script> -->
+     
    </body>
-   <!-- <script>
-   const buttons = document.querySelectorAll('Reserve');
-buttons.forEach(button => {
-   if(!auth=)
-	button.addEventListener('click', () => {
-		window.location.href = "rums";
-	});
-});
- </script>  -->
+
 </html>

@@ -13,6 +13,8 @@ class BookingController extends Controller
      */
     public function index()
     {
+
+
         $rooms = Rooms::all();
         $forms = Booking::with('room')->get();
 
@@ -71,8 +73,23 @@ class BookingController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Booking $booking)
+    public function cancel(Request $request, Booking $forms)
     {
-        //
+        // if ($request->user()->id !== $forms->user_id) {
+        //     abort(403, 'Unauthorized');
+        // }
+
+        // Update the booking status to "cancelled"
+        $forms->status = 'Cancelled';
+        $forms->save();
+
+        // Redirect the user to a confirmation page or display a success message
+        return redirect()->back()->with('success', 'Booking has been cancelled successfully.');
+    }
+    public function delete(Request $request)
+    {
+        $forms = Booking::find($request->dataid);
+        $forms->delete();
+        return redirect(route('booking.index'))->with('success', 'Booked data deleted');
     }
 }

@@ -9,7 +9,7 @@
     <a href="{{route('slider.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Photo</a>
 </div>
 <div class="table-responsive">
-<table  class="table">
+<table class="table table-bordered  text-dark">
         <thead>
             <tr>
         <th>Order</th>

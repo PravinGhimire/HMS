@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('check_out');
             $table->integer('noofpeople');
             $table->foreignId('room_id')->constrained();
+            $table->string('status');
             $table->timestamps();
         });
     }

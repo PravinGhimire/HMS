@@ -9,6 +9,7 @@ class Booking extends Model
 {
     protected $guarded = [];
     function room()
+    
     {
         return $this->belongsTo(Rooms::class);
     }

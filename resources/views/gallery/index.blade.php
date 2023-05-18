@@ -9,7 +9,7 @@
     <a href="{{route('gallery.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Photo</a>
 </div>
 <div class="table-responsive">
-    <table class="table">
+<table class="table table-bordered  text-dark">
         <thead>
             <tr>
                 <th>Order</th>
@@ -20,14 +20,15 @@
         <tbody>
             @foreach($galleries as $gallery)
             <tr>
-            <tr>
+                <tr>
+            
                 <td>{{$gallery->priority}}</td>
                 <td><img class="w-24" src="{{asset('images/gallery/'.$gallery->photopath)}}" alt=""></td>
                 <td>
                     <a href="{{route('gallery.edit',$gallery->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
                     <a onclick="showDelete('{{$gallery->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
                 </td>
-            </tr>
+                </tr>
             </tr>
             @endforeach
         </tbody>

@@ -7,8 +7,8 @@
     <a href="{{route('roomdetails.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Details</a>
 </div>
 <div class="table-responsive">
-    <table class="table">
-        <thead>
+<table class="table table-bordered  text-dark">
+            <thead>
             <tr>
                 <th>Order</th>
                 <th>Description</th>

@@ -6,45 +6,47 @@
 <h2 class="text-4xl font-bold border-b-4 text-black">Booking Records</h2>
 
 <div class="table-responsive">
-<table  class="table ">
-    <thead>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Check_in</th>
-        <th>Check_out</th>
-        <th>Room </th>
-        <th>Payment Status</th>
-        <th>Action</th>
-     </tr>
-    </thead>
-    <tbody>
-        @foreach($forms as $form)
-        <tr>
-        <tr>
+    <table class="table table-bordered  text-dark">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Check_in</th>
+                <th>Check_out</th>
+                <th>Room </th>
+                <th>Payment Status</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($forms as $form)
+            <tr>
+            <tr>
 
-            <td>{{$form->name}}</td>
-            <td>{{$form->email}}</td>
-            <td>{{$form->check_in}}</td>
-            <td>{{$form->check_out}}</td>
-            <td>{{$form->room->room_type}}</td>
-            <td><span class="bg-yellow-400 text-white text-m font-medium mr-2 px-2.5 py-1 rounded dark:bg-yellow-400">Pending</span>
+                <td>{{$form->name}}</td>
+                <td>{{$form->email}}</td>
+                <td>{{$form->check_in}}</td>
+                <td>{{$form->check_out}}</td>
+                <td>{{$form->room->room_type}}</td>
+                <td>{{$form->status}}</td>
+                <td><span class="badge  bg-warning text-white p-2">Pending</span>
 
-            </td>
-            <td>
-                <a href="" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a> <a onclick="showDelete" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
-            </td>
-        </tr>
-         </tr>
-        @endforeach
-    </tbody>
-</table>
+                </td>
+                <td>
+                    <a onclick="showDelete('{{$form->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
+                </td>
+            </tr>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
 </div>
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">
         <div class="bg-white p-10 rounded-lg">
             <p class="font-bold text-2xl">Are you sure to delete?</p>
-            <form action="{{route('gallery.delete')}}" method="POST">
+            <form action="{{route('booking.delete')}}" method="POST">
                 @csrf
                 <input type="hidden" id="dataid" name="dataid" value="">
 

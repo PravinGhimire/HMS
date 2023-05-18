@@ -9,6 +9,7 @@
     <table class="table table-bordered  text-dark">
         <thead>
             <tr>
+                <th>SN</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Check_in</th>
@@ -23,13 +24,18 @@
             @foreach($forms as $form)
             <tr>
             <tr>
-
+                <td>{{$form->id}}</td>
                 <td>{{$form->name}}</td>
                 <td>{{$form->email}}</td>
                 <td>{{$form->check_in}}</td>
                 <td>{{$form->check_out}}</td>
                 <td>{{$form->room->room_type}}</td>
-                <td>{{$form->status}}</td>
+                <td>@if($form->status !== 'cancelled')
+                        Booked
+                        @else
+                        {{ $form->status }}
+                    </td>
+                    @endif
                 <td><span class="badge  bg-warning text-white p-2">Pending</span>
 
                 </td>

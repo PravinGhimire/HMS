@@ -80,9 +80,14 @@ class BookingController extends Controller
         // }
 
         // Update the booking status to "cancelled"
-        $forms->status = 'Cancelled';
+        if ($forms->status === 'cancelled') {
+            return redirect()->back()->with('error', 'This booking has already been cancelled.');
+        }
+    
+        // Update the booking status to "cancelled"
+        $forms->status = 'cancelled';
         $forms->save();
-
+    
         // Redirect the user to a confirmation page or display a success message
         return redirect()->back()->with('success', 'Booking has been cancelled successfully.');
     }

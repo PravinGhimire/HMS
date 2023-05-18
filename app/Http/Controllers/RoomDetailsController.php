@@ -85,8 +85,8 @@ class RoomDetailsController extends Controller
             $file = $request->file('photopath');
             $filename = $file->getClientOriginalName();
             $photopath = time() . '_' . $filename;
-            $file->move(public_path('/images/gallery/'), $photopath);
-            FacadesFile::delete(public_path('/images/gallery/' . $roomdetails->photopath));
+            $file->move(public_path('/images/roomdetails/'), $photopath);
+            FacadesFile::delete(public_path('/images/roomdetails/' . $roomdetails->photopath));
             $data['photopath'] = $photopath;
         }
         $roomdetails->update($data);

@@ -14,7 +14,7 @@
         @enderror
         <p>Current Image</p>
         <img  class="w-34" src="{{asset('images/roomdetails/'.$roomdetails->photopath)}}" alt="">
-    <input type="file" name="photopath" class="mt-5">
+    <input type="file"  class="mt-5" name="photopath">
     @error('photopath')
         <p class="text-red-600 text-sm">* {{$message}}</p>
     @enderror

@@ -1,5 +1,3 @@
-
-
 <header>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
     <div class="container ">
@@ -36,8 +34,12 @@
 
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              @if(auth()->user()->role=='admin')
+              <li><a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a></li>
+              @else
               <li><a class="dropdown-item" href="{{route('bookingview')}}">View Booking</a></li>
               <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+              @endif
               <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
             </ul>
           </div>

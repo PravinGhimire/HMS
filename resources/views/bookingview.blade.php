@@ -1,3 +1,5 @@
+@include('layouts.message')
+
 <?php
 ?>
 <!DOCTYPE html>
@@ -47,22 +49,12 @@
     </header>
     <!-- end header inner -->
     <!-- end header -->
-    <div class="back_re">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="text-black mx-7">
-                        <h2>Booking Records</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
     <!-- booking -->
 
-    <h2 class="text-4xl font-bold border-b-4 text-red-600">Booking Records</h2>
+    <h2 class="mt-14 text-4xl font-bold border-b-4 text-red-600">Booking Records</h2>
 
-    <div class="table-responsive m-8">
+    <div class="table-responsive ml-9 justify-center">
         <table class="table custom-table table-bordered  text-dark">
             <thead>
                 <tr>
@@ -115,12 +107,14 @@
     <!-- end our_room -->
 
     <!--  footer -->
-    <footer>
-        @include('footer')
-    </footer>
+    <div class="fixed-bottom">
+        <footer>
+            @include('footer')
+        </footer>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </html>

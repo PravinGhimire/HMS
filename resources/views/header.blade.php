@@ -26,7 +26,13 @@
         @endif
         <ul>
           @if(!auth()->check())
-          <li><a class="nav-link active" href="{{route('login')}}">Login</a></li>
+          <ul class="navbar-nav ms-auto">
+            <li><a class="nav-link active" href="{{route('login')}}">Login</a></li>
+            <li class="nav-item">
+              <span class="nav-link active">|</span>
+            </li>
+            <li><a class="nav-link active" href="{{route('register')}}">Register</a></li>
+          </ul>
           @else
 
           <div class="btn-group dropstart">

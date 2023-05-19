@@ -29,11 +29,11 @@
           <li><a class="nav-link active" href="{{route('login')}}">Login</a></li>
           @else
 
-          <div class="dropdown">
-            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="btn-group dropstart">
+            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <ul class="dropdown-menu">
               @if(auth()->user()->role=='admin')
               <li><a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a></li>
               @else

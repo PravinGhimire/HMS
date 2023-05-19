@@ -58,13 +58,13 @@
         <table class="table custom-table table-bordered  text-dark">
             <thead>
                 <tr>
+                    <th>SN</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Check_in</th>
                     <th>Check_out</th>
                     <th>Room </th>
-                    <th>Status</th>
-                    <th>Action</th>
+
 
                 </tr>
             </thead>
@@ -72,27 +72,12 @@
                 @foreach($forms as $form)
                 <tr>
                 <tr>
-
+                    <td>{{$form->id}}</td>
                     <td>{{$form->name}}</td>
                     <td>{{$form->email}}</td>
                     <td>{{$form->check_in}}</td>
                     <td>{{$form->check_out}}</td>
                     <td>{{$form->room->room_type}}</td>
-                    <td>@if($form->status !== 'cancelled')
-                        Booked
-                        {{$form->status}}
-                        @else
-                        {{ $form->status }}
-                    </td>
-                    @endif
-                    <td>
-                        <form action="{{ route('booking.cancel', $form) }}" method="POST">
-                            @csrf
-                            @method('POST')
-
-                            <button type="submit" class="btn btn-warning bg-warning">Cancel</button>
-                        </form>
-                    </td>
 
 
                 </tr>
@@ -115,6 +100,7 @@
 
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </html>

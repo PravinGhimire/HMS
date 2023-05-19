@@ -16,7 +16,7 @@
                 <th>Check_out</th>
                 <th>Room </th>
                 <th>Payment Status</th>
-                <th>Status</th>
+               
                 <th>Action</th>
             </tr>
         </thead>
@@ -30,15 +30,12 @@
                 <td>{{$form->check_in}}</td>
                 <td>{{$form->check_out}}</td>
                 <td>{{$form->room->room_type}}</td>
-                <td>@if($form->status !== 'cancelled')
-                        Booked
-                        @else
-                        {{ $form->status }}
-                    </td>
-                    @endif
+               
+
                 <td><span class="badge  bg-warning text-white p-2">Pending</span>
 
                 </td>
+                
                 <td>
                     <a onclick="showDelete('{{$form->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
                 </td>

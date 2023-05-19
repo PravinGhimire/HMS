@@ -29,10 +29,9 @@ class PagesController extends Controller
         return view('room', compact('rooms'));
     }
     public function gallerys()
-    {$rooms = Rooms::all();
-        $forms = Booking::all();
+    {
         $galleries = Gallery::all();
-        return view('gallerys', compact('galleries','forms','rooms'));
+        return view('gallerys', compact('galleries'));
     }
     // public function header()
     // {

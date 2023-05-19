@@ -1,3 +1,6 @@
+
+
+@include('layouts.message')
 <?php
 ?>
 <!DOCTYPE html>
@@ -154,7 +157,7 @@
                            <option>05</option>
                         </select>
                      </div>
-                  </div> 
+                  </div>
                   <div class="col-lg-6">
                      <div class="form-group">
                         <label> Room Type</label>

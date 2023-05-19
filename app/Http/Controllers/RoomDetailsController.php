@@ -102,7 +102,7 @@ class RoomDetailsController extends Controller
 
     {
         $roomdetails = Roomdetails::find($request->dataid);
-        FacadesFile::delete(public_path('/images/gallery/' . $roomdetails->photopath));
+        FacadesFile::delete(public_path('/images/roomdetails/' . $roomdetails->photopath));
         $roomdetails->delete();
         return redirect(route('roomdetails.index'))->with('success', 'Details Deleted Successfully');
     }

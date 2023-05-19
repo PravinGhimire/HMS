@@ -7,6 +7,7 @@ use App\Models\Gallery;
 use App\Models\Roomdetails;
 use App\Models\Rooms;
 use App\Models\Slider;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -47,7 +48,8 @@ class PagesController extends Controller
     {
         $room = Rooms::find($id);
         $roomdetail = Roomdetails::where('room_id', $id)->first();
-        return view('rums', compact('room', 'roomdetail'));
+        $users=User::find($id);
+        return view('rums', compact('room', 'roomdetail','users'));
     }
     public function bookingview()
     {

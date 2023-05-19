@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Rooms;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -35,15 +37,26 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required',
+            'name' => 'nullable',
             'email' => 'required',
             'check_in' => 'required',
             'check_out' => 'required',
             'noofpeople' => 'required',
             'room_id' => 'required',
+            'user_id'=>'required'
+            
         ]);
+        // $users = new Booking();
+
+        // Assign the user_id based on the authenticated user
+        // $users->user_id = Auth::id();
+    
+        // Assign other validated data to booking attributes
+        // ...
+    
+        // $users->save();
         Booking::create($data);
-        return redirect()->back()->with('success', 'Room Booked Successfully');
+        return redirect(route('bookingview'))->with('success', 'Room Booked Successfully');
     }
 
     /**

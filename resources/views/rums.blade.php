@@ -1,5 +1,3 @@
-
-
 @include('layouts.message')
 <?php
 ?>
@@ -109,23 +107,30 @@
 
          <div class="booking-form">
             <h3 class=" items-center">Booking Sheet </h3>
+            <!-- @php
+            $userkoid=Auth::user()->id;
+            @endphp -->
+
             <form action="{{route('booking.store')}}" method="POST">
                @csrf
+               <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+
                <div class="row align-items-center">
                   <div class="col-lg-6">
                      <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" name="name" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
+                        <input type="text" name="name" value="{{ auth()->user()->name }}" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
                         <i class='bx bx-user'></i>
                      </div>
                   </div>
                   <div class="col-lg-6">
                      <div class="form-group">
-                        <label>Your Email</label>
-                        <input type="email" name="email" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+                        <label>Email </label>
+                        <input type="email" name="email" value="{{ auth()->user()->email }}" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
                         <i class='bx bx-mail-send'></i>
                      </div>
                   </div>
+
                   <div class="col-lg-6">
                      <div class="form-group">
                         <label>Check in</label>

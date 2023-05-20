@@ -64,6 +64,8 @@
                     <th>Check_in</th>
                     <th>Check_out</th>
                     <th>Room </th>
+                    <th>Status</th>
+                    <th>Action</th>
 
 
                 </tr>
@@ -80,7 +82,14 @@
                     <td>{{$form->check_in}}</td>
                     <td>{{$form->check_out}}</td>
                     <td>{{$form->room->room_type}}</td>
+                    <td>{{$form->status}}</td>
+                    <td>
+                        <form action="{{ route('booking.cancel', ['id' => $form->id]) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-warning">Cancel Booking</button>
+                        </form>
 
+                    </td>
                     @endif
                 </tr>
                 </tr>

@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('noofpeople');
             $table->foreignId('room_id')->constrained();
             $table->foreignId('user_id')->constrained();
+            $table->string('status')->default('Booked');
+
             $table->timestamps();
         });
     }

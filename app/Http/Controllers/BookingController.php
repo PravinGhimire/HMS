@@ -37,23 +37,27 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'nullable',
+            'name' => 'required',
             'email' => 'required',
             'check_in' => 'required',
             'check_out' => 'required',
             'noofpeople' => 'required',
             'room_id' => 'required',
-            'user_id'=>'required'
-            
+            'user_id' => 'required',
+          
+
+
         ]);
+        $data['status'] = 'Booked';
+
         // $users = new Booking();
 
         // Assign the user_id based on the authenticated user
         // $users->user_id = Auth::id();
-    
+
         // Assign other validated data to booking attributes
         // ...
-    
+
         // $users->save();
         Booking::create($data);
         return redirect(route('bookingview'))->with('success', 'Room Booked Successfully');
@@ -70,11 +74,16 @@ class BookingController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Booking $booking)
+    public function cancel($id)
     {
-        //
+        $forms = Booking::findOrFail($id);
+    
+        $forms->status = 'Cancelled';
+        $forms->save();
+    
+        return redirect()->back()->with('success', 'Booking Cancelled Successfully');
     }
-
+    
     /**
      * Update the specified resource in storage.
      */

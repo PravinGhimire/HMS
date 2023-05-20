@@ -44,7 +44,7 @@ class BookingController extends Controller
             'noofpeople' => 'required',
             'room_id' => 'required',
             'user_id' => 'required',
-          
+
 
 
         ]);
@@ -77,13 +77,13 @@ class BookingController extends Controller
     public function cancel($id)
     {
         $forms = Booking::findOrFail($id);
-    
+
         $forms->status = 'Cancelled';
         $forms->save();
-    
+
         return redirect()->back()->with('success', 'Booking Cancelled Successfully');
     }
-    
+
     /**
      * Update the specified resource in storage.
      */
@@ -99,7 +99,11 @@ class BookingController extends Controller
     public function delete(Request $request)
     {
         $forms = Booking::find($request->dataid);
-        $forms->delete();
-        return redirect(route('booking.index'))->with('success', 'Booked data deleted');
+        if ($forms->status === 'cancelled') {
+            $forms->delete();
+            return redirect()->back()->with('success', 'Booking Record Deleted Successfully');
+        } else {
+            return redirect()->back()->with('success', 'Cannot delete the booking record. It is not canceled by the user.');
+        }
     }
 }

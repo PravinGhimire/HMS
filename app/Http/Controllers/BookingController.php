@@ -43,13 +43,13 @@ class BookingController extends Controller
             'check_out' => 'required',
             'noofpeople' => 'required',
             'room_id' => 'required',
-            'user_id' => 'required',
+
 
 
 
         ]);
         $data['status'] = 'Booked';
-
+        $data['user_id'] = Auth::id();
         // $users = new Booking();
 
         // Assign the user_id based on the authenticated user
@@ -99,7 +99,7 @@ class BookingController extends Controller
     public function delete(Request $request)
     {
         $forms = Booking::find($request->dataid);
-        if ($forms->status === 'cancelled') {
+        if ($forms->status === 'Cancelled') {
             $forms->delete();
             return redirect()->back()->with('success', 'Booking Record Deleted Successfully');
         } else {

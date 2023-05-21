@@ -64,7 +64,17 @@ a {
     transition: all .3s ease-in-out;
 }
 
-h1,
+h1 {
+    letter-spacing: 0;
+    font-weight: normal;
+    position: relative;
+    padding: 0 0 10px 0;
+    font-weight: normal;
+    line-height: normal;
+    color: #813737;
+    margin: 0
+}
+
 h2,
 h3,
 h4,
@@ -307,15 +317,15 @@ button {
 }
 
 /* .carousel-control-next, */
-/* .carousel-control-prev {
-     display: none;
+.carousel-control-prev {
+    display: none;
 }
 
 .carousel-indicators {
-     right: inherit;
-     bottom: 53px;
-     margin-left: 9%;
-} */
+    right: inherit;
+    bottom: 53px;
+    margin-left: 9%;
+}
 
 
 /** end banner section **/
@@ -612,101 +622,62 @@ button {
 
 /** end contact section **/
 
-
-/** footer **/
+/* Footer Styles */
 
 .footer {
-    background: #15181c;
-    margin-top: 85px;
-    margin-bottom: 0px;
-    padding-top: 20px;
-    text-align: center;
+    background-color: #bbd2e8;
+    padding: 20px 0;
 }
 
 .footer h3 {
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24px;
-    text-align: left;
-    color: #fff;
+    color: #0e0b0b;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    color: #666;
+    font-size: 14px;
     margin-bottom: 10px;
-    border-bottom: #ff0909 solid 3px;
-    padding-bottom: 3px;
-    display: table;
 }
 
-ul.conta li {
-    color: #fff;
-    text-align: left;
-    padding-bottom: 15px;
-    font-size: 16px;
-}
-
-ul.conta li i {
-    padding-right: 15px;
-    text-align: center;
-    font-size: 20px;
-}
-
-ul.conta li a {
-    color: #fff;
-}
-
-ul.link_menu li {
-    display: block;
-    text-align: left;
-}
-
-ul.link_menu li.active a {
-    color: #09f7ff;
-}
-
-ul.link_menu li a {
-    color: #fff;
-    font-size: 17px;
-    line-height: 28px;
-    display: block;
-    width: -moz-max-content;
-}
-
-ul.link_menu li a:hover {
-    color: #09f7ff;
-}
-
-
-ul.social_icon {
-    padding-top: 30px;
-    width: 100%;
-    float: left;
-    text-align: justify;
-}
-
-ul.social_icon li {
+.social-icons li {
     display: inline-block;
+    margin-right: 10px;
 }
 
-ul.social_icon li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 27px;
-    border-radius: 30px;
-    margin: 0 9px;
+.social-icons li a {
+    color: #666;
+    font-size: 18px;
+}
+
+.bottom-bar {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.bottom-bar p {
     color: #fff;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
 }
 
-ul.social_icon li a:hover {
-    color: #09f7ff;
-}
+/* Media Queries */
 
-.p {
-    color: white;
-}
+@media (max-width: 767px) {
+    .footer h3 {
+        font-size: 20px;
+    }
 
+    .footer p,
+    .bottom-bar p {
+        font-size: 12px;
+    }
 
-
-.p:hover {
-    color: #09f7ff;
+    .social-icons li a {
+        font-size: 16px;
+    }
 }
 
 
@@ -740,6 +711,25 @@ ul.social_icon li a:hover {
     text-align: justify;
 }
 
+.back_ree {
+    background-color: #fbfbfb;
+    margin-top: 35px;
+}
+
+.back_ree .title {
+    text-align: start;
+
+}
+
+.back_ree .title h1 {
+    color: #190303;
+    font-size: 40px;
+
+    padding: 33px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 33px;
+}
 
 .inner_page .gallery {
     padding-top: 90px;
@@ -813,52 +803,3 @@ ul.social_icon li a:hover {
     width: 45%
 }
 
-/* .booking-form .nice-select {
-    height: 50px;
-    width: 100%;
-    line-height: 42px;
-    font-size: 15px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border-radius: 50px;
-    background-color: #b56952;
-    color: #fff
-}
-
-.booking-form .nice-select .list {
-    background-color: #fff;
-    -webkit-box-shadow: 0 0 29px 0 rgba(102, 102, 102, .1);
-    box-shadow: 0 0 29px 0 rgba(102, 102, 102, .1);
-    border-radius: 0;
-    margin-top: 0;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px
-}
-
-.booking-form .nice-select .list .option {
-    -webkit-transition: .6s;
-    transition: .6s;
-    color: #292323;
-    padding-left: 20px;
-    padding-right: 20px
-}
-
-.booking-form .nice-select .list .option:hover {
-    background-color: #b56952 !important;
-    color: #fff
-}
-
-.booking-form .nice-select .list .option .selected {
-    background-color: transparent;
-    font-weight: 600
-}
-
-.booking-form .nice-select::after {
-    height: 8px;
-    width: 8px;
-    border-color: #c890ff;
-    right: auto;
-    top: 45%;
-    right: 20px
-} */

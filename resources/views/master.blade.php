@@ -30,10 +30,12 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
 </head>
 <!-- body -->
 
-<body class="main-layout" data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<body class="main-layout">
   
    <!-- header -->
    <header>
@@ -276,6 +278,5 @@
   
    @yield('content')
 </body>
-
 
 </html>

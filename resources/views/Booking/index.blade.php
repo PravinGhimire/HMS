@@ -6,7 +6,7 @@
 <h2 class="text-4xl font-bold border-b-4 text-black">Booking Records</h2>
 
 <div class="table-responsive">
-    <table class="table table-bordered  text-dark">
+<table id="example" class="table table-striped" style="width:100%">
         <thead>
             <tr>
                 <th>SN</th>

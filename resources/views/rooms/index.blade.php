@@ -7,7 +7,7 @@
     <a href="{{route('rooms.create')}}" class="bg-green-500 text-white rounded-lg px-2 py-2">Add Room</a>
 </div>
 <div class="table-responsive">
-<table class="table table-bordered  text-dark">
+<table id="example" class="table table-striped" style="width:100%">
   <thead>
     <tr>
       <th scope="col">Order</th>

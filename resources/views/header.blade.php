@@ -35,11 +35,11 @@
           </ul>
           @else
 
-          <div class="btn-group dropstart">
+          <div class="btn-group ">
             <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
 
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu dropdown-menu-end">
               @if(auth()->user()->role=='admin')
               <li><a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a></li>
               @else

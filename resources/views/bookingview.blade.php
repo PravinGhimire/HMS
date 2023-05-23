@@ -31,19 +31,71 @@
     <!-- @vite(['resources/css/app.css', 'resources/js/app.js']) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        .custom-table {
-            width: 90%;
-            /* Set your desired width here */
-        }
-    </style>
+
 
 </head>
 <!-- body -->
 
 <body class="main-layout">
     <header>
-        @include('header')
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top">
+            <div class="container ">
+                <a class="navbar-brand" href="/">New Era</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active " href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/room">Our Room</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/gallerys">Gallery</a>
+                        </li>
+                    </ul>
+
+                    @if(auth()->check())
+                    <a class="text-white text-sm m-1 ">Welcome,{{auth()->user()->name}}</a>
+                    @endif
+                    <ul>
+                        @if(!auth()->check())
+                        <ul class="navbar-nav ms-auto">
+                            <li><a class="nav-link active" href="{{route('login')}}">Login</a></li>
+                            <li class="nav-item">
+                                <span class="nav-link active">|</span>
+                            </li>
+                            <li><a class="nav-link active" href="{{route('register')}}">Register</a></li>
+                        </ul>
+                        @else
+
+                        <div class="btn-group ">
+                            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                @if(auth()->user()->role=='admin')
+                                <li><a class="dropdown-item" href="{{route('dashboard')}}">Dashboard</a></li>
+                                @else
+                                <!-- <li><a class="dropdown-item" href="{{route('bookingview')}}">View Booking</a></li> -->
+                                <li><a class="dropdown-item" href="{{route('logout')}}">Logout</a></li>
+                                @endif
+                                <!-- <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                            </ul>
+                        </div>
+
+
+                        @endif
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </nav>
     </header>
     <!-- end header inner -->
     <!-- end header -->
@@ -116,11 +168,11 @@
     <!-- end our_room -->
 
     <!--  footer -->
-    <div class="fixed-bottom">
-        <footer>
-            @include('footer')
-        </footer>
-    </div>
+
+    <footer>
+        @include('footer')
+    </footer>
+
 
 
 </body>

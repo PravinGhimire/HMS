@@ -43,10 +43,6 @@ class BookingController extends Controller
             'check_out' => 'required',
             'noofpeople' => 'required',
             'room_id' => 'required',
-
-
-
-
         ]);
         $data['status'] = 'Booked';
         $data['user_id'] = Auth::id();
@@ -77,11 +73,20 @@ class BookingController extends Controller
     public function cancel($id)
     {
         $forms = Booking::findOrFail($id);
+        //yo time  if rw else or content thpeko if ko vitraw ko chaina haina thapeko
+        $timeDifference = now()->diffInMinutes($forms->created_at);
+        if ($timeDifference <= 10) {
 
         $forms->status = 'Cancelled';
         $forms->save();
-
         return redirect()->back()->with('success', 'Booking Cancelled Successfully');
+        }
+       
+        else {
+            // Display error message
+            return redirect()->back()->with('error', 'Cannot cancel the booking as the time limit has exceeded');
+        }
+        
     }
 
     /**
@@ -103,7 +108,7 @@ class BookingController extends Controller
             $forms->delete();
             return redirect()->back()->with('success', 'Booking Record Deleted Successfully');
         } else {
-            return redirect()->back()->with('success', 'Cannot delete the booking record. It is not canceled by the user.');
+            return redirect()->back()->with('error', 'Cannot delete the booking record. It is not canceled by the user.');
         }
     }
 }

@@ -1,3 +1,4 @@
+
 @include('layouts.message')
 
 <?php
@@ -114,7 +115,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-start">
+    <div class="d-flex justify-content-start mb-4">
         <div class="table-responsive">
             <table class="table stripped-table table-bordered   text-dark">
                 <thead>

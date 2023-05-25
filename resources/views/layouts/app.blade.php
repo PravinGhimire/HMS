@@ -97,11 +97,7 @@
                     <i class="	fas fa-clone"></i>
                     <span>Sliders</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-arrow-alt-circle-left"></i>
-                    <span>View Site</span></a>
-            </li>
+
             <li class="nav-item active">
                 <a class="nav-link" href="/logout">
                     <i class="fas fa-fw fa-user"></i>
@@ -160,10 +156,18 @@
                             </div>
                         </li>
                         <li class="nav-item ">
+                            <a class="nav-link active toggle" href="/">
+                                <span class="  d-lg-inline text-slate-800 small">View Site</span></a>
+                        </li>
+                        <!-- divider -->
+                        <div class="border border-black h-6 mt-4"></div>
+                        <li class="nav-item ">
                             <a class="nav-link active toggle ">
-                                <span class="mr-2 d-none d-lg-inline text-slate-800 small">
+                                <span class="mr-1 d-none d-lg-inline text-slate-800 small">
                                     Welcome,{{auth()->user()->name}}
                             </a>
+                        </li>
+
                     </ul>
 
                 </nav>

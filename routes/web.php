@@ -4,6 +4,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\dashboardcontroller;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
@@ -40,7 +41,7 @@ Route::middleware('auth')->group(function () {
     // Route::get('/',[PagesController::class,'index']);
 
     Route::get('/dashboard', [dashboardcontroller::class, 'index'])->name('dashboard');
-
+    //rooms
     Route::get('/rooms', [RoomController::class, 'index'])->name('rooms.index');
     Route::get('/rooms/create', [RoomController::class, 'create'])->name('rooms.create');
     Route::POST('/rooms/store', [RoomController::class, 'store'])->name('rooms.store');
@@ -75,11 +76,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/roomdetails/{roomdetails}/edit', [RoomDetailsController::class, 'edit'])->name('roomdetails.edit');
     Route::post('/roomdetails/{roomdetails}/update', [RoomDetailsController::class, 'update'])->name('roomdetails.update');
     Route::post('/roomdetails/delete', [RoomDetailsController::class, 'delete'])->name('roomdetails.delete');
-
+    //bookingrecords
     Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
     Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
     Route::post('/booking/{id}/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
     Route::post('/booking/delete', [BookingController::class, 'delete'])->name('booking.delete');
+
+    // Feedback
+    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+    Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
+    Route::post('/feedback/delete', [FeedbackController::class, 'delete'])->name('feedback.delete');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

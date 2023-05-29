@@ -534,7 +534,7 @@ button {
 }
 
 .gallery .gallery_img figure {
-    margin: 0;
+    margin: 1;
 }
 
 .gallery .gallery_img figure img {

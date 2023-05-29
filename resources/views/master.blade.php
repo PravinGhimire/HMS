@@ -41,39 +41,39 @@
    <!-- end header -->
    <!-- banner -->
 
-    <section class="banner_main" id="#">
+   <section class="banner_main" id="#">
 
-   <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-      <!-- Indicators/dots -->
-      <div class="carousel-indicators">
-         <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-         <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-         <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-      </div>
-
-      <!-- The slideshow/carousel -->
-      <div class="carousel-inner">
-         @foreach($sliders->take(1) as $slider)
-         <div class="carousel-item active">
-            <img src="{{asset('images/slider/'.$slider->photopath)}}" alt="" class="">
+         <!-- Indicators/dots -->
+         <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
          </div>
-         @endforeach
-         @foreach($sliders->skip(1) as $slider)
-         <div class="carousel-item">
-            <img src="{{asset('images/slider/'.$slider->photopath)}}" alt="" class="">
-         </div>
-         @endforeach
-      </div>
 
-      <!-- Left and right controls/icons -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-         <span class="carousel-control-prev-icon"></span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-         <span class="carousel-control-next-icon"></span>
-      </button>
-   </div>
+         <!-- The slideshow/carousel -->
+         <div class="carousel-inner">
+            @foreach($sliders->take(1) as $slider)
+            <div class="carousel-item active">
+               <img src="{{asset('images/slider/'.$slider->photopath)}}" alt="" class="">
+            </div>
+            @endforeach
+            @foreach($sliders->skip(1) as $slider)
+            <div class="carousel-item">
+               <img src="{{asset('images/slider/'.$slider->photopath)}}" alt="" class="">
+            </div>
+            @endforeach
+         </div>
+
+         <!-- Left and right controls/icons -->
+         <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+         </button>
+      </div>
 
 
    </section>
@@ -230,24 +230,27 @@
          </div>
          <div class="row">
             <div class="col-md-6">
-               <form id="request" class="main_form">
+               <form class="main_form" action=" {{route('feedback.store')}}" method="post">
+                  @csrf
                   <div class="row">
+
                      <div class="col-md-12 ">
-                        <input class="contactus" placeholder="Name" type="type" name="Name">
+                        <input class="contactus" placeholder="Name" type="text" name="name">
                      </div>
                      <div class="col-md-12">
-                        <input class="contactus" placeholder="Email" type="type" name="Email">
+                        <input class="contactus" placeholder="Email" type="email" name="email">
                      </div>
                      <div class="col-md-12">
-                        <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
+                        <input class="contactus" placeholder="Phone Number" type="number" name="phone_number">
                      </div>
                      <div class="col-md-12">
-                        <textarea class="textarea" placeholder="Message" type="type" Message="Name">Message</textarea>
+                        <textarea class="textarea" placeholder="Message" type="text" name="message"></textarea>
                      </div>
                      <div class="col-md-12">
-                        <button class="send_btn">Send</button>
+                        <button class="send_btn" type="submit" value="submit">Send</button>
                      </div>
                   </div>
+
                </form>
             </div>
             <div class="col-md-6">

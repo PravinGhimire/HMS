@@ -97,6 +97,11 @@
                     <i class="	fas fa-clone"></i>
                     <span>Sliders</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/feedback">
+                    <i class="	fas fa-clone"></i>
+                    <span>Feedbacks</span></a>
+            </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="/logout">

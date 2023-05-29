@@ -20,11 +20,11 @@
             <img src="{{asset('images/logo3.png')}}" class=" rounded-full h-32  m-auto" alt="">
             <h2 class="ml-1">Please Login!!!</h2>
            </div>
-           <input type="email" name="email" class="border-0 block  box-content w-auto mx-10 my-3 p-2 rounded-lg " placeholder="Enter Email">
+           <input type="email" name="email" class="border-0 block  box-content w-auto mx-10 my-3 p-2 rounded-lg " placeholder="Enter Email" required>
        
-           <input type="password" name="password" class="border-0 block w-auto mx-10 my-3 p-2 rounded-lg" placeholder="Enter Password">
+           <input type="password" name="password" class="border-0 block w-auto mx-10 my-3 p-2 rounded-lg" placeholder="Enter Password" required>
       
-            <input type="submit" value="Login" class=" bg-blue-600 hover:bg-gray-900 text-white ml-3.5 mr-1 my-2.5 px-10 py-2 rounded-lg cursor-pointer items-center" >
+            <input type="submit" value="Login" class=" bg-blue-600 hover:bg-gray-900 text-white ml-3.5 mr-1 my-2.5 px-10 py-2 rounded-lg cursor-pointer items-center" required >
             <a class="underline text-sm text-red-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
                     {{('Forgot your password?') }}
                 </a>

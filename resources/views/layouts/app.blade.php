@@ -99,7 +99,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="/feedback">
-                    <i class="	fas fa-clone"></i>
+                    <i class="	fas fa-comment-alt"></i>
                     <span>Feedbacks</span></a>
             </li>
 

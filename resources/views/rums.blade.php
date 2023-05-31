@@ -172,6 +172,15 @@
                         </select>
                      </div>
                   </div>
+                  <div class="col-lg-6">
+                     <div class="form-group">
+                        <label> Room Rate</label>
+                        <select class="form-control" name="room_id">
+                           <option value="{{$room->id}}">{{$room->rate}}</option>
+
+                        </select>
+                     </div>
+                  </div>
                   <div class="col-lg-12 col-md-12">
                      <button type="submit" class="default-btn p-2   ">
                         Reserve Now

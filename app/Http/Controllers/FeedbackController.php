@@ -13,7 +13,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-        $feedbacks = Feedback::all();
+       $feedbacks=Feedback::all();
         return view('feedback.index',compact('feedbacks'));
     }
 
@@ -31,9 +31,9 @@ class FeedbackController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|alpha',
+            'name' => 'required',
             'email' => 'required',
-            'phone_number' => 'required|numeric',
+            'phone_number' => 'required',
             'message' => 'required',
 
         ]);
@@ -68,8 +68,11 @@ class FeedbackController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Feedback $feedback)
+    public function delete(Request $request)
     {
-        //
+        $feedbacks=Feedback::find($request->dataid);
+      
+        $feedbacks->delete();
+        return redirect(route('feedback.index'))->with('success',' Deleted Successfully');
     }
 }

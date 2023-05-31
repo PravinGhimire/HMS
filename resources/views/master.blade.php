@@ -196,7 +196,7 @@
    <!-- end our_room -->
    <!-- gallery -->
    <div class="gallery" id="gallery">
-      <div class="container con-div">
+      <div class="container ">
          <div class="row">
             <div class="col-md-12">
                <div class="titlepage">
@@ -219,8 +219,8 @@
    <!-- end gallery -->
 
    <!--  contact -->
-   <div class="contact">
-      <div class="container con-div">
+   <div class="contact mb-1">
+      <div class="container">
          <div class="row">
             <div class="col-md-12">
                <div class="titlepage">
@@ -228,58 +228,40 @@
                </div>
             </div>
          </div>
-         <div class="row">
+         <div class="row   bg-slate-500 ">
             <div class="col-md-6">
-               <form class="main_form" action=" {{route('feedback.store')}}" method="post">
+
+               <form action="{{route('feedback.store')}}" method="post">
                   @csrf
-                  <div class="row">
-
-                     <div class="col-md-12 ">
-                        <input class="contactus" placeholder="Name" type="text" name="name">
-                     </div>
-                     <div class="col-md-12">
-                        <input class="contactus" placeholder="Email" type="email" name="email">
-                     </div>
-                     <div class="col-md-12">
-                        <input class="contactus" placeholder="Phone Number" type="number" name="phone_number">
-                     </div>
-                     <div class="col-md-12">
-                        <textarea class="textarea" placeholder="Message" type="text" name="message"></textarea>
-                     </div>
-                     <div class="col-md-12">
-                        <button class="send_btn" type="submit" value="submit">Send</button>
-                     </div>
+                  <div class="form-group">
+                     <label for="name">Name</label>
+                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter your name">
                   </div>
-
+                  <div class="form-group">
+                     <label for="email">Email</label>
+                     <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email">
+                  </div>
+                  <div class="form-group">
+                     <label for="phone">Phone Number</label>
+                     <input type="tel" class="form-control" id="phone" name="phone_number" placeholder="Enter your phone number">
+                  </div>
+                  <div class="form-group">
+                     <label for="message">Message</label>
+                     <textarea class="form-control" id="message" rows="5" name="message" placeholder="Enter your message"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                </form>
             </div>
-            <div class="col-md-6">
-               <div class="map_main">
+            <div class="col-md-6   contact-info  text-center mt-3">
+               <h2><i class="fas fa-map-marker-alt"></i> </h2>
+               <h2> Nawalpur, Nepal</h2>
+               <h2> <i class="fas fa-phone"></i></h2>
+               <h2> +977 9800000000</h2>
+               <h2><i class="fas fa-envelope"></i> </h2>
+               <h2>halka@gmail.com</h2>
 
 
-                  <div class="mapouter">
-                     <div class="gmap_canvas"><iframe width="600" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=nepal&t=&z=11&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co"></a><br>
-                        <style>
-                           .mapouter {
-                              position: relative;
-                              text-align: right;
-                              height: 100%;
-                              width: 100%;
-                           }
-                        </style><a href="https://embedgooglemap.2yu.co/"></a>
-                        <style>
-                           .gmap_canvas {
-                              overflow: hidden;
-                              background: none !important;
-                              height: 100%;
-                              width: 100%;
-                           }
-                        </style>
-                     </div>
-                  </div>
 
-
-               </div>
             </div>
          </div>
       </div>

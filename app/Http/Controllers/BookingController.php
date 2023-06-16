@@ -17,7 +17,7 @@ class BookingController extends Controller
     public function index()
     {
 
-
+       
         $rooms = Rooms::all();
         $forms = Booking::with('room')->get();
 
@@ -27,21 +27,6 @@ class BookingController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function calculatePrice(Request $request)
-    {
-        $basePrice = 100; // Base price for the room
-        $priceIncreaseFactor = 10; // Price increase per day
-
-        $checkInDate = Carbon::createFromFormat('Y-m-d', $request->input('check_in'));
-        $checkOutDate = Carbon::createFromFormat('Y-m-d', $request->input('check_out'));
-        $numberOfDays = $checkOutDate->diffInDays($checkInDate);
-
-        $totalPrice = $basePrice + ($numberOfDays * $priceIncreaseFactor);
-
-        // Rest of the code
-
-        return view('booking.', compact('totalPrice'));
-    }
     public function store(Request $request)
     {
         $data = $request->validate([

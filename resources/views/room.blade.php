@@ -68,6 +68,7 @@
                      <div class="bed_room">
                         <h3>{{$room->room_type}}</h3>
                         <p><h3>Nrs.{{$room->rate}}</h3></p>
+                        
                         <a class="book_btn" href="{{route('rums',$room->id)}}" >Book Now</a>
 
                      </div>

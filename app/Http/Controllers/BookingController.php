@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Rooms;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,14 +27,21 @@ class BookingController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function calculatePrice(Request $request)
     {
-        //
-    }
+        $basePrice = 100; // Base price for the room
+        $priceIncreaseFactor = 10; // Price increase per day
 
-    /**
-     * Store a newly created resource in storage.
-     */
+        $checkInDate = Carbon::createFromFormat('Y-m-d', $request->input('check_in'));
+        $checkOutDate = Carbon::createFromFormat('Y-m-d', $request->input('check_out'));
+        $numberOfDays = $checkOutDate->diffInDays($checkInDate);
+
+        $totalPrice = $basePrice + ($numberOfDays * $priceIncreaseFactor);
+
+        // Rest of the code
+
+        return view('booking.', compact('totalPrice'));
+    }
     public function store(Request $request)
     {
         $data = $request->validate([
@@ -56,7 +64,7 @@ class BookingController extends Controller
 
         // $users->save();
         Booking::create($data);
-        return redirect(route('bookingview'))->with('success', 'Room Booked Successfully');
+        return redirect(route('bookingview'))->with('message', 'Room Booked Successfully');
     }
 
     /**

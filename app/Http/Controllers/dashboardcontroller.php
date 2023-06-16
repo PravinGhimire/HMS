@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminNotification;
 use App\Models\Booking;
 use App\Models\Gallery;
 use App\Models\Rooms;
@@ -16,6 +17,8 @@ class dashboardcontroller extends Controller
     $totalrooms = Rooms::count();
     $totalgallery=Gallery::count();
     $totalbooking = Booking::count();
+  
+
     return view('dashboard', compact('totalrooms', 'totalusers', 'totalbooking','totalgallery'));
   }
 }

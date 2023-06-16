@@ -107,9 +107,7 @@
 
          <div class="booking-form">
             <h3 class=" items-center">Booking Sheet </h3>
-            <!-- @php
-            $userkoid=Auth::user()->id;
-            @endphp -->
+
 
             <form action="{{route('booking.store')}}" method="POST">
                @csrf
@@ -193,7 +191,28 @@
    </div>
    </div>
 
-
+   <!-- <div class="review-form">
+      <h3>Leave a Review</h3>
+      <form action="" method="POST">
+         @csrf
+         <div class="form-group">
+            <label for="rating">Rating:</label>
+            <select class="form-control" id="rating" name="rating">
+               <option value="1">1 Star</option>
+               <option value="2">2 Stars</option>
+               <option value="3">3 Stars</option>
+               <option value="4">4 Stars</option>
+               <option value="5">5 Stars</option>
+            </select>
+         </div>
+         <div class="form-group">
+            <label for="comment">Comment:</label>
+            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+         </div>
+         <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+   </div> -->
+   </div>
 
    </div>
 
@@ -204,6 +223,8 @@
    </footer>
    <!-- end footer -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
 
 </body>
 

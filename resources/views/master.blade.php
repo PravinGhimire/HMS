@@ -116,7 +116,7 @@
          <div class="row">
             @foreach($rooms as $room)
             <div class="col-md-4 col-sm-6">
-               <div id="serv_hover" class="room">
+               <div id="serv_hover" class="room" >
                   <div class="room_img">
                      <figure><img src="{{asset('images/rooms/'.$room->photopath)}}" alt="#" /></figure>
                   </div>

@@ -49,7 +49,7 @@ class BookingController extends Controller
 
         // $users->save();
         Booking::create($data);
-        return redirect(route('bookingview'))->with('message', 'Room Booked Successfully');
+        return redirect(route('bookingview'))->with('Success', 'Room Booked Successfully');
     }
 
     /**
@@ -101,7 +101,7 @@ class BookingController extends Controller
             $forms->delete();
             return redirect()->back()->with('success', 'Booking Record Deleted Successfully');
         } else {
-            return redirect()->back()->with('error', 'Cannot delete the booking record. It is not canceled by the user.');
+            return redirect()->back()->with('error', 'Customer hasnt cancel his/her booking yet!!');
         }
     }
 }

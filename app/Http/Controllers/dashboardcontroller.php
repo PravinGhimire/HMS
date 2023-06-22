@@ -17,8 +17,8 @@ class dashboardcontroller extends Controller
     $totalrooms = Rooms::count();
     $totalgallery=Gallery::count();
     $totalbooking = Booking::count();
-  
+    $forms = Booking::with('room')->get();
 
-    return view('dashboard', compact('totalrooms', 'totalusers', 'totalbooking','totalgallery'));
+    return view('dashboard', compact('totalrooms', 'totalusers', 'totalbooking','totalgallery','forms'));
   }
 }

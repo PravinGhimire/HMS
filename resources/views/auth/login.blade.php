@@ -19,7 +19,7 @@
                 <form action="{{route('login')}}" method="POST">
                     @csrf
                     <div class=" text-center items-center justify-center">
-                        <img src="{{asset('images/logo3.png')}}" class=" rounded-full h-32  m-auto" alt="">
+                        <img src="{{asset('images/Fauget Hotel.png')}}" class=" rounded-full h-32  m-auto" alt="">
                         <h2 class="ml-1">Please Login!!!</h2>
                     </div>
 

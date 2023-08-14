@@ -125,10 +125,9 @@
                                 <tr>
                                     <th>SN</th>
                                     <th>Name</th>
-                                    <th>Email</th>
                                     <th>Room </th>
                                     <th>Status</th>
-                                    <th>View</th>
+                                    <th>View Record</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -137,7 +136,6 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$form->name}}</td>
-                                    <td>{{$form->email}}</td>
                                     <td>{{$form->room->room_type}}</td>
                                     <td> @if ($form->status === 'Booked')
                                         <span class="badge bg-primary text-white p-2">Booked</span>
@@ -145,7 +143,7 @@
                                         <span class="badge bg-dark text-white p-2">Cancelled</span>
                                         @endif
                                     </td>
-                                    <td><a class="badge bg-danger text-white p-2" href="{{route('booking.index')}}">View more</a></td>
+                                    <td><a class="badge bg-danger text-white p-2" href="{{route('booking.index')}}">View Details</a></td>
                                 </tr>
                                 </tr>
                                 @endforeach

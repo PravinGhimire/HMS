@@ -32,9 +32,9 @@
                 <td>{{$form->room->room_type}}</td>
                 <td><span class="badge  bg-warning text-white p-2">Pending</span>
                 <td> @if ($form->status === 'Booked')
-                    <span class="badge bg-primary text-white">Booked</span>
+                    <span class=" p-2 badge bg-success text-white">Booked</span>
                     @elseif ($form->status === 'Cancelled')
-                    <span class="badge bg-dark text-white">Cancelled</span>
+                    <span class=" p-2 badge bg-dark text-white">Cancelled</span>
                     @endif
                 </td>
                 </td>

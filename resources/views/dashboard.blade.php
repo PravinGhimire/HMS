@@ -108,12 +108,12 @@
         </div>
     </div>
 </div>
-<div class="row">
+<!-- <div class="row">
 
-    <!-- Area Chart -->
+    Area Chart
     <div class=" container-fuild">
         <div class="card shadow mb-4">
-            <!-- Card Header - Dropdown -->
+            Card Header - Dropdown
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
 
                 <ul>
@@ -150,5 +150,5 @@
                             </tbody>
                         </table>
                     </div>
-            </div>
+            </div> -->
             @endsection

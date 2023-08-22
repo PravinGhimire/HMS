@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{asset('datatable/datatables.css')}}">
     <script src="{{asset('datatable/jquery-3.6.0.js')}}"></script>
     <script src="{{asset('datatable/datatables.js')}}"></script>
-  
+
     <!-- Scripts -->
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -161,6 +161,52 @@
                                 </form>
                             </div>
                         </li>
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">5+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Booking
+                                </h6>
+
+                                @foreach($forms->where('status', 'Booked'||'Cancelled')->take(3) as $form)
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold">
+                                            <p>{{ $form->name }} has booked {{ $form->room->room_type }}</p>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                @endforeach
+
+                                <!-- @foreach($forms->where('status', 'Cancelled')->take(8) as $form)
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span class="font-weight-bold">
+                                            <p>{{ $form->name }} has cancelled Booking .</p>
+                                        </span>
+                                    </div>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                @endforeach -->
+                                <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.index')}}">Show all records</a>
+                            </div>
+
                         <li class="nav-item ">
                             <a class="nav-link active toggle" href="/">
                                 <span class="  d-lg-inline text-slate-800 small">View Site</span></a>
@@ -170,7 +216,7 @@
                         <li class="nav-item ">
                             <a class="nav-link active toggle ">
                                 <span class="mr-1 d-none d-lg-inline text-slate-800 small">
-                                    Welcome,{{auth()->user()->name}}
+                                    Welcome,Admin
                             </a>
                         </li>
 

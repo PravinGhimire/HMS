@@ -26,9 +26,9 @@ class BookingController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     */
-    public function store(Request $request)
-    {
+     */public function store(Request $request)
+{
+    if (auth()->check()) {
         $data = $request->validate([
             'name' => 'required',
             'email' => 'required',
@@ -37,20 +37,19 @@ class BookingController extends Controller
             'noofpeople' => 'required',
             'room_id' => 'required',
         ]);
+
         $data['status'] = 'Booked';
-        $data['user_id'] = Auth::id();
-        // $users = new Booking();
+        $data['user_id'] = auth()->user()->id; // Use auth()->user() to get the authenticated user
 
-        // Assign the user_id based on the authenticated user
-        // $users->user_id = Auth::id();
-
-        // Assign other validated data to booking attributes
-        // ...
-
-        // $users->save();
         Booking::create($data);
-        return redirect(route('bookingview'))->with('Success', 'Room Booked Successfully');
+        return redirect()->back()->with('Success', 'Room Booked Successfully')
+        ->with('booking_completed', 1); 
+    } else {
+        return redirect()->route('login')->with('success', 'You need to log in to make a booking.');
     }
+}
+
+    
 
     /**
      * Display the specified resource.

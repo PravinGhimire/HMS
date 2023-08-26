@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Feedback;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -13,8 +14,9 @@ class FeedbackController extends Controller
      */
     public function index()
     {
+        $forms=Booking::all();
        $feedbacks=Feedback::all();
-        return view('feedback.index',compact('feedbacks'));
+        return view('feedback.index',compact('feedbacks','forms'));
     }
 
     /**

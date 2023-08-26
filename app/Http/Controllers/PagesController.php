@@ -34,16 +34,6 @@ class PagesController extends Controller
         $galleries = Gallery::all();
         return view('gallerys', compact('galleries'));
     }
-    // public function header()
-    // {
-    //     $rooms = Rooms::all();
-    //     $gu = Booking::all();
-    //     return view('header', compact('rooms', 'gu'));
-    // }
-    // public function footer()
-    // {
-    //     return view('footer');
-    // }
     public function rums($id)
     {
         $room = Rooms::find($id);

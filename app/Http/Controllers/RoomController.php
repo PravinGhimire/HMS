@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Room;
 use App\Models\Rooms;
 use Illuminate\Http\File;
@@ -12,8 +13,9 @@ class RoomController extends Controller
 {
     Public function index(){
         $rooms=Rooms::all();
+        $forms=Booking::all();
 
-        return view('rooms.index', compact('rooms'));
+        return view('rooms.index', compact('rooms','forms'));
     }
     public function create(){
         return view('rooms.create');

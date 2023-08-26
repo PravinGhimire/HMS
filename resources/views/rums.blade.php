@@ -109,25 +109,29 @@
             <h3 class=" items-center">Booking Sheet </h3>
 
 
-            <form action="{{route('booking.store')}}" method="POST">
+            <form action="{{ route('booking.store') }}" method="POST" >
                @csrf
+               @auth <!-- Check if the user is authenticated -->
                <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
+               @endauth <!-- End of authenticated user check -->
 
                <div class="row align-items-center">
+                   <!-- If the user is not authenticated -->
                   <div class="col-lg-6">
                      <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" name="name" value="{{ auth()->user()->name }}" class="form-control" required data-error="Please enter your name" placeholder="Your Name">
+                        <input type="text" name="name" class="form-control" required placeholder="Your Name">
                         <i class='bx bx-user'></i>
                      </div>
                   </div>
                   <div class="col-lg-6">
                      <div class="form-group">
-                        <label>Email </label>
-                        <input type="email" name="email" value="{{ auth()->user()->email }}" id="email" class="form-control" required data-error="Please enter your email" placeholder="Your Email">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" required placeholder="Your Email">
                         <i class='bx bx-mail-send'></i>
                      </div>
                   </div>
+                 <!-- End of guest user check -->
 
                   <div class="col-lg-6">
                      <div class="form-group">
@@ -178,40 +182,22 @@
 
                         </select>
                      </div>
-                  </div>
+                  </div> 
+                  <input type="hidden" name="booking_completed" id="bookingCompleted" value="1"> <!-- Hidden field -->
+
                   <div class="col-lg-12 col-md-12">
-                     <button type="submit" class="default-btn p-2   ">
-                        Reserve Now
-                     </button>
+                     @auth <!-- If the user is authenticated -->
+                     <button type="submit" class="default-btn p-2">Reserve Now</button>
+                     @endauth <!-- End of authenticated user check -->
+                     @guest <!-- If the user is not authenticated -->
+                     <button type="button" class="default-btn p-2" onclick="showGuestAlert()">Reserve Now</button>
+                     @endguest <!-- End of guest user check -->
                   </div>
                </div>
             </form>
          </div>
       </div>
-   </div>
-   </div>
 
-   <!-- <div class="review-form">
-      <h3>Leave a Review</h3>
-      <form action="" method="POST">
-         @csrf
-         <div class="form-group">
-            <label for="rating">Rating:</label>
-            <select class="form-control" id="rating" name="rating">
-               <option value="1">1 Star</option>
-               <option value="2">2 Stars</option>
-               <option value="3">3 Stars</option>
-               <option value="4">4 Stars</option>
-               <option value="5">5 Stars</option>
-            </select>
-         </div>
-         <div class="form-group">
-            <label for="comment">Comment:</label>
-            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
-         </div>
-         <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-   </div> -->
    </div>
 
    </div>
@@ -223,6 +209,25 @@
    </footer>
    <!-- end footer -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+   <script>
+      function showGuestAlert() {
+         alert("You need to login/ register to make a booking.");
+      }
+   </script>
+
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const bookingCompleted = "{{ session('booking_completed') }}";
+        
+        if (bookingCompleted) {
+            alert("Booking completed successfully!");
+        }
+    });
+</script>
+
+
 
 
 

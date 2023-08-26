@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Roomdetails;
 use App\Models\Rooms;
 use Illuminate\Http\Request;
@@ -11,9 +12,9 @@ class RoomDetailsController extends Controller
 {
     public function index()
     {
-
         $roomdetails = Roomdetails::all();
-        return view('roomdetails.index', compact('roomdetails'));
+        $forms=Booking::all();
+        return view('roomdetails.index', compact('roomdetails','forms'));
     }
 
     /**
@@ -22,7 +23,8 @@ class RoomDetailsController extends Controller
     public function create()
     {
         $rooms = Rooms::all();
-        return view('roomdetails.create', compact('rooms'));
+        
+        return view('roomdetails.create', compact('rooms',));
     }
 
     /**

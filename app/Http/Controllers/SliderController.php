@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as FacadesFile;
@@ -13,9 +14,9 @@ class SliderController extends Controller
      */
     public function index()
     {
-        
+        $forms=Booking::all();
         $sliders = Slider::all();
-        return view('slider.index',compact('sliders'));
+        return view('slider.index',compact('sliders','forms'));
         
     }
 

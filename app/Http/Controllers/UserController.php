@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -12,7 +13,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index',compact('users'));
+        $forms=Booking::all();
+       
+        return view('users.index',compact('users','forms'));
     }
     public function create()
     {
@@ -23,7 +26,7 @@ class UserController extends Controller
         $data= $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'password' => ['required', 'confirmed','min:8', 'regex:/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d!@#$%^&*()\-_=+{};:,<.>]{8,}$/', Rules\Password::defaults()],
             'role' =>'required'
         ]);
         $data['password']= Hash::make($request->password);

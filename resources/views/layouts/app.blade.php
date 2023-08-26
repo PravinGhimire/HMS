@@ -170,40 +170,32 @@
                             <!-- Dropdown - Alerts -->
                             <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                                 <h6 class="dropdown-header">
-                                    Booking
+                                    Notification
                                 </h6>
-
-                                @foreach($forms->where('status', 'Booked'||'Cancelled')->take(3) as $form)
+                                @foreach($forms as $form)
                                 <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <!-- Your notification content here -->
                                     <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
+                                        @if ($form->status === 'Booked')
+                                        <i class="fas fa-check-circle fa-2x text-success"></i>
+                                        @elseif ($form->status === 'Cancelled')
+                                        <i class="fas fa-times-circle fa-2x text-danger"></i>
+                                        @endif
                                     </div>
                                     <div>
                                         <span class="font-weight-bold">
-                                            <p>{{ $form->name }} has booked {{ $form->room->room_type }}</p>
+                                            <p>
+                                                @if ($form->status === 'Booked')
+                                                {{ $form->name }} has booked {{ $form->room->room_type }}
+                                                @elseif ($form->status === 'Cancelled')
+                                                {{ $form->name }} has cancelled booking for {{ $form->room->room_type }}
+                                                @endif
+                                            </p>
                                         </span>
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 @endforeach
-
-                                <!-- @foreach($forms->where('status', 'Cancelled')->take(8) as $form)
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <div class="mr-3">
-                                        <div class="icon-circle bg-primary">
-                                            <i class="fas fa-file-alt text-white"></i>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <span class="font-weight-bold">
-                                            <p>{{ $form->name }} has cancelled Booking .</p>
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                @endforeach -->
                                 <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.index')}}">Show all records</a>
                             </div>
 

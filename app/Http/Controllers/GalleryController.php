@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Booking;
 use App\Models\Gallery;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
@@ -14,9 +15,9 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        
+        $forms=Booking::all();
         $galleries = Gallery::all();
-        return view('gallery.index',compact('galleries'));
+        return view('gallery.index',compact('galleries','forms'));
         
     }
 

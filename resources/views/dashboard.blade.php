@@ -108,47 +108,5 @@
         </div>
     </div>
 </div>
-<!-- <div class="row">
 
-    Area Chart
-    <div class=" container-fuild">
-        <div class="card shadow mb-4">
-            Card Header - Dropdown
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-
-                <ul>
-                    <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <h6 class="m-0 font-weight-bold text-primary text-center justify-center">Recent Activity</h6>
-                            <thead>
-
-                                <tr>
-                                    <th>SN</th>
-                                    <th>Name</th>
-                                    <th>Room </th>
-                                    <th>Status</th>
-                                    <th>View Record</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($forms as $form)
-                                <tr>
-                                <tr>
-                                    <td>{{$loop->iteration}}</td>
-                                    <td>{{$form->name}}</td>
-                                    <td>{{$form->room->room_type}}</td>
-                                    <td> @if ($form->status === 'Booked')
-                                        <span class="badge bg-primary text-white p-2">Booked</span>
-                                        @elseif ($form->status === 'Cancelled')
-                                        <span class="badge bg-dark text-white p-2">Cancelled</span>
-                                        @endif
-                                    </td>
-                                    <td><a class="badge bg-danger text-white p-2" href="{{route('booking.index')}}">View Details</a></td>
-                                </tr>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-            </div> -->
-            @endsection
+@endsection

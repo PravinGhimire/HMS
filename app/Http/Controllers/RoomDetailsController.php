@@ -23,8 +23,8 @@ class RoomDetailsController extends Controller
     public function create()
     {
         $rooms = Rooms::all();
-        
-        return view('roomdetails.create', compact('rooms',));
+        $forms=Booking::all();
+        return view('roomdetails.create', compact('rooms','forms'));
     }
 
     /**

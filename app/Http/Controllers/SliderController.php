@@ -25,7 +25,8 @@ class SliderController extends Controller
      */
     public function create()
     {
-        return view('slider.create');
+        $forms=Booking::all();
+        return view('slider.create',compact('forms'));
     }
 
     /**

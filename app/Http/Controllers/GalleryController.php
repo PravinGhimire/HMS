@@ -26,7 +26,8 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        return view('gallery.create');
+        $forms=Booking::all();
+        return view('gallery.create',compact('forms'));
     }
 
     /**

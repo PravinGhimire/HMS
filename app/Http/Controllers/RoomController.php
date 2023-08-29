@@ -18,7 +18,8 @@ class RoomController extends Controller
         return view('rooms.index', compact('rooms','forms'));
     }
     public function create(){
-        return view('rooms.create');
+      $forms=Booking::all();
+        return view('rooms.create',compact('forms'));
     }
     public function store(Request $request){
        $data =$request->validate([

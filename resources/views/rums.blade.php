@@ -30,7 +30,33 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+   <style>
+.alert-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 9999;
+}
 
+.alert-content {
+    text-align: center;
+}
+
+.close-btn {
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+</style>
 </head>
 <!-- body -->
 
@@ -199,6 +225,12 @@
       </div>
 
    </div>
+   <div class="alert-popup" id="alertPopup">
+    <div class="alert-content">
+        <p>Please Login or register for the reservation</p>
+        <button class="close-btn" onclick="hideAlert()">Close</button>
+    </div>
+</div>
 
    </div>
 
@@ -210,11 +242,16 @@
    <!-- end footer -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
    <script>
-      function showGuestAlert() {
-         alert("You need to login/ register to make a booking.");
-      }
-   </script>
+function showGuestAlert() {
+    var alertPopup = document.getElementById('alertPopup');
+    alertPopup.style.display = 'block';
+}
 
+function hideAlert() {
+    var alertPopup = document.getElementById('alertPopup');
+    alertPopup.style.display = 'none';
+}
+</script>
 
 
 <script>

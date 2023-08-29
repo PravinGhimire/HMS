@@ -1,4 +1,3 @@
-
 @include('layouts.message')
 
 <?php
@@ -117,6 +116,18 @@
     </div>
     <div class="d-flex justify-content-start mb-4">
         <div class="table-responsive">
+            @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
+            </div>
+            @endif
+
             <table class="table stripped-table table-bordered   text-dark">
                 <thead>
                     <tr>
@@ -133,46 +144,46 @@
                     </tr>
                 </thead>
                 <tbody>
-    @php
-        $userBookingCount = []; // Store the booking count for each user
-    @endphp
+                    @php
+                    $userBookingCount = []; // Store the booking count for each user
+                    @endphp
 
-    @foreach($forms as $form)
-        @if ($form->user_id == auth()->user()->id)
-            @if (!isset($userBookingCount[$form->user_id]))
-                @php
+                    @foreach($forms as $form)
+                    @if ($form->user_id == auth()->user()->id)
+                    @if (!isset($userBookingCount[$form->user_id]))
+                    @php
                     $userBookingCount[$form->user_id] = 1;
-                @endphp
-            @else
-                @php
+                    @endphp
+                    @else
+                    @php
                     $userBookingCount[$form->user_id]++;
-                @endphp
-            @endif
-
-            <tr>
-                <td>{{ $userBookingCount[$form->user_id] }}</td>
-                <td>{{ $form->name }}</td>
-                <td>{{ $form->email }}</td>
-                <td>{{ $form->check_in }}</td>
-                <td>{{ $form->check_out }}</td>
-                <td>{{ $form->room->room_type }}</td>
-                <td>
-                    @if ($form->status === 'Booked')
-                        <span class="badge bg-primary text-white p-2">Booked</span>
-                    @elseif ($form->status === 'Cancelled')
-                        <span class="badge bg-dark text-white p-2">Cancelled</span>
+                    @endphp
                     @endif
-                </td>
-                <td>
-                    <form action="{{ route('booking.cancel', ['id' => $form->id]) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-warning">Cancel Booking</button>
-                    </form>
-                </td>
-            </tr>
-        @endif
-    @endforeach
-</tbody>
+
+                    <tr>
+                        <td>{{ $userBookingCount[$form->user_id] }}</td>
+                        <td>{{ $form->name }}</td>
+                        <td>{{ $form->email }}</td>
+                        <td>{{ $form->check_in }}</td>
+                        <td>{{ $form->check_out }}</td>
+                        <td>{{ $form->room->room_type }}</td>
+                        <td>
+                            @if ($form->status === 'Booked')
+                            <span class="badge bg-primary text-white p-2">Booked</span>
+                            @elseif ($form->status === 'Cancelled')
+                            <span class="badge bg-dark text-white p-2">Cancelled</span>
+                            @endif
+                        </td>
+                        <td>
+                            <form action="{{ route('booking.cancel', ['id' => $form->id]) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn btn-warning">Cancel Booking</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @endif
+                    @endforeach
+                </tbody>
 
             </table>
         </div>

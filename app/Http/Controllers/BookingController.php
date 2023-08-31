@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Rooms;
 use App\Models\User;
+use App\Notifications\BookingCancelled;
+use App\Notifications\BookingConfirmed;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Notification ;
 
 class BookingController extends Controller
 {
@@ -26,7 +30,8 @@ class BookingController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     */public function store(Request $request)
+     */
+    public function store(Request $request)
 {
     if (auth()->check()) {
         $data = $request->validate([
@@ -40,8 +45,10 @@ class BookingController extends Controller
 
         $data['status'] = 'Booked';
         $data['user_id'] = auth()->user()->id; // Use auth()->user() to get the authenticated user
-
-        Booking::create($data);
+       $booking= Booking::create($data);
+        $user = auth()->user();
+        Notification::send($user, new BookingConfirmed($booking));
+       
         return redirect()->back()->with('Success', 'Room Booked Successfully')
         ->with('booking_completed', 1); 
     } else {
@@ -71,6 +78,9 @@ class BookingController extends Controller
 
         $forms->status = 'Cancelled';
         $forms->save();
+        $user = auth()->user();
+       Notification::send($user, new BookingCancelled($forms));
+
         return redirect()->back()->with('success', 'Booking Cancelled Successfully');
         }
        

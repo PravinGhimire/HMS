@@ -41,7 +41,7 @@ class BookingCancelled extends Notification
             ->subject('Booking Cancelled')
             ->greeting('Hello, ' . $notifiable->name) // Greeting with user's name
             ->line('Your booking has been Cancelled.')
-            ->action('View cancelled', url('/bookingview'))
+            ->action('View cancelled', url('/bookingview',$notifiable->id ))
             ->line('Thank you!');
     }
 

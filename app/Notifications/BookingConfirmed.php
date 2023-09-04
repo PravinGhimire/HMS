@@ -42,11 +42,13 @@ class BookingConfirmed extends Notification
             ->subject('Booking Confirmation')
             ->greeting('Hello, ' . $notifiable->name) // Greeting with user's name
             ->line('Your booking has been confirmed.')
-            ->action('View Booking', url('/bookingview' . $this->booking->id))
-            ->line('Thank you for choosing our services!');
+            ->action('View Booking', url('/bookingview',$this->booking->id ))
+            ->line('Thank you for choosing our services!')
+            ->line('NewEra');
     }
 
-    /**
+    /**  ->subject('Booking Confirmation')
+        
      * Get the array representation of the notification.
      *
      * @return array<string, mixed>

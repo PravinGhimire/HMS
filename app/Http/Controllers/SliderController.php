@@ -65,7 +65,8 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        return view('slider.edit',compact('slider'));
+        $forms=Booking::all();
+        return view('slider.edit',compact('slider','forms'));
     }
 
     /**

@@ -37,12 +37,13 @@ class BookingConfirmed extends Notification
      */
     public function toMail($notifiable)
     {
+        // if ($notifiable) { // Check if $notifiable is not null
+        //     $userId = $notifiable->id;
         return (new MailMessage)
 
             ->subject('Booking Confirmation')
             ->greeting('Hello, ' . $notifiable->name) // Greeting with user's name
             ->line('Your booking has been confirmed.')
-            ->action('View Booking', url('/bookingview',$this->booking->id ))
             ->line('Thank you for choosing our services!')
             ->line('NewEra');
     }

@@ -24,8 +24,9 @@ class BookingController extends Controller
        
         $rooms = Rooms::all();
         $forms = Booking::with('room')->get();
+        $paginated = Booking::paginate(6);
 
-        return view('booking.index', compact('rooms', 'forms'));
+        return view('booking.index', compact('rooms', 'forms','paginated'));
     }
 
     /**
@@ -90,17 +91,31 @@ class BookingController extends Controller
         }
         
     }
-
+    public function edit($id)
+    {
+        $booking = Booking::findOrFail($id);
+        $forms=Booking::all();
+    
+        return view('booking.edit', compact('booking','forms'));
+    }
+    
+    public function update(Request $request, $id)
+    {
+        $booking = Booking::findOrFail($id);
+    
+        $request->validate([
+            // Add validation rules for other fields as needed...
+            'payment_status' => 'required|in:Pending,Received',
+        ]);
+    
+        // Update the payment status
+        $booking->payment_status = $request->input('payment_status');
+        $booking->save();
+    
+        return redirect()->route('booking.index')->with('success', 'Booking updated successfully');
+    }
     /**
      * Update the specified resource in storage.
-     */
-    public function update(Request $request, Booking $booking)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
      */
 
     public function delete(Request $request)

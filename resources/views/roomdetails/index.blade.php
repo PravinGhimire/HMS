@@ -4,9 +4,9 @@
 <h2 class="text-4xl font-bold border-b-4 text-black ">Room Details</h2>
 
 <div class="my-3 text-right">
-    <a href="{{route('roomdetails.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add Details</a>
+    <a href="{{route('roomdetails.create')}}" class="btn btn-primary rounded-lg px-3 py-2">Add Details</a>
 </div>
-<div class="table-responsive">
+
 <table id="example" class="table table-striped" style="width:100%">
             <thead>
             <tr>
@@ -21,8 +21,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($roomdetails as $roomdetails)
-            <tr>
+            @foreach($roomdetailed as $roomdetails)
             <tr>
                 <td>{{$roomdetails->priority}}</td>
                 <td>
@@ -33,17 +32,18 @@
                 <td>{{$roomdetails->bed_size}}</td>
                 <td>{{$roomdetails->view}}</td>
                 <td>{{$roomdetails->room->room_type}}</td>
-                <td>
-                    <a href="{{route('roomdetails.edit',$roomdetails->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
-                    <a onclick="showDelete('{{$roomdetails->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
-                </td>
-            </tr>
+                <td><div class="btn-group">
+                    <a href="{{route('roomdetails.edit',$roomdetails->id)}}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                    <a onclick="showDelete('{{$roomdetails->id}}')" class="btn btn-danger cursor-pointer"><i class="fas fa-trash"></i></a>
+                    </div></td>
+            
             </tr>
             @endforeach
         </tbody>
     </table>
+    <div class="mt-4">
+    {{ $roomdetailed->links() }}
 </div>
-
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">
         <div class="bg-white p-10 rounded-lg">
@@ -62,21 +62,9 @@
 </div>
 
 
-<!-- <script>
-    $(document).ready(function() {
-        DataTable({
-            columnDefs: [{
-                    width: 150,
-                    targets: 3
-                },
-                {
-                    width: 350,
-                    targets: 2
-                }
-            ],
-        });
-    });
-</script> -->
+ <!-- <script>
+    new DataTable('#example');
+</script>  -->
 
 <script>
     function showDelete(id) {

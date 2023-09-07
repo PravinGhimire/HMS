@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+#pagination {
+    margin-top: 20px;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+}

@@ -4,38 +4,42 @@
 <h2 class="text-4xl font-bold border-b-4 text-black">Users</h2>
 
 <div class="my-3 text-right">
-    <a href="{{route('user.create')}}" class="bg-blue-600 text-white rounded-lg px-3 py-2">Add User</a>
+    <a href="{{ route('user.create') }}" class="btn btn-primary rounded-lg px-3 py-2">
+        Add User
+    </a>
 </div>
-<div class="table-responsive">
-<table id="example" class="table table-striped" style="width:100%">
-        <thead>
-            <tr>
-                <th>S.N.</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach($users as $user)
-            <tr>
-            <tr>
-                <td>{{$loop->iteration}}</td>
-                <td>{{$user->name}}</td>
-                <td>{{$user->email}}</td>
-                <td>{{$user->role}}</td>
-                <td>
-                    <a href="{{route('user.edit',$user->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
-                    <a onclick="showDelete('{{$user->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
-                </td>
-            </tr>
-            </tr>
-            @endforeach
-        </tbody>
-    </table>
-</div>
+<!-- Pagination for Subset of Users -->
 
+<table id="example" class="table table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>S.N.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($paginatedUsers as $user)
+        <tr>
+            <td>{{$loop->iteration}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->role}}</td>
+            <td>
+                <a href="{{route('user.edit',$user->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1"><i class="fas fa-edit"></i></a>
+                <a onclick="showDelete('{{$user->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer"><i class="fas fa-trash"></i></a>
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
+</table>
+
+<!-- Pagination Links for Paginated Users -->
+<div class="mt-4">
+    {{ $paginatedUsers->links() }}
+</div>
 
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">
@@ -56,12 +60,8 @@
 
 
 <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-</script>
+  new DataTable('#example');
 
-<script>
     function showDelete(id) {
         $('#deletebox').removeClass('hidden');
         $('#dataid').val(id);

@@ -24,8 +24,8 @@
             <td>{{$slider->priority}}</td>
             <td><img  class="w-24" src="{{asset('images/slider/'.$slider->photopath)}}" alt=""></td>
             <td>
-                <a href="{{route('slider.edit',$slider->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1">Edit</a>
-                <a onclick="showDelete('{{$slider->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer">Delete</a>
+                <a href="{{route('slider.edit',$slider->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1"><i class="fas fa-edit"></i></a>
+                <a onclick="showDelete('{{$slider->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
         </tr>

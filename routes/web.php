@@ -81,6 +81,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');
     Route::post('/booking/{id}/cancel', [BookingController::class, 'cancel'])->name('booking.cancel');
     Route::post('/booking/delete', [BookingController::class, 'delete'])->name('booking.delete');
+    Route::get('/booking/{id}/edit', [BookingController::class, 'edit'])->name('booking.edit');
+    Route::post('/booking/{id}', [BookingController::class, 'update'])->name('booking.update');
 
     // Feedback
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');

@@ -46,6 +46,7 @@ class PagesController extends Controller
         $rooms = Rooms::all();
         $forms = Booking::all();
         
+        
         return view('bookingview', compact('rooms', 'forms'));
 
     }

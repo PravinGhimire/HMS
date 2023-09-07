@@ -14,7 +14,8 @@ class RoomDetailsController extends Controller
     {
         $roomdetails = Roomdetails::all();
         $forms=Booking::all();
-        return view('roomdetails.index', compact('roomdetails','forms'));
+        $roomdetailed=Roomdetails::paginate(6);
+        return view('roomdetails.index', compact('roomdetails','forms','roomdetailed'));
     }
 
     /**
@@ -24,6 +25,7 @@ class RoomDetailsController extends Controller
     {
         $rooms = Rooms::all();
         $forms=Booking::all();
+        
         return view('roomdetails.create', compact('rooms','forms'));
     }
 
@@ -66,7 +68,8 @@ class RoomDetailsController extends Controller
     {
         $rooms = Rooms::all();
         $roomdetails = Roomdetails::find($id);
-        return view('roomdetails.edit', compact('roomdetails', 'rooms'));
+        $forms=Booking::all();
+        return view('roomdetails.edit', compact('roomdetails', 'rooms','forms'));
     }
 
     /**

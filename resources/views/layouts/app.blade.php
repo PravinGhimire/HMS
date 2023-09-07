@@ -6,15 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>
+        New Era</title>
+    <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="{{asset('datatable/datatables.css')}}">
-    <script src="{{asset('vendorr/datatables/jquery-3.6.0.js')}}"></script>
-    <script src="{{asset('datatable/datatables.js')}}"></script>
+
 
     <!-- Scripts -->
 
@@ -24,6 +23,13 @@
 
     <!-- Custom styles for this template-->
     <link href="{{asset('csss/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('csss/stylee.css') }}">
+    <!-- <script src="{{ asset('csss/scrptt.js') }}"></script> -->
+
+    <!-- Datatables -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+
 
 </head>
 
@@ -199,18 +205,21 @@
                                 <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.index')}}">Show all records</a>
                             </div>
 
-                        <li class="nav-item ">
+                        <li class="nav-item">
                             <a class="nav-link active toggle" href="/">
-                                <span class="  d-lg-inline text-slate-800 small">View Site</span></a>
-                        </li>
-                        <!-- divider -->
-                        <div class="border border-black h-6 mt-4"></div>
-                        <li class="nav-item ">
-                            <a class="nav-link active toggle ">
-                                <span class="mr-1 d-none d-lg-inline text-slate-800 small">
-                                    Welcome,Admin
+                                <span class="d-lg-inline text-slate-800 small">View Site</span>
                             </a>
                         </li>
+                        <!-- divider -->
+                        <div class="border border-black h-8 mt-4"></div>
+                        <li class="nav-item">
+                            <span class="nav-link active toggle">
+                                <span class="mr-1 d-none d-lg-inline text-slate-800 small">
+                                    Welcome, Admin
+                                </span>
+                            </span>
+                        </li>
+
 
                     </ul>
 
@@ -230,17 +239,6 @@
         </div>
         @endif
     </div>
-
-
-    </div>
-    <!-- End of Main Content -->
-
-
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-    </div>
     <!-- End of Page Wrapper -->
 
     <!-- Scroll to Top Button-->
@@ -258,13 +256,11 @@
     <script src="vendorr/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+
 
     <!-- Page level plugins -->
 
 
 </body>
-
-
 
 </html>

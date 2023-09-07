@@ -42,7 +42,8 @@ class RoomController extends Controller
  }
  public function edit($id){
     $rooms = Rooms::find($id);
-    return view('rooms.edit',compact('rooms'));
+    $forms=Booking::all();
+    return view('rooms.edit',compact('rooms','forms'));
   }
   public function update(Request $request,Rooms $rooms){
     $data =$request->validate([

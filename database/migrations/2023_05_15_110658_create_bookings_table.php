@@ -21,6 +21,7 @@ return new class extends Migration
             $table->foreignId('room_id')->constrained();
             $table->foreignId('user_id')->constrained();
             $table->string('status')->default('Booked');
+            $table->string('payment_status')->default('Pending');
 
             $table->timestamps();
         });

@@ -14,12 +14,14 @@ class UserController extends Controller
     {
         $users = User::all();
         $forms=Booking::all();
+        $paginatedUsers = User::paginate(6);
        
-        return view('users.index',compact('users','forms'));
+        return view('users.index',compact('users','forms','paginatedUsers'));
     }
     public function create()
     {
-     return view('users.create');
+        $forms=Booking::all();
+     return view('users.create',compact('forms'));
     }
     public function store(Request $request)
     {

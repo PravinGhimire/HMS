@@ -18,7 +18,7 @@ class dashboardcontroller extends Controller
     $totalgallery=Gallery::count();
     $totalbooking = Booking::count();
     $forms = Booking::with('room')->orderBy('created_at', 'desc') // Order by creation date in descending order
-    ->take(4) // Get the latest 4 records
+    ->take(5) // Get the latest 4 records
     ->get();
    
 

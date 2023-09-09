@@ -20,10 +20,14 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($paginated as $form)
-
+   
+    @php
+        $currentNumber = ($forms->currentPage() - 1) * $forms->perPage() + 1;
+        @endphp
+    @foreach($forms as $form)
         <tr>
-            <td>{{$form->id}}</td>
+            
+        <td>{{ $currentNumber++ }}</td> 
             <td>{{$form->name}}</td>
             <td>{{$form->email}}</td>
             <td>{{$form->check_in}}</td>
@@ -57,7 +61,7 @@
 </table>
 <!-- Pagination Links -->
 <div class="mt-4">
-    {{ $paginated->links() }}
+    {{ $forms->links() }}
 </div>
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">
@@ -76,13 +80,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-</script> -->
 
 <script>
     function showDelete(id) {

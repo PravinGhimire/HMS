@@ -177,7 +177,7 @@
                                 <h6 class="dropdown-header">
                                     Notification
                                 </h6>
-                                @foreach($forms as $form)
+                                @foreach($forms->take(5) as $form)
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <!-- Your notification content here -->
                                     <div class="mr-3">

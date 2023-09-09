@@ -22,7 +22,7 @@
     <!-- style css -->
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
     <style>
         th {
             background-color: #343a49;
@@ -165,7 +165,7 @@
 
     <!--  footer -->
 
-    <footer>
+    <footer >
         @include('footer')
     </footer>
 </body>

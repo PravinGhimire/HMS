@@ -18,7 +18,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($galleries as $gallery)
+            @foreach($pages as $gallery)
             <tr>
                 <tr>
             
@@ -37,7 +37,9 @@
         </tbody>
     </table>
 
-
+    <div class="mt-4">
+    {{ $pages->links()}}
+</div>
 <div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class="flex h-full justify-center items-center">
         <div class="bg-white p-10 rounded-lg">

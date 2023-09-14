@@ -165,7 +165,7 @@
 
     <!--  footer -->
 
-    <footer >
+    <footer>
         @include('footer')
     </footer>
 </body>

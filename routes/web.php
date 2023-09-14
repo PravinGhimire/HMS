@@ -12,6 +12,7 @@ use App\Http\Controllers\RoomDetailsController;
 use App\Http\Controllers\signupcontroller;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*

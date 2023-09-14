@@ -17,7 +17,8 @@ class GalleryController extends Controller
     {
         $forms=Booking::all();
         $galleries = Gallery::all();
-        return view('gallery.index',compact('galleries','forms'));
+        $pages=Gallery::paginate(6);
+        return view('gallery.index',compact('galleries','forms','pages'));
         
     }
 

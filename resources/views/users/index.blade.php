@@ -51,7 +51,7 @@
 
                 <div class="flex mt-10 justify-center">
                     <input type="submit" value="Yes! Delete" class="bg-blue-600 text-white px-3 py-2 rounded-lg cursor-pointer mx-2">
-                    <a onclick="hideDelete()" class="bg-red-600 text-white px-6 py-2 rounded-lg cursor-pointer mx-2">Exit</a>
+                    <a onclick="hideDelete()" class="btn btn-danger text-white rounded-lg px-4 py-2 mx-2">Exit</a>
                 </div>
             </form>
         </div>

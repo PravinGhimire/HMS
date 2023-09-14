@@ -19,7 +19,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach($rooms as $rooms)
+        @foreach($paginate as $rooms)
         <tr>
 
             <td>{{$rooms->priority}}</td>
@@ -37,7 +37,9 @@
         @endforeach
     </tbody>
 </table>
-
+<div class="mt-4">
+    {{ $paginate->links()}}
+</div>
 <div id="deletebox" class=" hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
     <div class=" flex h-full justify-center items-center">
         <div class="bg-white p-10 rounded-lg">

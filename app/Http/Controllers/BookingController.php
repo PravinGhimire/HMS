@@ -88,8 +88,12 @@ class BookingController extends Controller
     public function edit($id)
     {
         $booking = Booking::findOrFail($id);
+        if ($booking->status === 'Cancelled') {
+            return redirect()->route('booking.index')
+                ->with('error', 'This booking has been canceled and cannot be edited');
+        }
         $forms = Booking::all();
-      
+
         return view('booking.edit', compact('booking', 'forms'));
     }
 
@@ -106,7 +110,7 @@ class BookingController extends Controller
         $booking->payment_status = $request->input('payment_status');
         $booking->save();
 
-        return redirect()->route('booking.index')->with('success', 'Booking updated successfully');
+        return redirect()->route('booking.index')->with('success', 'Payment updated successfully');
     }
     /**
      * Update the specified resource in storage.

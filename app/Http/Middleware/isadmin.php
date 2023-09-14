@@ -15,12 +15,10 @@ class isadmin
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(auth()->user()->role=='admin')
-        {
+        if (auth()->user()->role == 'admin') {
             return $next($request);
-        }
-        else{
-            return back()->with('success','Not enough permission');
+        } else {
+            return back()->with('success', 'Not enough permission');
         }
     }
 }

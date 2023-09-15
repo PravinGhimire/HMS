@@ -56,6 +56,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/user/{id}/edit', [UserController::class, 'edit'])->name('user.edit');
     Route::post('/user/{id}/update', [UserController::class, 'update'])->name('user.update');
     Route::post('/user/delete', [UserController::class, 'delete'])->name('user.delete');
+
     //Gallery
     Route::get('/gallery', [GalleryController::class, 'index'])->name('gallery.index');
     Route::get('/gallery/create', [GalleryController::class, 'create'])->name('gallery.create');
@@ -84,6 +85,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/booking/delete', [BookingController::class, 'delete'])->name('booking.delete');
     Route::get('/booking/{id}/edit', [BookingController::class, 'edit'])->name('booking.edit');
     Route::post('/booking/{id}', [BookingController::class, 'update'])->name('booking.update');
+
 
     // Feedback
     Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');

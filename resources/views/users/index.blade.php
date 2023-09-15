@@ -28,7 +28,6 @@
             <td>{{$user->email}}</td>
             <td>{{$user->role}}</td>
             <td>
-                <!-- <a href="{{route('user.edit',$user->id)}}" class="bg-blue-600 text-white px-4 py-1 rounded-lg mx-1"><i class="fas fa-edit"></i></a> -->
                 <a onclick="showDelete('{{$user->id}}')" class="bg-red-600 text-white px-4 py-1 rounded-lg mx-1 cursor-pointer"><i class="fas fa-trash"></i></a>
             </td>
         </tr>
@@ -60,7 +59,7 @@
 
 
 <script>
-  new DataTable('#example');
+    new DataTable('#example');
 
     function showDelete(id) {
         $('#deletebox').removeClass('hidden');

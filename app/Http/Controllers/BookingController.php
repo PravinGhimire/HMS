@@ -59,10 +59,7 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Booking $booking)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
@@ -75,19 +72,19 @@ class BookingController extends Controller
         if ($booking->status === 'Cancelled') {
             return redirect()->back()->with('error', 'Booking has already been canceled.');
         }
-    
+
         // Calculate the time difference in minutes
         $timeDifference = now()->diffInMinutes($booking->created_at);
-    
+
         if ($timeDifference <= 10) {
             // Mark the booking as canceled
             $booking->status = 'Cancelled';
             $booking->save();
-    
+
             // Send a notification to the user
             $user = auth()->user();
             Notification::send($user, new BookingCancelled($booking));
-    
+
             return redirect()->back();
         } else {
             // Display error message
@@ -99,7 +96,7 @@ class BookingController extends Controller
         $booking = Booking::findOrFail($id);
         if ($booking->status === 'Cancelled') {
             return redirect()->route('booking.index')
-                ->with('error', 'This booking has been canceled and cannot be edited');
+                ->with('error', 'This booking has been cancelled so cannot be updated further');
         }
         $forms = Booking::all();
 

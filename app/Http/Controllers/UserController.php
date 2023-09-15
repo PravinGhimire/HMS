@@ -18,6 +18,7 @@ class UserController extends Controller
        
         return view('users.index',compact('users','forms','paginatedUsers'));
     }
+   
     public function create()
     {
         $forms=Booking::all();
@@ -41,4 +42,12 @@ class UserController extends Controller
         $users->delete();
         return redirect(route('user.index'))->with('success','User Deleted Successfully');
     }
+ 
+
+
+
+
+
+
+
 }

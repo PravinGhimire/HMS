@@ -21,7 +21,7 @@
    <!-- style css -->
    <link rel="stylesheet" href="css/style.css">
    <!-- fevicon -->
-   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
    <!-- Tweaks for older IEs-->
 
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">

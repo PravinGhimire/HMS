@@ -10,97 +10,72 @@
 
 <!-- Content Row -->
 <div class="row">
-
-    <!-- Earnings (Monthly) Card Example -->
+    <!-- Users Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-primary shadow h-100 py-2">
+        <div class="card custom-card bg-primary text-white shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
-                            Users</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalusers}}</div>
+                    <div class="col-9">
+                        <div class="text-uppercase mb-1">Total Users</div>
+                        <div class="h5 mb-0">{{$totalusers}}</div>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa-user fa-2x text-gray-300"></i>
+                    <div class="col-3">
+                        <i class="fas fa-users fa-2x"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Earnings (Monthly) Card Example -->
+    <!-- Booking Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
+        <div class="card custom-card bg-success text-white shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Booking </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalbooking}}</div>
+                    <div class="col-9">
+                        <div class="text-uppercase mb-1">Total Bookings</div>
+                        <div class="h5 mb-0">{{$totalbooking}}</div>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-success shadow h-100 py-2">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                            Photos </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalgallery}}</div>
-                    </div>
-                    <div class="col-auto">
-                        <i class="fas fa-clone fa-2x text-gray-300"></i>
+                    <div class="col-3">
+                        <i class="fas fa-calendar-check fa-2x"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Earnings (Monthly) Card Example -->
+    <!-- Photos Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-    <div class="card border-left-info shadow h-100">
-        <div class="card-body">
-            <div class="row no-gutters align-items-center">
-                <div class="col mr-2">
-                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Rooms</div>
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">{{$totalrooms}}</div>
-                    <div class="progress mt-3" style="height: 8px;">
-                        <div class="progress-bar bg-info" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="card custom-card bg-warning text-white shadow h-100">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col-9">
+                        <div class="text-uppercase mb-1">Total Photos</div>
+                        <div class="h5 mb-0">{{$totalgallery}}</div>
                     </div>
-                </div>
-                <div class="col-auto">
-                    <i class="fas fa-bed fa-2x text-gray-300"></i>
+                    <div class="col-3">
+                        <i class="fas fa-image fa-2x"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-    <!-- 
-                        Pending Requests Card Example -->
+    <!-- Rooms Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card custom-card bg-info text-white shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                            Total Feedback</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">180</div>
+                    <div class="col-9">
+                        <div class="text-uppercase mb-1">Total Rooms</div>
+                        <div class="h5 mb-0">{{$totalrooms}}</div>
                     </div>
-                    <div class="col-auto">
-                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    <div class="col-3">
+                        <i class="fas fa-bed fa-2x"></i>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

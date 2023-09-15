@@ -56,14 +56,6 @@
         </div>
     </div>
 </div>
-
-
-<!-- <script>
-    $(document).ready(function() {
-        $('#example').DataTable();
-    });
-</script> -->
-
 <script>
     function showDelete(id) {
         $('#deletebox').removeClass('hidden');

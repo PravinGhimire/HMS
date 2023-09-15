@@ -69,16 +69,25 @@ class BookingController extends Controller
      */
     public function cancel($id)
     {
-        $forms = Booking::findOrFail($id);
-        //yo time  if rw else or content thpeko if ko vitraw ko chaina haina thapeko
-        $timeDifference = now()->diffInMinutes($forms->created_at);
+        $booking = Booking::findOrFail($id);
+
+        // Check if the booking has already been canceled
+        if ($booking->status === 'Cancelled') {
+            return redirect()->back()->with('error', 'Booking has already been canceled.');
+        }
+    
+        // Calculate the time difference in minutes
+        $timeDifference = now()->diffInMinutes($booking->created_at);
+    
         if ($timeDifference <= 10) {
-
-            $forms->status = 'Cancelled';
-            $forms->save();
+            // Mark the booking as canceled
+            $booking->status = 'Cancelled';
+            $booking->save();
+    
+            // Send a notification to the user
             $user = auth()->user();
-            Notification::send($user, new BookingCancelled($forms));
-
+            Notification::send($user, new BookingCancelled($booking));
+    
             return redirect()->back();
         } else {
             // Display error message

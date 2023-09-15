@@ -17,7 +17,7 @@ class PagesController extends Controller
         $rooms = Rooms::all();
         $galleries = Gallery::all();
         $sliders = Slider::all();
-     
+
         return view('welcome', compact('rooms', 'galleries', 'sliders'));
     }
     public function about()
@@ -38,16 +38,16 @@ class PagesController extends Controller
     {
         $room = Rooms::find($id);
         $roomdetail = Roomdetails::where('room_id', $id)->first();
-        $users=User::find($id);
-        return view('rums', compact('room', 'roomdetail','users'));
+        $users = User::find($id);
+        return view('rums', compact('room', 'roomdetail', 'users'));
     }
     public function bookingview()
     {
         $rooms = Rooms::all();
         $forms = Booking::all();
-        
-        
-        return view('bookingview', compact('rooms', 'forms'));
+        $pages=Booking::orderBy('created_at', 'desc')->paginate(6);
 
+
+        return view('bookingview', compact('rooms', 'forms','pages'));
     }
 }

@@ -13,6 +13,7 @@
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
    <title>New Era</title>
+   <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -146,7 +147,7 @@
                   <div class="col-lg-6">
                      <div class="form-group">
                         <label>Your Name</label>
-                        <input type="text" name="name" class="form-control" required placeholder="Your Name">
+                        <input type="text" name="name" class="form-control" required placeholder="Your Name" value="{{auth()->user()->name}}">
                         <i class='bx bx-user'></i>
                      </div>
                   </div>

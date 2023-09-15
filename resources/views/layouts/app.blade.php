@@ -45,82 +45,81 @@
         @if(auth()->user()->role=='admin')
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion " id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
-            <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="far fa-grin-tongue-squint"></i>
-                </div>
-                <div class="sidebar-brand-text mx-1">New Era </div>
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+        <div class="sidebar-brand-icon">
+            <i class="fas fa-hotel"></i>
+        </div>
+        <div class="sidebar-brand-text mx-2">New Era</div>
+    </a>
 
-            </a>
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
 
-            <!-- Divider -->
-            <hr class="sidebar-divider my-0">
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/dashboard">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+        </a>
+    </li>
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="/dashboard">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
-            </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link  " href="/rooms">
-                    <i class="fas fa-bed"></i>
-                    <span>Rooms</span>
-                </a>
+    <!-- Nav Items -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/rooms">
+            <i class="fas fa-bed"></i>
+            <span>Rooms</span>
+        </a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/roomdetails">
+            <i class="fas fa-box"></i>
+            <span>Room Details</span>
+        </a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/gallery">
+            <i class="fas fa-images"></i>
+            <span>Gallery</span>
+        </a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/user">
+            <i class="fas fa-users"></i>
+            <span>Users</span>
+        </a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/booking">
+            <i class="fas fa-clipboard"></i>
+            <span>Bookings</span>
+        </a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/slider">
+            <i class="fas fa-sliders-h"></i>
+            <span>Sliders</span>
+        </a>
+    </li>
+    <li class="nav-item active">
+        <a class="nav-link" href="/feedback">
+            <i class="fas fa-comments"></i>
+            <span>Feedbacks</span>
+        </a>
+    </li>
 
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link " href="/roomdetails">
-                    <i class="fas fa-boxes"></i>
-                    <span>Room Details</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item active">
-                <a class="nav-link  " href="/gallery">
-                    <i class="fas fa-images"></i>
-                    <span>Gallery</span>
-                </a>
-
-            </li>
-            <!-- Nav Item - Pages Collapse Menu -->
-            <!-- Nav Item - Charts -->
-            <li class="nav-item active">
-                <a class="nav-link " href="/user">
-                    <i class="fas fa-user-alt"></i>
-                    <span>Users</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item active">
-                <a class="nav-link " href="/booking">
-                    <i class="fas fa-clipboard"></i>
-                    <span>Bookings</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/slider">
-                    <i class="	fas fa-clone"></i>
-                    <span>Sliders</span></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/feedback">
-                    <i class="	fas fa-comment-alt"></i>
-                    <span>Feedbacks</span></a>
-            </li>
-
-            <li class="nav-item active">
-                <a class="nav-link" href="/logout">
-                    <i class="fas fa-fw fa-user"></i>
-                    <span>Logout</span></a>
-            </li>
+    <!-- Logout -->
+    <li class="nav-item active">
+        <a class="nav-link" href="/logout">
+            <i class="fas fa-sign-out-alt"></i>
+            <span>Logout</span>
+        </a>
+    </li>
             <!-- Sidebar Toggler (Side ma jane) -->
             <!-- <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

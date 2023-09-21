@@ -35,9 +35,13 @@ class BookingController extends Controller
             $data = $request->validate([
                 'name' => 'required',
                 'email' => 'required',
-                'check_in' => 'required',
-                'check_out' => 'required',
-                'noofpeople' => 'required',
+                'check_in' => 'required|date|after_or_equal:today', // Date must be today or in the future
+                'check_out' => [
+                    'required',
+                    'date',
+                    'after:check_in', // Check-out date must be after check-in date
+                ],
+                'noofpeople' => 'required|integer|min:1',
                 'room_id' => 'required',
             ]);
 
@@ -59,7 +63,7 @@ class BookingController extends Controller
     /**
      * Display the specified resource.
      */
-    
+
 
     /**
      * Show the form for editing the specified resource.

@@ -18,12 +18,30 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function show(Request $request)
     {
-        $rooms = Rooms::all();
-        $forms = Booking::with('room')->orderBy('created_at', 'desc')->paginate(6);
+        // Retrieve the logged-in user
+        $userId = $request->input('id');
 
-        return view('booking.index', compact('rooms', 'forms'));
+        // Fetch booking records for the specific user
+        $forms = Booking::where('user_id', $userId)
+            ->with('room')
+            ->orderBy('created_at', 'desc')
+            ->paginate(6);
+
+        return view('booking.show', compact('forms'));
+    }
+
+    public function userbook()
+    {
+        $users = User::where('role', 'customer')
+            ->select('id', 'name', 'email')
+            ->withCount('bookings') // This adds a 'bookings_count' attribute to each user
+            ->get();
+        // Count user's bookings
+        $user = auth()->user();
+        $forms = Booking::all();
+        return view('booking.userbook', compact('users', 'forms'));
     }
 
     /**
@@ -35,13 +53,9 @@ class BookingController extends Controller
             $data = $request->validate([
                 'name' => 'required',
                 'email' => 'required',
-                'check_in' => 'required|date|after_or_equal:today', // Date must be today or in the future
-                'check_out' => [
-                    'required',
-                    'date',
-                    'after:check_in', // Check-out date must be after check-in date
-                ],
-                'noofpeople' => 'required|integer|min:1',
+                'check_in' => 'required|date|after_or_equal:today',
+                'check_out' => 'required|date|after_or_equal:check_in',
+                'noofpeople' => 'required',
                 'room_id' => 'required',
             ]);
 

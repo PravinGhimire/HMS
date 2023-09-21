@@ -95,7 +95,7 @@
         </a>
     </li>
     <li class="nav-item active">
-        <a class="nav-link" href="/booking">
+        <a class="nav-link" href="/userbook">
             <i class="fas fa-clipboard"></i>
             <span>Bookings</span>
         </a>
@@ -200,7 +200,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 @endforeach
-                                <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.index')}}">Show all records</a>
+                                <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.show')}}">Show all records</a>
                             </div>
 
                         <li class="nav-item">

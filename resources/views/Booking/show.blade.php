@@ -20,12 +20,12 @@
         </tr>
     </thead>
     <tbody>
-        @php
-        $currentNumber = ($forms->currentPage() - 1) * $forms->perPage() + 1;
+    @php
+        $currentNumber = $forms->firstItem(); // Get the starting number from the paginator
         @endphp
         @foreach($forms as $form)
         <tr>
-            <td>{{ $currentNumber++ }}</td>
+            <td>{{ $currentNumber }}</td>
             <td>{{ $form->name }}</td>
             <td>{{ $form->email }}</td>
             <td>{{ $form->check_in }}</td>
@@ -52,6 +52,9 @@
                 </div>
             </td>
         </tr>
+        @php
+        $currentNumber++; // Increment the current number
+        @endphp
         @endforeach
     </tbody>
 </table>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2023 at 07:35 AM
+-- Generation Time: Sep 23, 2023 at 05:06 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -293,12 +293,12 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`, `role`) VALUES
 (4, 'Pravin Ghimire', 'ghimireprabin62@gmail.com', NULL, '$2y$10$9e75kTXU6ZntLCr99iib.eDKpfTnbUEXCWinqgE2sZbVCy3MRklAG', NULL, '2023-05-11 00:33:59', '2023-05-11 00:33:59', 'admin'),
-(5, 'Amrit don', 'amritdon@gmail.com', NULL, '$2y$10$OQwcMyIsuZSMgyoS0VNS8OYQAV2nhBQymuLadrOm7gV6P1YuuK6B2', NULL, '2023-05-11 00:35:02', '2023-05-11 00:35:02', 'Costumer'),
-(6, 'rijal', 'rijal@gmail.com', NULL, '$2y$10$c6jzttk2/tdHGGOArZE/ReZgqR7nLHZ/STEyXfiKa0X8f.W0/YcrG', NULL, '2023-05-13 23:40:50', '2023-05-13 23:40:50', 'Costumer'),
-(7, 'Sandip Sharma', 'sandip@gmail.com', NULL, '$2y$10$p4gy0L5sgJSYdwSDORdZZ.jukOuOReCKg0ya5Heq/xZl0TJRG2kl.', NULL, '2023-05-19 05:36:54', '2023-05-19 05:36:54', 'costumer'),
-(9, 'suman', 'suman@gmail.com', NULL, '$2y$10$lae7DEiYSqRq/kBd/bFSn.inpxx3n/6iN8d9P9Zd64KD1q8CjCuny', NULL, '2023-05-21 00:13:45', '2023-05-21 00:13:45', 'costumer'),
-(13, 'carlos', 'carlos62@gmail.com', NULL, '$2y$10$tGz1gWeXtozqQX05F.ebCujwcc1xKOXSZppEpI7P0urWtqkMKUMD.', 'cej9UVW3ifoJ3UHJbw5e6rKVMzV7CWu9GJKZqvS9Vcd3HwLHScBuPiGZk94L', '2023-08-25 22:11:00', '2023-08-31 08:44:28', 'Costumer'),
-(14, 'Nabs', 'nabs@gmail.com', NULL, '$2y$10$jBIyxtICJZ2.56NCZzpDoONLTlqWdVV3XlEgO1X4OpU4VGBpfdYOS', NULL, '2023-08-30 23:17:31', '2023-08-30 23:17:31', 'Costumer'),
+(5, 'Amrit don', 'amritdon@gmail.com', NULL, '$2y$10$OQwcMyIsuZSMgyoS0VNS8OYQAV2nhBQymuLadrOm7gV6P1YuuK6B2', NULL, '2023-05-11 00:35:02', '2023-05-11 00:35:02', 'Customer'),
+(6, 'rijal', 'rijal@gmail.com', NULL, '$2y$10$c6jzttk2/tdHGGOArZE/ReZgqR7nLHZ/STEyXfiKa0X8f.W0/YcrG', NULL, '2023-05-13 23:40:50', '2023-05-13 23:40:50', 'Customer'),
+(7, 'Sandip Sharma', 'sandip@gmail.com', NULL, '$2y$10$p4gy0L5sgJSYdwSDORdZZ.jukOuOReCKg0ya5Heq/xZl0TJRG2kl.', NULL, '2023-05-19 05:36:54', '2023-05-19 05:36:54', 'Customer'),
+(9, 'suman', 'suman@gmail.com', NULL, '$2y$10$lae7DEiYSqRq/kBd/bFSn.inpxx3n/6iN8d9P9Zd64KD1q8CjCuny', NULL, '2023-05-21 00:13:45', '2023-05-21 00:13:45', 'Customer'),
+(13, 'carlos', 'carlos62@gmail.com', NULL, '$2y$10$tGz1gWeXtozqQX05F.ebCujwcc1xKOXSZppEpI7P0urWtqkMKUMD.', 'cej9UVW3ifoJ3UHJbw5e6rKVMzV7CWu9GJKZqvS9Vcd3HwLHScBuPiGZk94L', '2023-08-25 22:11:00', '2023-08-31 08:44:28', 'Customer'),
+(14, 'Nabs', 'nabs@gmail.com', NULL, '$2y$10$jBIyxtICJZ2.56NCZzpDoONLTlqWdVV3XlEgO1X4OpU4VGBpfdYOS', NULL, '2023-08-30 23:17:31', '2023-08-30 23:17:31', 'Customer'),
 (15, 'Kads', 'kads@gmail.com', NULL, '$2y$10$N68/7jaND7gpq4Fm5SVpv.DmamRzfdSYmV5JOw6fOdSvAjoNPtDHi', NULL, '2023-09-08 08:11:04', '2023-09-08 08:11:04', 'Customer');
 
 --

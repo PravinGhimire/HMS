@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mx-auto">
+
     <h2 class="text-4xl font-bold border-b-4 text-black">User Bookings</h2>
 
     <table id="example" class="table table-striped" style="width:100%">
@@ -33,5 +33,5 @@
             @endforeach
         </tbody>
     </table>
-</div>
+
 @endsection

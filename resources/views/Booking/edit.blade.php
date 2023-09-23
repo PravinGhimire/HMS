@@ -42,7 +42,7 @@
 
         @if ($booking->payment_status === 'Received')
         <div class="mt-4 text-center">
-            <a href="{{ route('booking.index') }}" class="btn btn-danger text-white rounded-lg px-4 py-2">Exit</a>
+            <a href="{{ URL::previous() }}" class="btn btn-danger text-white rounded-lg px-4 py-2">Exit</a>
         </div>
         @else
         <form action="{{ route('booking.update', $booking->id) }}" method="POST">
@@ -58,7 +58,7 @@
 
             <div class="mt-4 text-center">
                 <button type="submit" class="btn btn-primary rounded-lg px-4 py-2">Update</button>
-                <a href="{{ route('booking.show') }}" class="btn btn-danger text-white rounded-lg px-4 py-2 mx-2">Exit</a>
+                <a href="{{ URL::previous() }}" class="btn btn-danger text-white rounded-lg px-4 py-2 mx-2">Exit</a>
             </div>
         </form>
         @endif

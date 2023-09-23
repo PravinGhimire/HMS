@@ -9,6 +9,7 @@ use App\Notifications\BookingCancelled;
 use App\Notifications\BookingConfirmed;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Notification;
@@ -27,10 +28,13 @@ class BookingController extends Controller
         $forms = Booking::where('user_id', $userId)
             ->with('room')
             ->orderBy('created_at', 'desc')
-            ->paginate(6);
+           ->paginate(9);
 
         return view('booking.show', compact('forms'));
     }
+    
+
+
 
     public function userbook()
     {
@@ -72,16 +76,6 @@ class BookingController extends Controller
         }
     }
 
-
-
-    /**
-     * Display the specified resource.
-     */
-
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function cancel($id)
     {
         $booking = Booking::findOrFail($id);
@@ -111,6 +105,7 @@ class BookingController extends Controller
     }
     public function edit($id)
     {
+        
         $booking = Booking::findOrFail($id);
         if ($booking->status === 'Cancelled') {
             return redirect()->route('booking.index')

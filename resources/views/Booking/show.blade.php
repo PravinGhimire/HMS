@@ -20,7 +20,7 @@
         </tr>
     </thead>
     <tbody>
-    @php
+        @php
         $currentNumber = $forms->firstItem(); // Get the starting number from the paginator
         @endphp
         @foreach($forms as $form)
@@ -48,7 +48,7 @@
             <td>
                 <div class="btn-group">
                     <a href="{{ route('booking.edit', $form->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                    <a onclick="showDelete('{{ $form->id }}')" class="btn btn-danger cursor-pointer"><i class="fas fa-trash"></i></a>
+                    <a onclick="showDeleteConfirmation('{{ $form->id }}')" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                 </div>
             </td>
         </tr>
@@ -58,34 +58,38 @@
         @endforeach
     </tbody>
 </table>
-<!-- Pagination Links -->
-<div class="mt-4">
-    {{ $forms->links() }}
-</div>
-<div id="deletebox" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
-    <div class="flex h-full justify-center items-center">
+<!-- Delete Confirmation Modal -->
+<div id="deleteConfirmationModal" class="hidden fixed inset-0 bg-blue-500 bg-opacity-40 backdrop-blur-sm ">
+    <div class="modal-container flex h-full justify-center items-center">
         <div class="bg-white p-10 rounded-lg">
             <p class="font-bold text-2xl">Are you sure to delete?</p>
-            <form action="{{ route('booking.delete') }}" method="POST">
-                @csrf
-                <input type="hidden" id="dataid" name="dataid" value="">
-                <div class="flex mt-10 justify-center">
-                    <input type="submit" value="Confirm? Delete" class="bg-blue-600 text-white px-3 py-2 rounded-lg cursor-pointer mx-2">
-                    <a onclick="hideDelete()" class="btn btn-danger text-white rounded-lg px-4 py-2 mx-2">Exit</a>
-                </div>
-            </form>
+
+            <div class="text-center">
+                <form action="{{ route('booking.delete') }}" method="POST">
+                    @csrf
+                    <input type="hidden" id="deleteFormId" name="dataid" value="">
+                    <div class="flex mt-10 justify-center">
+                        <input type="submit" value="Yes! Delete" class="bg-blue-600 text-white px-3 py-2 rounded-lg cursor-pointer mx-2">
+                        <a onclick="hideDeleteConfirmation()" class="btn btn-danger text-white rounded-lg px-4 py-2 mx-2">Exit</a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    function showDelete(id) {
-        $('#deletebox').removeClass('hidden');
-        $('#dataid').val(id);
-    }
 
-    function hideDelete() {
-        $('#deletebox').addClass('hidden');
-    }
-</script>
-@endsection
+
+    <script>
+        function showDeleteConfirmation(id) {
+            document.getElementById('deleteFormId').value = id;
+            const modal = document.getElementById('deleteConfirmationModal');
+            modal.style.display = 'block'; // Show the modal
+        }
+
+        function hideDeleteConfirmation() {
+            document.getElementById('deleteFormId').value = ''; // Clear the hidden input value
+            const modal = document.getElementById('deleteConfirmationModal');
+            modal.style.display = 'none'; // Hide the modal
+        }
+    </script>
+    @endsection

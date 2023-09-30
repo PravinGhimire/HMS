@@ -108,7 +108,7 @@ class BookingController extends Controller
         
         $booking = Booking::findOrFail($id);
         if ($booking->status === 'Cancelled') {
-            return redirect()->route('booking.index')
+            return redirect()->back()
                 ->with('error', 'This booking has been cancelled so cannot be updated further');
         }
         $forms = Booking::all();
@@ -129,21 +129,33 @@ class BookingController extends Controller
         $booking->payment_status = $request->input('payment_status');
         $booking->save();
 
-        return redirect()->route('booking.index')->with('success', 'Payment updated successfully');
+        return redirect()->route('booking.show')->with('success', 'Payment updated successfully');
     }
     /**
      * Update the specified resource in storage.
      */
 
-    public function delete(Request $request)
-    {
-        $forms = Booking::find($request->dataid);
-
-        if ($forms->status === 'Cancelled' || $forms->payment_status === 'Received') {
-            $forms->delete();
-            return redirect()->back()->with('success', 'Booking Record Deleted Successfully');
-        } else {
-            return redirect()->back()->with('error', 'Booking cannot be deleted. Ensure it is either cancelled or the payment status is received.');
-        }
-    }
+     public function delete(Request $request)
+     {
+         try {
+             // Retrieve the booking record by ID
+             $booking = Booking::findOrFail($request->dataid);
+     
+             // Check if the booking can be deleted
+             if ($booking->status === 'Cancelled' || $booking->payment_status === 'Received') {
+                 // Delete the booking record from the database
+                 $booking->delete();
+     
+                 // Redirect back with a success message
+                 return redirect()->back()->with('success', 'Booking Record Deleted Successfully');
+             } else {
+                 // Redirect back with an error message if the booking cannot be deleted
+                 return redirect()->back()->with('error', 'Booking cannot be deleted. Ensure it is either cancelled or the payment status is received.');
+             }
+         } catch (\Exception $e) {
+             // Handle any exceptions that may occur during the delete operation
+             return redirect()->back()->with('error', 'An error occurred while deleting the booking record.');
+         }
+     }
+     
 }

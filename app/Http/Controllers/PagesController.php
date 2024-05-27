@@ -28,6 +28,10 @@ class PagesController extends Controller
     {
         $rooms = Rooms::all();
         return view('room', compact('rooms'));
+    } public function room1()
+    {
+        $rooms = Rooms::all();
+        return view('room', compact('rooms'));
     }
     public function gallerys()
     {

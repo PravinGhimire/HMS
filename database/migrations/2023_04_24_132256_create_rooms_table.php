@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('room_type');
             $table->integer('rate');
             $table->integer('priority');
+            $table->boolean('availability')->default(true); // Defaulting to available
             $table->timestamps();
         });
     }

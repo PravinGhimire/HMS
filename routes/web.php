@@ -31,6 +31,7 @@ Route::get('/header', [PagesController::class, 'header']);
 Route::get('/footer', [PagesController::class, 'footer']);
 Route::get('/about', [PagesController::class, 'about']);
 Route::get('/room', [PagesController::class, 'room']);
+Route::get('/room', [PagesController::class, 'room1']);
 Route::get('{id}/rums/', [PagesController::class, 'rums'])->name('rums');
 Route::post('{id}/rums/', [PagesController::class, 'rums'])->name('rums');
 Route::get('/gallerys', [PagesController::class, 'gallerys']);

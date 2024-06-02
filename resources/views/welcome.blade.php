@@ -117,7 +117,7 @@
                   <div class="bed_room">
                      <h3>Superior Room</h3>
                      <h4>$110</h4>
-                     <a class="btn btn-primary btn-lg" href="room" role="button">View Room</a>
+                     <a class="btn btn-primary btn-lg" href="room1" role="button">View Room</a>
                   </div>
                </div>
             </div>

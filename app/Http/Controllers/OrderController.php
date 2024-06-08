@@ -15,10 +15,15 @@ class OrderController extends Controller
         {
             $forms = Booking::all();
 
-            $orders = Order::all();
             return view('orders.index', compact('orders','forms'));
         }
-    
+        public function details()
+        {
+            $forms = Booking::all();
+
+            $orders = Order::all();
+            return view('order.details', compact('orders','forms'));
+        }
 
     public function create(Resturant $resturant)
     {

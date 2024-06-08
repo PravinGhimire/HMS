@@ -1,30 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 style="font-size: 2.25rem; font-weight: bold; border-bottom: 4px solid black; padding-bottom: 0.5rem; margin-bottom: 1rem;">Add New Restaurant Item</h2>
+<div class="container mx-auto">
+    <h2 class="text-4xl font-bold border-b-4 text-black mb-4">Add New Restaurant Item</h2>
 
-    <form action="{{ route('resturant.store') }}" method="POST" enctype="multipart/form-data" style="background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <form action="{{ route('resturant.store') }}" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-md mx-auto w-full max-w-lg">
         @csrf
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="priority" style="font-weight: bold;">Priority</label>
-            <input type="number" name="priority" class="form-control" required>
+        <div class="mb-4">
+            <label for="priority" class="block text-gray-700 text-sm font-bold mb-2">Priority</label>
+            <input type="number" name="priority" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="food" style="font-weight: bold;">Food</label>
-            <input type="text" name="food" class="form-control" required>
+        <div class="mb-4">
+            <label for="food" class="block text-gray-700 text-sm font-bold mb-2">Food</label>
+            <input type="text" name="food" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="quantity" style="font-weight: bold;">Quantity</label>
-            <input type="text" name="quantity" class="form-control" required>
+        <div class="mb-4">
+            <label for="quantity" class="block text-gray-700 text-sm font-bold mb-2">Quantity</label>
+            <input type="text" name="quantity" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="rate" style="font-weight: bold;">Rate</label>
-            <input type="number" name="rate" class="form-control" required>
+        <div class="mb-4">
+            <label for="rate" class="block text-gray-700 text-sm font-bold mb-2">Rate</label>
+            <input type="number" name="rate" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="photopath" style="font-weight: bold;">Photo</label>
-            <input type="file" name="photopath" class="form-control" required>
+        <div class="mb-4">
+            <label for="photopath" class="block text-gray-700 text-sm font-bold mb-2">Photo</label>
+            <input type="file" name="photopath" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <button type="submit" class="btn btn-primary">Add Item</button>
+        <div class="flex items-center justify-center">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Item</button>
+        </div>
     </form>
+</div>
 @endsection

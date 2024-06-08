@@ -105,6 +105,8 @@ Route::middleware('auth')->group(function () {
 
     // Routes for Resturant management
     Route::get('/resturants', [ResturantController::class, 'index'])->name('resturant.index');
+    Route::get('/resturant/details', [ResturantController::class, 'details'])->name('resturant.details');
+
     Route::get('/resturants/create', [ResturantController::class, 'create'])->name('resturant.create');
     Route::post('/resturants', [ResturantController::class, 'store'])->name('resturant.store');
     Route::get('/resturants/{id}/edit', [ResturantController::class, 'edit'])->name('resturant.edit');
@@ -113,9 +115,14 @@ Route::middleware('auth')->group(function () {
     Route::post('/resturant/delete', [ResturantController::class, 'delete'])->name('resturant.delete');
 
     //resturantorder
+    Route::get('/order/details', [OrderController::class, 'details'])->name('order.details');
+
     Route::get('resturant/{resturant}/order', [OrderController::class, 'create'])->name('order.create');
 Route::post('resturant/{resturant}/order', [OrderController::class, 'store'])->name('order.store');
 Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
+
+
+
 
 });
 

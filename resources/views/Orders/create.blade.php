@@ -1,4 +1,3 @@
-// resources/views/orders/create.blade.php
 
 @extends('layouts.app')
 

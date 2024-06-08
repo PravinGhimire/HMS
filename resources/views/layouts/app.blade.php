@@ -58,15 +58,12 @@
             <hr class="sidebar-divider">
 
             <!-- Restaurant Management -->
-            <li class="nav-item  active dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Restaurants
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="{{ route('resturant.index') }}">Restaurant Details</a></li>
-                        <li><a class="dropdown-item" href="{{ route('orders.index') }}">Order Details</a></li>
-                    </ul>
-                </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route('resturant.index') }}">
+                    <i class="fas fa-hamburger"></i>
+                    <span>Restaurants</span>
+                </a>
+            </li>
 
             <!-- Other Menu Items -->
             <li class="nav-item active">
@@ -129,7 +126,7 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                   
+
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -157,7 +154,7 @@
                             <span class="nav-link active toggle">
                             <div><span class="mr-1 d-none d-lg-inline text-slate-800 small">
                                     Welcome, Admin
-                                </span></div>  
+                                </span></div>
                             </span>
                         </li>
                         <li class="nav-item dropdown no-arrow mx-1">
@@ -238,6 +235,11 @@
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('vendorr/jquery-easing/jquery.easing.min.js') }}"></script>
     <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    @stack('scripts')
 </body>
 
 </html>

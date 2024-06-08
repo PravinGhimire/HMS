@@ -12,11 +12,17 @@ class ResturantController extends Controller
 {
     public function index()
     {
-        $resturants = Resturant::all();
         $forms = Booking::all();
-        return view('resturant.index', compact('resturants', 'forms'));
+        return view('resturant.index', compact( 'forms'));
     }
 
+    public function details()
+    {
+        $resturants = Resturant::all();
+        $forms = Booking::all();
+
+        return view('resturant.details', compact('resturants','forms'));
+    }
     public function create()
     {
         $forms = Booking::all();

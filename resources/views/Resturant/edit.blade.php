@@ -1,34 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 style="font-size: 2.25rem; font-weight: bold; border-bottom: 4px solid black; padding-bottom: 0.5rem; margin-bottom: 1rem;">Edit Restaurant Item</h2>
+<div class="container mx-auto">
+    <h2 class="text-4xl font-bold border-b-4 text-black mb-4">Edit Restaurant Item</h2>
 
-    <form action="{{ route('resturant.update', $resturant->id) }}" method="POST" enctype="multipart/form-data" style="background-color: white; padding: 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+    <form action="{{ route('resturant.update', $resturant->id) }}" method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-lg shadow-md mx-auto w-full max-w-lg">
         @csrf
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="priority" style="font-weight: bold;">Priority</label>
-            <input type="number" name="priority" class="form-control" value="{{ $resturant->priority }}" required>
+        <div class="mb-4">
+            <label for="priority" class="block text-gray-700 text-sm font-bold mb-2">Priority</label>
+            <input type="number" name="priority" value="{{ $resturant->priority }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="food" style="font-weight: bold;">Food</label>
-            <input type="text" name="food" class="form-control" value="{{ $resturant->food }}" required>
+        <div class="mb-4">
+            <label for="food" class="block text-gray-700 text-sm font-bold mb-2">Food</label>
+            <input type="text" name="food" value="{{ $resturant->food }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="quantity" style="font-weight: bold;">Quantity</label>
-            <input type="text" name="quantity" class="form-control" value="{{ $resturant->quantity }}" required>
+        <div class="mb-4">
+            <label for="quantity" class="block text-gray-700 text-sm font-bold mb-2">Quantity</label>
+            <input type="text" name="quantity" value="{{ $resturant->quantity }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="rate" style="font-weight: bold;">Rate</label>
-            <input type="number" name="rate" class="form-control" value="{{ $resturant->rate }}" required>
+        <div class="mb-4">
+            <label for="rate" class="block text-gray-700 text-sm font-bold mb-2">Rate</label>
+            <input type="number" name="rate" value="{{ $resturant->rate }}" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
         </div>
-        <div class="form-group" style="margin-bottom: 1rem;">
-            <label for="photopath" style="font-weight: bold;">Current Photo</label>
-            <div style="margin-bottom: 0.5rem;">
-                <img src="{{ asset('images/resturants/' . $resturant->photopath) }}" alt="Food Image" style="width: 100px; height: 100px; object-fit: cover; border-radius: 0.25rem;">
-            </div>
-            <label for="photopath" style="font-weight: bold;">Change Photo</label>
-            <input type="file" name="photopath" class="form-control">
+        <div class="mb-4">
+            <label for="photopath" class="block text-gray-700 text-sm font-bold mb-2">Photo</label>
+            <input type="file" name="photopath" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <img src="{{ asset('images/resturants/' . $resturant->photopath) }}" alt="Food Image" class="w-20 h-20 object-cover mt-2">
         </div>
-        <button type="submit" class="btn btn-primary">Update Item</button>
+        <div class="flex items-center justify-center">
+            <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Update Item</button>
+        </div>
     </form>
+</div>
 @endsection

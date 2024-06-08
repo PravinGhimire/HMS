@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Gallery;
+use App\Models\Resturant;
 use App\Models\Roomdetails;
 use App\Models\Rooms;
 use App\Models\Slider;
@@ -53,5 +54,10 @@ class PagesController extends Controller
 
 
         return view('bookingview', compact('rooms', 'forms','pages'));
+    }
+    public function resturant()
+    {
+        $resturants = Resturant::all();
+        return view('resturant', compact('resturants'));
     }
 }

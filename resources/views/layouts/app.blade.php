@@ -6,126 +6,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>
-        New Era</title>
+    <title>New Era</title>
     <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-
-
-    <!-- Scripts -->
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link href="{{asset('vendorr/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- Styles -->
+    <link href="{{ asset('vendorr/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{{asset('csss/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{ asset('csss/sb-admin-2.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('csss/stylee.css') }}">
-    <!-- <script src="{{ asset('csss/scrptt.js') }}"></script> -->
 
     <!-- Datatables -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
-    <style>
-        .navbar-nav .nav-item {
-            margin-bottom: 7px;
-            /* Adjust the value as needed */
-        }
-    </style>
 
+    <!-- Scripts -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-        @if(auth()->user()->role=='admin')
+        @if(auth()->user()->role == 'admin')
 
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
-        <div class="sidebar-brand-icon">
-            <i class="fas fa-hotel"></i>
-        </div>
-        <div class="sidebar-brand-text mx-2">New Era</div>
-    </a>
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-hotel"></i>
+                </div>
+                <div class="sidebar-brand-text mx-2">New Era</div>
+            </a>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
 
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="/dashboard">
-            <i class="fas fa-tachometer-alt"></i>
-            <span>Dashboard</span>
-        </a>
-    </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+            <!-- Divider -->
+            <hr class="sidebar-divider">
 
-    <!-- Nav Items -->
-    <li class="nav-item active">
-        <a class="nav-link" href="/rooms">
-            <i class="fas fa-bed"></i>
-            <span>Rooms</span>
-        </a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/roomdetails">
-            <i class="fas fa-box"></i>
-            <span>Room Details</span>
-        </a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/gallery">
-            <i class="fas fa-images"></i>
-            <span>Gallery</span>
-        </a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/user">
-            <i class="fas fa-users"></i>
-            <span>Users</span>
-        </a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/userbook">
-            <i class="fas fa-clipboard"></i>
-            <span>Bookings</span>
-        </a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/slider">
-            <i class="fas fa-sliders-h"></i>
-            <span>Sliders</span>
-        </a>
-    </li>
-    <li class="nav-item active">
-        <a class="nav-link" href="/feedback">
-            <i class="fas fa-comments"></i>
-            <span>Feedbacks</span>
-        </a>
-    </li>
+            <!-- Restaurant Management -->
+            <li class="nav-item  active dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Restaurants
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{{ route('resturant.index') }}">Restaurant Details</a></li>
+                        <li><a class="dropdown-item" href="{{ route('orders.index') }}">Order Details</a></li>
+                    </ul>
+                </li>
 
-    <!-- Logout -->
-    <li class="nav-item active">
-        <a class="nav-link" href="/logout">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Logout</span>
-        </a>
-    </li>
-            <!-- Sidebar Toggler (Side ma jane) -->
-            <!-- <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div> -->
+            <!-- Other Menu Items -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/rooms">
+                    <i class="fas fa-bed"></i>
+                    <span>Rooms</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/roomdetails">
+                    <i class="fas fa-box"></i>
+                    <span>Room Details</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/gallery">
+                    <i class="fas fa-images"></i>
+                    <span>Gallery</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/user">
+                    <i class="fas fa-users"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/userbook">
+                    <i class="fas fa-clipboard"></i>
+                    <span>Bookings</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/slider">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Sliders</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/feedback">
+                    <i class="fas fa-comments"></i>
+                    <span>Feedbacks</span>
+                </a>
+            </li>
 
+            <!-- Logout -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
         </ul>
+
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
@@ -217,16 +212,14 @@
 
                 </nav>
                 <!-- End of Topbar -->
+                <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <div>
                         @yield('content')
-
                     </div>
                 </div>
-
             </div>
         </div>
         @endif
@@ -238,21 +231,13 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
-
     <!-- Bootstrap core JavaScript-->
-    <script src="vendorr/jquery/jquery.min.js"></script>
-    <script src="vendorr/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="vendorr/jquery-easing/jquery.easing.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-
-
-    <!-- Page level plugins -->
-
-
+    <script src="{{ asset('vendorr/jquery-easing/jquery.easing.min.js') }}"></script>
+    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
 </body>
 
 </html>

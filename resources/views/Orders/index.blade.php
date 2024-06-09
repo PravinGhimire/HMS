@@ -1,5 +1,3 @@
-
-
 @extends('layouts.app')
 
 @section('content')
@@ -22,7 +20,7 @@
                 @foreach($orders as $order)
                     <tr>
                         <td>{{ $order->id }}</td>
-                        <td>{{ $order->resturant->food }}</td>
+                        <td>{{ $order->food }}</td>
                         <td>{{ $order->customer_name }}</td>
                         <td>{{ $order->customer_email }}</td>
                         <td>{{ $order->customer_phone }}</td>

@@ -11,41 +11,42 @@ use Illuminate\Http\Request;
 class OrderController extends Controller
 {
    
-        public function index()
-        {
-            $forms = Booking::all();
-
-            return view('orders.index', compact('orders','forms'));
-        }
-        public function details()
-        {
-            $forms = Booking::all();
-
-            $orders = Order::all();
-            return view('order.details', compact('orders','forms'));
-        }
-
-    public function create(Resturant $resturant)
+    public function create($resturantId)
     {
-        $forms = Booking::all();
-
-        return view('orders.create', compact('resturant','forms'));
+        $resturant = Resturant::find($resturantId);
+        return view('order-food', compact('resturant'));
     }
 
-    public function store(Request $request, Resturant $resturant)
+    // Method to store the order
+    public function store(Request $request, $resturantId)
     {
-        $validatedData = $request->validate([
+        $request->validate([
+            'food' => 'required|string|max:255',
             'customer_name' => 'required|string|max:255',
-            'customer_email' => 'required|string|email|max:255',
-            'customer_phone' => 'required|string|max:15',
-            'customer_address' => 'required|string|max:255',
-            'quantity' => 'required|integer|min:1',
+            'customer_email' => 'required|email|max:255',
+            'customer_phone' => 'required|string|max:20',
+            'customer_address' => 'required|string',
+            'quantity' => 'required|integer',
         ]);
 
-        $order = new Order($validatedData);
-        $order->resturant_id = $resturant->id;
-        $order->save();
+        Order::create([
+            'resturant_id' => $resturantId,
+            'food' => $request->food,
+            'customer_name' => $request->customer_name,
+            'customer_email' => $request->customer_email,
+            'customer_phone' => $request->customer_phone,
+            'customer_address' => $request->customer_address,
+            'quantity' => $request->quantity,
+        ]);
 
-        return redirect()->route('resturant.index')->with('success', 'Order placed successfully.');
+        return redirect()->route('resturant')->with('success', 'Order placed successfully!');
+    }
+
+    // Method to list all orders
+    public function index()
+    {
+        $orders = Order::all();
+        $forms= Booking::all();
+        return view('orders.index', compact('orders','forms'));
     }
 }

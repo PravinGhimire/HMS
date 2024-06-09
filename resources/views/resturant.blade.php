@@ -86,8 +86,9 @@
                             <h3>Food: {{ $resturant->food }}</h3>
                             <h3>Quantity: {{ $resturant->quantity }}</h3>
                             <h3>Rate: Nrs. {{ $resturant->rate }}</h3>
-                            <a class="order-btn" href="{{ route('order.create', $resturant->id) }}">Order Now</a>
-                        </div>
+                            <a href="{{ route('order.create', $resturant->id) }}" class="btn btn-primary">
+                            Order Now
+                        </a>                        </div>
                     </div>
                 </div>
                 @endforeach

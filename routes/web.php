@@ -15,6 +15,7 @@ use App\Http\Controllers\signupcontroller;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserDashboardController;
+use App\Models\Resturant;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -111,19 +112,12 @@ Route::middleware('auth')->group(function () {
     Route::post('/resturants', [ResturantController::class, 'store'])->name('resturant.store');
     Route::get('/resturants/{id}/edit', [ResturantController::class, 'edit'])->name('resturant.edit');
     Route::post('/resturants/{id}/update', [ResturantController::class, 'update'])->name('resturant.update');
-    Route::delete('/resturants/{id}', [ResturantController::class,'destroy'])->name('resturant.destroy');
     Route::post('/resturant/delete', [ResturantController::class, 'delete'])->name('resturant.delete');
 
-    //resturantorder
-    Route::get('/order/details', [OrderController::class, 'details'])->name('order.details');
-
+    // Food Ordering
     Route::get('resturant/{resturant}/order', [OrderController::class, 'create'])->name('order.create');
-Route::post('resturant/{resturant}/order', [OrderController::class, 'store'])->name('order.store');
-Route::get('orders', [OrderController::class, 'index'])->name('orders.index');
-
-
-
-
+    Route::post('resturant/{resturant}/order', [OrderController::class, 'store'])->name('order.store');
+    Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
 });
 
 require __DIR__.'/auth.php';

@@ -6,12 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Resturant extends Model
-{
-    use HasFactory;
-
-    protected $fillable = [
-        'priority', 'food', 'quantity', 'rate', 'photopath',
-    ];
+{ use HasFactory;
 
     public function orders()
     {

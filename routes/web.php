@@ -41,6 +41,7 @@ Route::get('/gallerys', [PagesController::class, 'gallerys']);
 Route::get('/bookingview', [PagesController::class, 'bookingview'])->name('bookingview');
 Route::get('/resturant', [PagesController::class, 'resturant'])->name('resturant');
 
+// Route to process availability check
 // Middleware group for authenticated routes
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [dashboardcontroller::class, 'index'])->name('dashboard');
@@ -115,9 +116,15 @@ Route::middleware('auth')->group(function () {
     Route::post('/resturant/delete', [ResturantController::class, 'delete'])->name('resturant.delete');
 
     // Food Ordering
-    Route::get('resturant/{resturant}/order', [OrderController::class, 'create'])->name('order.create');
-    Route::post('resturant/{resturant}/order', [OrderController::class, 'store'])->name('order.store');
+    // In your web.php or appropriate routes file
+Route::get('/resturant/{id}/order', [OrderController::class, 'create'])->name('order.create');
+Route::post('/resturant/{id}/order', [OrderController::class, 'store'])->name('order.store');
+
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+    Route::resource('orders', OrderController::class);
+    Route::get('orders/{order}/invoice', [OrderController::class, 'generateInvoice'])->name('orders.invoice');
+  
+
 });
 
 require __DIR__.'/auth.php';

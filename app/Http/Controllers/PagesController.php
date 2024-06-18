@@ -15,12 +15,14 @@ class PagesController extends Controller
 {
     public function index()
     {
-        $rooms = Rooms::all();
+        $rooms = Rooms::all(); 
+        $resturants = Resturant::all();
         $galleries = Gallery::all();
         $sliders = Slider::all();
-
-        return view('welcome', compact('rooms', 'galleries', 'sliders'));
+        
+        return view('welcome', compact('rooms', 'resturants', 'galleries', 'sliders'));
     }
+    
     public function about()
     {
         return view('about');
@@ -50,14 +52,17 @@ class PagesController extends Controller
     {
         $rooms = Rooms::all();
         $forms = Booking::all();
-        $pages=Booking::orderBy('created_at', 'desc')->paginate(6);
-
-
-        return view('bookingview', compact('rooms', 'forms','pages'));
+        $pages = Booking::orderBy('created_at', 'desc')->paginate(6);
+    
+        return view('bookingview', compact('rooms', 'forms', 'pages'));
     }
+    
     public function resturant()
-    {
-        $resturants = Resturant::all();
-        return view('resturant', compact('resturants'));
-    }
+{
+    $resturants = Resturant::all();
+    
+    return view('resturant', compact('resturants'));
+}
+
+    
 }

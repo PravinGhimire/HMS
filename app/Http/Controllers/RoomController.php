@@ -7,6 +7,7 @@ use App\Models\Room;
 use App\Models\Rooms;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File as FacadesFile;
 
 class RoomController extends Controller
@@ -78,4 +79,7 @@ class RoomController extends Controller
     $rooms->delete();
     return redirect(route('rooms.index'))->with('success', 'Room Deleted Successfully');
   }
+  
+ 
+      
 }

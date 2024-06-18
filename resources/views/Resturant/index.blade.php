@@ -25,7 +25,7 @@
                             <td>Order Details</td>
                             <td>
                                 <a href="{{ route('orders.index') }}" class="btn btn-outline-primary btn-sm">Visit</a>
-                            </td>
+                                      </td>
                         </tr>
                     </tbody>
                 </table>

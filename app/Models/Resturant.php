@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Resturant extends Model
-{ use HasFactory;
+{ 
+    use HasFactory;
+    protected $guarded=[];
+
 
     public function orders()
     {

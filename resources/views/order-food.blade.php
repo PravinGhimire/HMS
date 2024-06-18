@@ -37,7 +37,7 @@
                     <input type="hidden" name="resturant_id" value="{{ $resturant->id }}">
                     <div class="form-group mb-3">
                         <label for="food" class="form-label">Food</label>
-                        <input type="text" class="form-control" id="food" name="food" required>
+                        <input type="text" class="form-control" id="food" value="{{$resturant->food}}" name="food" required >
                     </div>
                     <div class="form-group mb-3">
                         <label for="customer_name" class="form-label">Customer Name</label>
@@ -51,13 +51,13 @@
                         <label for="customer_phone" class="form-label">Customer Phone</label>
                         <input type="text" class="form-control" id="customer_phone" name="customer_phone" required>
                     </div>
-                    <div class="form-group mb-3">
+                    <!-- <div class="form-group mb-3">
                         <label for="customer_address" class="form-label">Customer Address</label>
                         <input type="text" class="form-control" id="customer_address" name="customer_address" required>
-                    </div>
+                    </div> -->
                     <div class="form-group mb-3">
                         <label for="quantity" class="form-label">Quantity</label>
-                        <input type="string" class="form-control" id="quantity" name="quantity" required>
+                        <input type="number" class="form-control" id="quantity" name="quantity" required>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Order Now</button>
                 </form>
@@ -65,6 +65,15 @@
         </div>
     </div>
 </div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <!-- Bootstrap JS and Custom JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

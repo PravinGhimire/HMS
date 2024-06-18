@@ -13,6 +13,7 @@ class ResturantController extends Controller
     public function index()
     {
         $forms = Booking::all();
+        
         return view('resturant.index', compact( 'forms'));
     }
 

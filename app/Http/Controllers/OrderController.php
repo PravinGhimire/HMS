@@ -8,45 +8,110 @@ use App\Models\Order;
 use App\Models\Resturant;
 use Illuminate\Http\Request;
 
+
+
 class OrderController extends Controller
 {
-   
-    public function create($resturantId)
-    {
-        $resturant = Resturant::find($resturantId);
-        return view('order-food', compact('resturant'));
-    }
-
-    // Method to store the order
-    public function store(Request $request, $resturantId)
-    {
-        $request->validate([
-            'food' => 'required|string|max:255',
-            'customer_name' => 'required|string|max:255',
-            'customer_email' => 'required|email|max:255',
-            'customer_phone' => 'required|string|max:20',
-            'customer_address' => 'required|string',
-            'quantity' => 'required|integer',
-        ]);
-
-        Order::create([
-            'resturant_id' => $resturantId,
-            'food' => $request->food,
-            'customer_name' => $request->customer_name,
-            'customer_email' => $request->customer_email,
-            'customer_phone' => $request->customer_phone,
-            'customer_address' => $request->customer_address,
-            'quantity' => $request->quantity,
-        ]);
-
-        return redirect()->route('resturant')->with('success', 'Order placed successfully!');
-    }
-
-    // Method to list all orders
     public function index()
     {
-        $orders = Order::all();
-        $forms= Booking::all();
+        $orders = Order::paginate(10);
+        $forms = Booking::all();
         return view('orders.index', compact('orders','forms'));
     }
+
+   // In OrderController.php
+public function create($id)
+{
+    $resturant = Resturant::findOrFail($id);
+    return view('order-food', compact('resturant'));
 }
+
+public function store(Request $request)
+{
+    $validatedData = $request->validate([
+        'food' => 'required|string|max:255',
+        'customer_name' => 'required|string|max:255',
+        'customer_email' => 'required|email|max:255',
+        'customer_phone' => 'required|string|max:15',
+     
+        'quantity' => 'required|integer',
+        'resturant_id' => 'required|exists:resturants,id',
+    ]);
+
+    $order = new Order();
+    $order->food = $validatedData['food'];
+    $order->customer_name = $validatedData['customer_name'];
+    $order->customer_email = $validatedData['customer_email'];
+    $order->customer_phone = $validatedData['customer_phone'];
+    
+    $order->quantity = $validatedData['quantity'];
+    $order->resturant_id = $validatedData['resturant_id'];
+    $order->status = 'Pending'; // Set the default status
+
+    $order->save();
+
+    return redirect('/')->with('success', 'Order placed successfully!');
+}
+public function show($id)
+{
+    $order = Order::findOrFail($id);
+    return view('orders.show', compact('order'));
+}
+
+// Show the form for editing the specified resource.
+public function edit($id)
+{
+    $order = Order::findOrFail($id);
+    $forms = Booking::all();
+
+    return view('orders.edit', compact('order','forms'));
+}
+
+// Update the specified resource in storage.
+// public function update(Request $request, $id)
+// {
+//     $validatedData = $request->validate([
+//         'food' => 'required|string|max:255',
+//         'customer_name' => 'required|string|max:255',
+//         'customer_email' => 'required|email|max:255',
+//         'customer_phone' => 'required|string|max:15',
+//         'customer_address' => 'required|string|max:255',
+//         'quantity' => 'required|integer|',
+//         'resturant_id' => 'required|exists:resturants,id',
+//     ]);
+
+//     $order = Order::findOrFail($id);
+//     $order->update($validatedData);
+//     return redirect()->route('orders.index')->with('success', 'Order updated successfully!');
+// }
+
+// Remove the specified resource from storage.
+public function destroy($id)
+{
+    $order = Order::findOrFail($id);
+    $order->delete();
+    return redirect()->route('orders.index')->with('success', 'Order deleted successfully!');
+}
+// app/Http/Controllers/OrderController.php
+
+
+
+public function update(Request $request, $id)
+{ 
+    $order = Order::find($id);
+    $order->status = $request->status;
+    $order->save();
+
+    return redirect()->route('orders.index')->with('success', 'Order updated successfully');
+}
+
+public function generateInvoice(Order $order)
+    {
+        if ($order->status !== 'Completed') {
+            return redirect()->route('orders.edit', $order->id)->with('error', 'Invoice can only be generated for completed orders.');
+        }
+
+        return view('orders.invoice', compact('order'));
+    }
+}
+

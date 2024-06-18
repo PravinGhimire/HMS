@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('_resturants', function (Blueprint $table) {
             $table->id();
             $table->string('priority');
-            $table->string('name');
+         
             $table->string('food');
             $table->integer('quantity');
             $table->decimal('rate', 8, 2);

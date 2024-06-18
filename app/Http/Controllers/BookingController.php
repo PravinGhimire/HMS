@@ -3,11 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Resturant;
 use App\Models\Rooms;
 use App\Models\User;
 use App\Notifications\BookingCancelled;
 use App\Notifications\BookingConfirmed;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -32,9 +34,9 @@ class BookingController extends Controller
 
         return view('booking.show', compact('forms'));
     }
+   
     
-
-
+  
 
     public function userbook()
     {
@@ -45,7 +47,10 @@ class BookingController extends Controller
         // Count user's bookings
         $user = auth()->user();
         $forms = Booking::all();
-        return view('booking.userbook', compact('users', 'forms'));
+        $resturants = Resturant::all();
+
+    $pages = Booking::all();
+        return view('booking.userbook', compact('users', 'forms','pages','resturants'));
     }
 
     /**

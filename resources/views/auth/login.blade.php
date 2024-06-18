@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="grid grid-cols-1   h-full bg-gradient-to-r from-green-400 to-blue-500">
+    <div class="grid grid-cols-1   h-full ">
 
 
         <div class=" flex h-full p-14 justify-center items-center  ">

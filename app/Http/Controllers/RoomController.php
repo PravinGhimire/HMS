@@ -16,6 +16,8 @@ class RoomController extends Controller
   {
     $rooms = Rooms::all();
     $forms = Booking::all();
+    
+
     $paginate = Rooms::paginate(6);
 
     return view('rooms.index', compact('rooms', 'forms', 'paginate'));

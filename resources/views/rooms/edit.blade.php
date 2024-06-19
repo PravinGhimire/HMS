@@ -3,7 +3,17 @@
 <h2 class="text-4xl font-bold border-b-4 text-red-500 border-blue-500"> Edit Rooms</h2>
 <form action="{{route('rooms.update',$rooms->id)}}"  method="post" class="my-10">
     @csrf
-    <input type="text" class="w-full p-2 rounded-lg my-2" name="room_type" placeholder="Room Type" value="{{$rooms->room_type}}">
+    <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="room_type" id="room_type" required>
+                        <option value="select">---Select---</option>
+                        <option value="Single Room">Single Room</option>
+                        <option value="Deluxe Room">Deluxe Room</option>
+                        <option value="Double Bed Room">Double Bed Room</option>
+                        <option value="Suit Room">Suit Room</option>
+                        <option value="VIP Room">VIP Room</option>
+                        <option value="Luxurious Room">Luxurious Room</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Family Room">Family Room</option>
+                    </select>
 @error('room_type')
 <span  class="text-red-500 -mt-4">*{{$message}}</span>
 @enderror

@@ -224,181 +224,224 @@
    <!-- End Header -->
   
    <div class="container mt-5">
-      <div class="row">
+   <div class="row">
       <div class="col-md-7 mx-4">
-               <div class="title">
-                  <h2>{{ $room->room_type }}</h2>
-               </div>
-            </div>
-         <div class="col-md-9">
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-               <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-               </div>
-               <div class="carousel-inner">
-                  <div class="carousel-item active">
-                     <img src="{{asset('images/rooms/'.$room->photopath)}}" class="w-100" alt="Room Image">
-                  </div>
-                  <div class="carousel-item">
-                     <img src="{{asset('images/roomdetails/'.$roomdetail->photopath)}}" class="w-100" alt="Room Detail Image">
-                  </div>
-                  <div class="carousel-item">
-                     <img src="https://rooms-hotel-kazbegi.booked.net/data/Photos/OriginalPhoto/4972/497240/497240235/Rooms-Hotel-Kazbegi-Exterior.JPEG" class="w-100" alt="Hotel Exterior">
-                  </div>
-               </div>
-               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-               </button>
-               <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-               </button>
-            </div>
-            <div class="details-section">
-               <h2>Description</h2>
-               <p class="text-justify">{{$roomdetail->description}}</p>
-            </div>
-            <div class="details-section overview-container">
-               <h2>Overview</h2>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-ruler-combined"></i>
-                     <p><strong>Room size:</strong> {{$roomdetail->room_size}} sq m</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-users"></i>
-                     <p><strong>Occupancy:</strong> Up to 4 adults</p>
-                  </div>
-               </div>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-eye"></i>
-                     <p><strong>View:</strong> {{$roomdetail->view}}</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-smoking-ban"></i>
-                     <p><strong>Smoking:</strong> No smoking</p>
-                  </div>
-               </div>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-utensils"></i>
-                     <p><strong>Room service:</strong> Yes</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-bath"></i>
-                     <p><strong>Bathroom:</strong> Ensuite, with shower and bathtub</p>
-                  </div>
-               </div>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-wifi"></i>
-                     <p><strong>Free Wi-Fi:</strong> Yes</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-tv"></i>
-                     <p><strong>Entertainment:</strong> Flat-screen TV, Cable channels</p>
-                  </div>
-               </div>
-            </div>
+         <div class="title">
+            <h2>{{ $room->room_type }}</h2>
          </div>
-         
-         <div class="col-md-3 ">
-            <div class="booking-form">
-               <h3>Booking Sheet</h3>
-               <form action="{{ route('booking.store') }}" method="POST">
-                  @csrf
-                  @auth
-                  <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
-                  @endauth
-                  <div class="form-group">
-                     <label for="name">Your Name</label>
-                     <input type="text" class="form-control" name="name" id="name" required placeholder="Your Name" value="{{auth()->user()->name ?? ''}}" @guest disabled @endguest>
-                  </div>
-                  <div class="form-group">
-                     <label for="email">Email</label>
-                     <input type="email" class="form-control" name="email" id="email" required placeholder="Your Email" @guest disabled @endguest>
-                  </div>
-                  <div class="form-group">
-                     <label for="check_in">Check-in</label>
-                     <input type="date" class="form-control" name="check_in" id="check_in" required>
-                  </div>
-                  <div class="form-group">
-                     <label for="check_out">Check-out</label>
-                     <input type="date" class="form-control" name="check_out" id="check_out" required>
-                  </div>
-                  <div class="form-group">
-                     <label for="noofpeople">Number of Persons</label>
-                     <select class="form-control" name="noofpeople" id="noofpeople" required>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                     </select>
-                  </div>
-                  <div class="form-group">
-                     <label for="room_type">Room Type</label>
-                     <select class="form-control" name="room_id" id="room_type" required>
-                        <option value="{{$room->id}}">{{$room->room_type}}</option>
-                     </select>
-                  </div>
-                  <div class="form-group">
-                     <label for="room_rate">Room Rate</label>
-                     <select class="form-control" name="room_rate" id="room_rate" required>
-                        <option value="{{$room->id}}">{{$room->rate}}</option>
-                     </select>
-                  </div>
-                  <input type="hidden" name="booking_completed" id="bookingCompleted" value="1">
-                  <div class="form-group mt-3 justify-center">
-                     @auth
-                     <button type="submit" class="default-btn">Reserve Now</button>
-                     @endauth
-                     @guest
-                     <button type="button" class="default-btn" onclick="showGuestAlert()">Reserve Now</button>
-                     @endguest
-                  </div>
-               </form>
+      </div>
+      <div class="col-md-9">
+         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <!-- Carousel Indicators -->
+            <div class="carousel-indicators">
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+               <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <!-- Carousel Items -->
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="{{asset('images/rooms/'.$room->photopath)}}" class="w-100" alt="Room Image">
+               </div>
+               <div class="carousel-item">
+                  <img src="{{asset('images/roomdetails/'.$roomdetail->photopath)}}" class="w-100" alt="Room Detail Image">
+               </div>
+               <div class="carousel-item">
+                  <img src="https://rooms-hotel-kazbegi.booked.net/data/Photos/OriginalPhoto/4972/497240/497240235/Rooms-Hotel-Kazbegi-Exterior.JPEG" class="w-100" alt="Hotel Exterior">
+               </div>
+            </div>
+            <!-- Carousel Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+               <span class="carousel-control-next-icon" aria-hidden="true"></span>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+         <!-- Room Details -->
+         <div class="details-section">
+            <h2>Description</h2>
+            <p class="text-justify">{{$roomdetail->description}}</p>
+         </div>
+         <!-- Overview -->
+         <div class="details-section overview-container">
+            <h2>Overview</h2>
+            <div class="overview-row">
+               <div class="overview-item">
+                  <i class="fas fa-ruler-combined"></i>
+                  <p><strong>Room size:</strong> {{$roomdetail->room_size}} sq m</p>
+               </div>
+               <div class="overview-item">
+                  <i class="fas fa-users"></i>
+                  <p><strong>Occupancy:</strong> Up to 4 adults</p>
+               </div>
+            </div>
+            <div class="overview-row">
+               <div class="overview-item">
+                  <i class="fas fa-eye"></i>
+                  <p><strong>View:</strong> {{$roomdetail->view}}</p>
+               </div>
+               <div class="overview-item">
+                  <i class="fas fa-smoking-ban"></i>
+                  <p><strong>Smoking:</strong> No smoking</p>
+               </div>
+            </div>
+            <div class="overview-row">
+               <div class="overview-item">
+                  <i class="fas fa-utensils"></i>
+                  <p><strong>Room service:</strong> Yes</p>
+               </div>
+               <div class="overview-item">
+                  <i class="fas fa-bath"></i>
+                  <p><strong>Bathroom:</strong> Ensuite, with shower and bathtub</p>
+               </div>
+            </div>
+            <div class="overview-row">
+               <div class="overview-item">
+                  <i class="fas fa-wifi"></i>
+                  <p><strong>Free Wi-Fi:</strong> Yes</p>
+               </div>
+               <div class="overview-item">
+                  <i class="fas fa-tv"></i>
+                  <p><strong>Entertainment:</strong> Flat-screen TV, Cable channels</p>
+               </div>
             </div>
          </div>
       </div>
-      <div class="alert-popup" id="alertPopup">
-         <div class="alert-content">
-            <p>Please login or register to make a reservation.</p>
-            <button class="close-btn" onclick="hideAlert()">Close</button>
-         </div>
-      </div>
-   </div>
-   
-   <!-- Footer -->
-   <footer>
-      @include('footer')
-   </footer>
-   <!-- End Footer -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-   <script>
-      function showGuestAlert() {
-         var alertPopup = document.getElementById('alertPopup');
-         alertPopup.style.display = 'block';
-      }
 
-      function hideAlert() {
-         var alertPopup = document.getElementById('alertPopup');
-         alertPopup.style.display = 'none';
-      }
-   </script>
-   <!-- <script>
-      document.addEventListener('DOMContentLoaded', function() {
-         const bookingCompleted = "{{ session('booking_completed') }}";
+      <!-- Check Availability Section -->
+      <div class="col-md-3">
+                <div class="details-section booking-form">
+                    <h3>Check Availability</h3>
+                    <form action="{{ route('booking.checkAvailability') }}" method="POST" id="checkAvailabilityForm">
+                    @csrf
+                        <div class="form-group">
+                            <label for="check_in">Check-in</label>
+                            <input type="date" class="form-control" id="check_in" name="check_in" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="check_out">Check-out</label>
+                            <input type="date" class="form-control" id="check_out" name="check_out" required>
+                        </div>
+                        <button type="submit" class="btn default-btn mt-3">Check Availability</button>
+                    </form>
+                </div>
+                @if (session('availability_checked'))
+                    <div class="details-section booking-form mt-4">
+                        <h3>Book Now</h3>
+                        <form id="bookRoomForm" action="{{ route('booking.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="room_id" value="{{ $room->id }}">
+                            <input type="hidden" name="check_in" value="{{ session('check_in') }}">
+                            <input type="hidden" name="check_out" value="{{ session('check_out') }}">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                             <div class="form-group">
+            <label for="noofpeople">Number of People</label>
+            <input type="number" class="form-control" id="noofpeople" name="noofpeople" required>
+        </div>
+                            <button type="submit" class="btn default-btn mt-3">Book Now</button>
+                        </form>
+                    </div>
+                @endif
+            </div>
+        </div>
+    </div>
 
-         if (bookingCompleted) {
-            alert("Booking completed successfully!");
-         }
-      });
-   </script> -->
+@include('footer')
+
+<script>
+  $(document).ready(function() {
+    $('#checkAvailabilityForm').submit(function(event) {
+        event.preventDefault();
+
+        var checkin = $('#check_in').val();
+        var checkout = $('#check_out').val();
+
+        $.ajax({
+            type: 'POST',
+            url: "{{ route('booking.checkAvailability') }}",
+            data: {
+                "_token": "{{ csrf_token() }}",
+                check_in: checkin,
+                check_out: checkout
+            },
+            success: function(response) {
+                if (response.available) {
+                    // Room is available, display the popup or take further action
+                    $('#availabilityPopup').show();
+                } else {
+                    // Room is not available, display a message or take other actions
+                    alert('Room is not available for the selected dates.');
+                }
+            },
+            error: function(xhr, status, error) {
+                // Handle error response here
+                console.log('Error checking availability');
+                console.log(xhr.responseText);
+            }
+        });
+    });
+});
+
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- <script>
+    function showBookingForm() {
+        // Hide availability popup
+        $('#availabilityPopup').hide();
+
+        // Show booking form
+        $('#bookingForm').show();
+    }
+
+    function closePopup() {
+        $('#availabilityPopup').hide();
+    }
+
+    $(document).ready(function() {
+        $('#checkAvailabilityForm').submit(function(event) {
+            event.preventDefault();
+
+            var checkin = $('#check_in').val();
+            var checkout = $('#check_out').val();
+
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('roomAvailability') }}",
+                data: {
+                    "_token": "{{ csrf_token() }}",
+                    check_in: checkin,
+                    check_out: checkout
+                },
+                success: function(response) {
+                    if (response.available) {
+                        // Room is available, display the popup
+                        $('#availabilityPopup').show();
+                    } else {
+                        // Room is not available, display a message or take other actions
+                        alert('Room is not available for the selected dates.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    // Handle error response here
+                    console.log('Error checking availability');
+                    console.log(xhr.responseText);
+                }
+            });
+        });
+    });
+</script> -->
+
 </body>
 
 </html>

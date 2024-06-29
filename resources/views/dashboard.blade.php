@@ -1,4 +1,5 @@
 @extends('layouts.app')
+
 @section('content')
 
 <!-- Page Heading -->
@@ -10,8 +11,8 @@
 <div class="row">
     <!-- Users Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card custom-card bg-primary text-white shadow h-100">
-            <div class="card-body">
+    <div class="card custom-card bg-light text-dark shadow h-100">
+    <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col-9">
                         <div class="text-uppercase mb-1">Total Users</div>
@@ -27,8 +28,8 @@
 
     <!-- Booking Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card custom-card bg-success text-white shadow h-100">
-            <div class="card-body">
+    <div class="card custom-card bg-light text-dark shadow h-100">
+    <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col-9">
                         <div class="text-uppercase mb-1">Total Bookings</div>
@@ -44,8 +45,8 @@
 
     <!-- Photos Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card custom-card bg-warning text-white shadow h-100">
-            <div class="card-body">
+    <div class="card custom-card bg-light text-dark shadow h-100">
+    <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col-9">
                         <div class="text-uppercase mb-1">Total Photos</div>
@@ -61,7 +62,7 @@
 
     <!-- Rooms Card -->
     <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card custom-card bg-info text-white shadow h-100">
+        <div class="card custom-card bg-light text-dark shadow h-100">
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col-9">
@@ -81,9 +82,9 @@
 <div class="row">
     <!-- Booking Overview Chart -->
     <div class="col-xl-6 col-lg-6">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Booking Overview</h6>
+        <div class="card shadow mb-5">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-light">
+                <h6 class="m-0 font-weight-bold text-dark">Booking Overview</h6>
             </div>
             <div class="card-body">
                 <div class="chart-area">
@@ -95,9 +96,9 @@
 
     <!-- User Overview Chart -->
     <div class="col-xl-6 col-lg-6">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">User Overview</h6>
+        <div class="card shadow mb-5">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-light">
+                <h6 class="m-0 font-weight-bold text-dark">User Overview</h6>
             </div>
             <div class="card-body">
                 <div class="chart-area">
@@ -112,8 +113,8 @@
 <!-- <div class="row">
     <div class="col-xl-12 col-lg-12">
         <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Feedback Overview</h6>
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-primary">
+                <h6 class="m-0 font-weight-bold text-white">Feedback Overview</h6>
             </div>
             <div class="card-body">
                 <div class="chart-area">
@@ -131,10 +132,10 @@
     var bookingChart = new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ["January", "February", "March", "April", "May", "June"],
+            labels: ["January", "February", "March", "April", "May", "June","July"],
             datasets: [{
                 label: 'Bookings',
-                data: [12, 19, 3, 5, 2, 3],
+                data: [9,12, 13, 14, 11, 12,16],
                 backgroundColor: 'rgba(54, 162, 235, 0.2)',
                 borderColor: 'rgba(54, 162, 235, 1)',
                 borderWidth: 1
@@ -150,10 +151,10 @@
     var userChart = new Chart(ctx2, {
         type: 'bar',
         data: {
-            labels: ["January", "February", "March", "April", "May", "June"],
+            labels: ["January", "February", "March", "April", "May", "June","July"],
             datasets: [{
                 label: 'Users',
-                data: [22, 29, 15, 30, 20, 25],
+                data: [7, 11, 9, 10, 8, 16,19],
                 backgroundColor: 'rgba(75, 192, 192, 0.2)',
                 borderColor: 'rgba(75, 192, 192, 1)',
                 borderWidth: 1

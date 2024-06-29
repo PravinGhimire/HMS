@@ -113,4 +113,50 @@ class RoomDetailsController extends Controller
         $roomdetails->delete();
         return redirect(route('roomdetails.index'))->with('success', 'Details Deleted Successfully');
     }
+    public function checkRoomAvailability(Request $request)
+{
+    $roomId = $request->input('room_id');
+    $checkin = $request->input('checkin');
+    $checkout = $request->input('checkout');
+
+    $isAvailable = $this->isRoomAvailable($roomId, $checkin, $checkout);
+
+    if (!$isAvailable) {
+        return response()->json(['available' => false]);
+    }
+
+    if (auth()->check()) {
+        return response()->json(['available' => true, 'redirect' => route('bookingForm', ['roomId' => $roomId, 'checkin' => $checkin, 'checkout' => $checkout])]);
+    } else {
+        // Store booking details in session
+        session()->put('booking_details', ['roomId' => $roomId, 'checkin' => $checkin, 'checkout' => $checkout]);
+        return response()->json(['available' => true, 'redirect' => route('login')]);
+    }}
+
+    private function isRoomAvailable($roomId, $checkin, $checkout)
+    {
+        // Retrieve all bookings for the specified room
+        $bookings = Booking::where('room_id', $roomId)->get();
+    
+        // Iterate over each booking
+        foreach ($bookings as $booking) {
+            // Check if the requested check-in date is between the booking's check-in and check-out dates
+            if (strtotime($checkin) > strtotime($booking->check_in) && strtotime($checkin) < strtotime($booking->check_out)) {
+                return false; // Room is not available
+            }
+    
+            // Check if the requested check-out date is between the booking's check-in and check-out dates
+            if (strtotime($checkout) > strtotime($booking->check_in) && strtotime($checkout) < strtotime($booking->check_out)) {
+                return false; // Room is not available
+            }
+    
+            // Check if the requested dates overlap with the booking's dates
+            if (strtotime($checkin) <= strtotime($booking->check_in) && strtotime($checkout) >= strtotime($booking->check_out)) {
+                return false; // Room is not available
+            }
+        }
+    
+        // If no overlapping bookings were found, the room is available
+        return true;
+    }
 }

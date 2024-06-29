@@ -123,10 +123,7 @@
             <!-- Main Content -->
             <div id="content">
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
-                    <!-- Sidebar Toggle (Topbar) -->
-
+                <nav class="navbar navbar-expand navbar-light bg-gradient-info topbar mb-4 static-top shadow">
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -194,21 +191,14 @@
                                 @endforeach
                                 <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.show')}}">Show all records</a>
                             </div>
-
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link active toggle" href="/">
                                 <span class="d-lg-inline text-slate-800 small mr-2">View Site</span>
                             </a>
                         </li>
-                        <!-- divider
-                        <div class="border border-black h-8 mt-4"></div> -->
-
-
-
                     </ul>
-
                 </nav>
-                <!-- End of Topbar -->
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

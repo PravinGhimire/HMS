@@ -13,7 +13,7 @@ class ResturantController extends Controller
     public function index()
     {
         $forms = Booking::all();
-        
+       
         return view('resturant.index', compact( 'forms'));
     }
 
@@ -21,8 +21,8 @@ class ResturantController extends Controller
     {
         $resturants = Resturant::all();
         $forms = Booking::all();
-
-        return view('resturant.details', compact('resturants','forms'));
+        $paginate = Resturant::paginate(10);
+        return view('resturant.details', compact('resturants','forms','paginate'));
     }
     public function create()
     {
@@ -50,7 +50,7 @@ class ResturantController extends Controller
 
         Resturant::create($validatedData);
 
-        return redirect()->route('resturant.index')->with('success', 'Restaurant item created successfully.');
+        return redirect()->route('resturant.details')->with('success', 'Restaurant item created successfully.');
     }
 
     public function edit($id)
@@ -85,7 +85,7 @@ class ResturantController extends Controller
 
         $resturant->update($validatedData);
 
-        return redirect()->route('resturant.index')->with('success', 'Restaurant item updated successfully.');
+        return redirect()->route('resturant.details')->with('success', 'Restaurant item updated successfully.');
     }
 
     // public function destroy(Request $request, $id)
@@ -99,6 +99,6 @@ class ResturantController extends Controller
     $resturant = Resturant::find($request->dataid);
     FacadesFile::delete(public_path('/images/resturants/' . $resturant->photopath));
     $resturant->delete();
-    return redirect(route('resturant.index'))->with('success', 'Items Deleted Successfully');
+    return redirect(route('resturant.details'))->with('success', 'Items Deleted Successfully');
   }
 }

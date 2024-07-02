@@ -17,7 +17,7 @@
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                     <img src="{{ asset('images/slider/' . $slider->photopath) }}" alt="Banner Image" class="d-block w-100">
                     <div class="carousel-caption d-none d-md-block">
-                        <h5 class="animate__animated animate__fadeInDown">Welcome to New Era Hotel</h5>
+                        <h5 class="animate__animated animate__fadeInDown">Welcome to EliteStay</h5>
                         <p class="animate__animated animate__fadeInUp">Experience luxury and comfort like never before.</p>
                     </div>
                     <div class="overlay"></div>
@@ -71,13 +71,13 @@
             <div class="col-md-5">
                 <div class="titlepage animate__animated animate__fadeInLeft">
                     <h2>About Us</h2>
-                    <p>Welcome to our hotel New Era! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.</p>
+                    <p>Welcome to our hotel EliteStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.</p>
                     <a class="btn btn-primary" href="/about" role="button">Read More</a>
                 </div>
             </div>
             <div class="col-md-7">
                 <div class="about_img animate__animated animate__fadeInRight">
-                    <figure><img src="{{ asset('images/about.png') }}" class="img-fluid" alt="#" /></figure>
+                    <figure><img src="{{ asset('images/about.png') }}" class="img-fluid" alt="About Image" /></figure>
                 </div>
             </div>
         </div>
@@ -88,7 +88,7 @@
 <section class="our_room my-5" id="room">
     <div class="container">
         <div class="titlepage text-center animate__animated animate__fadeInUp">
-            <h2>Our Rooms</h2>
+            <h2>Accommodations</h2>
             <p>Experience the epitome of comfort and luxury in our exquisitely designed rooms. Whether you're here for business or leisure, our rooms offer the perfect blend of elegance and convenience to ensure your stay is unforgettable.</p>
         </div>
         <div class="row">
@@ -96,7 +96,7 @@
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="room animate__animated animate__zoomIn">
                         <div class="room_img">
-                            <figure><img src="{{ asset('images/rooms/' . $room->photopath) }}" class="img-fluid" alt="#" /></figure>
+                            <figure><img src="{{ asset('images/rooms/' . $room->photopath) }}" class="img-fluid" alt="Room Image" /></figure>
                         </div>
                         <div class="bed_room text-center">
                             <h3>{{ $room->room_type }}</h3>
@@ -128,7 +128,7 @@
                             <h3>Food: {{ $resturant->food }}</h3>
                             <h3>Quantity: {{ $resturant->quantity }}</h3>
                             <h3>Rate: Nrs. {{ $resturant->rate }}</h3>
-                            <a href="{{ route('order.create', $resturant->id) }}" class="btn btn-primary">Order Now</a>
+                            <a href="{{ route('order.create', $resturant->id) }}" class="  btn btn-primary">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,7 @@
 
 <!-- Add custom CSS for better styling -->
 <style>
-    .banner_main {
+   .banner_main {
         position: relative;
     }
 
@@ -159,7 +159,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-       
+        background: rgba(0, 0, 0, 0.5);
     }
 
     .check-availability {
@@ -223,7 +223,21 @@
         border: none;
     }
 
-    .our_room .titlepage, .resturant .titlepage {
+    .img-container {
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .our_room .titlepage, .restaurant .titlepage {
         margin-bottom: 50px;
     }
 

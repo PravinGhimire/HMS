@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>New Era</title>
+    <title>EliteStay</title>
     <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
 
     <!-- Fonts -->
@@ -40,7 +40,7 @@
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-hotel"></i>
                 </div>
-                <div class="sidebar-brand-text mx-2">New Era</div>
+                <div class="sidebar-brand-text mx-2">EliteStay</div>
             </a>
 
             <!-- Divider -->

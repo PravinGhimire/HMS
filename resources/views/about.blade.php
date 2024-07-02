@@ -8,7 +8,7 @@
    <!-- Mobile metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Site metas -->
-   <title>New Era</title>
+   <title>EliteStay</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -111,8 +111,8 @@
          <div class="row align-items-center">
             <div class="col-md-5">
                <div class="titlepage">
-                  <h2 class="animate__animated animate__fadeInLeft">Welcome to New Era Hotel!</h2>
-                  <p class="margin_0">Welcome to our hotel New Era! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. Our hotel also features a cozy lobby where you can enjoy a cup of coffee or tea, read a book, or connect with friends and family. Our friendly staff is available 24/7 to assist you with any questions or concerns you may have during your stay. Our hotel is located within walking distance to many popular attractions, restaurants, and shops, making it the perfect choice for travelers who want to experience the local culture and explore the city. Thank you for choosing our simple hotel as your home away from home. We look forward to hosting you and ensuring that you have a comfortable and enjoyable stay.</p>
+                  <h2 class="animate__animated animate__fadeInLeft">Welcome to EliteStay!</h2>
+                  <p class="margin_0">Welcome to our hotel EliteStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. Our hotel also features a cozy lobby where you can enjoy a cup of coffee or tea, read a book, or connect with friends and family. Our friendly staff is available 24/7 to assist you with any questions or concerns you may have during your stay. Our hotel is located within walking distance to many popular attractions, restaurants, and shops, making it the perfect choice for travelers who want to experience the local culture and explore the city. Thank you for choosing our simple hotel as your home away from home. We look forward to hosting you and ensuring that you have a comfortable and enjoyable stay.</p>
                   <a href="#" class="btn btn-custom mt-3">Learn More</a>
                </div>
             </div>

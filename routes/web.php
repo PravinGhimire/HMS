@@ -127,7 +127,7 @@ Route::post('/resturant/{id}/order', [OrderController::class, 'store'])->name('o
 
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::resource('orders', OrderController::class);
-    Route::get('orders/{order}/invoice', [OrderController::class, 'generateInvoice'])->name('orders.invoice');
+    Route::get('/orders/{order}/invoice', [OrderController::class, 'generateInvoice'])->name('orders.invoice');
   
 
 });

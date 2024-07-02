@@ -1,9 +1,11 @@
+<!-- resources/views/orders/invoice.blade.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Era</title>
+    <title>Invoice</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -69,7 +71,7 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <h3>Bill</h3>
+                                <h3>Invoice</h3>
                             </td>
 
                             <td>
@@ -87,8 +89,8 @@
                         <tr>
                             <td>
                                 Customer Name: {{ $order->customer_name }}<br>
+                                Customer Email: {{ $order->customer_email }}<br>
                                 Customer Phone: {{ $order->customer_phone }}<br>
-                                Customer Address: {{ $order->customer_address }}
                             </td>
                         </tr>
                     </table>
@@ -98,22 +100,24 @@
             <tr class="heading">
                 <td>Food</td>
                 <td>Details</td>
+                <td>Rate</td>
             </tr>
 
             <tr class="details">
-            <td>{{ $order->food }}</td>
-            <td>{{ $order->quantity }}</td>
+                <td>{{ $order->food }}</td>
+                <td>{{ $order->quantity }}</td>
+                <td>{{ $resturant->rate }}</td>
             </tr>
 
             <tr class="total">
                 <td></td>
-                <td>Total: ${{ $order->quantity *$order->rate }}</td>
+                <td>Total: Rs {{ $order->quantity * $resturant->rate }}</td>
             </tr>
         </table>
     </div>
-    <div class=" justify-center text-center mt-4">
+    <div class="justify-center text-center mt-4">
         <button onclick="window.print()" class="btn btn-primary">Print</button>
-        <button onclick="window.close()" class="btn btn-secondary">Exit</button>
+        <a href="{{ route('orders.index') }}" class="btn btn-secondary">Exit</a>
     </div>
 </body>
 </html>

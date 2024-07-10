@@ -3,42 +3,24 @@
 @section('content')
 <!-- Banner Section -->
 <section class="banner_main" id="home">
-    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-        <!-- Indicators/dots -->
-        <div class="carousel-indicators">
-            @foreach($sliders as $slider)
-                <button type="button" data-bs-target="#demo" data-bs-slide-to="{{ $loop->index }}" class="{{ $loop->first ? 'active' : '' }}"></button>
-            @endforeach
+    <video autoplay muted loop id="heroVideo">
+        <source src="{{ asset('images/hero.mp4') }}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    <div class="container">
+        <div class="row justify-content-center align-items-center" style="height: 100vh;">
+            <div class="col-md-8 text-center text-white">
+                <h1 class="display-4 font-weight-bold animate__animated animate__fadeInDown">Welcome to EliteStay</h1>
+                <p class="lead animate__animated animate__fadeInUp">Experience luxury and comfort like never before.</p>
+                <a href="#room" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp">Book Now</a>
+            </div>
         </div>
-
-        <!-- The slideshow/carousel -->
-        <div class="carousel-inner">
-            @foreach($sliders as $slider)
-                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                    <img src="{{ asset('images/slider/' . $slider->photopath) }}" alt="Banner Image" class="d-block w-100">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="animate__animated animate__fadeInDown">Welcome to EliteStay</h5>
-                        <p class="animate__animated animate__fadeInUp">Experience luxury and comfort like never before.</p>
-                    </div>
-                    <div class="overlay"></div>
-                </div>
-            @endforeach
-        </div>
-
-        <!-- Left and right controls/icons -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
     </div>
 </section>
 
+
 <!-- Check Availability Section -->
-<section class="check-availability my-5 py-5 bg-light">
+<section class="check-availability my-4 py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -138,28 +120,34 @@
 </section>
 
 <!-- Add custom CSS for better styling -->
-<style>
-   .banner_main {
+ <style>
+.banner_main {
         position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.6);
     }
 
-    .carousel-caption h5, .carousel-caption p {
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    }
-
-    .carousel-caption .btn {
-        background-color: #007bff;
-        border: none;
-    }
-
-    .overlay {
+    #heroVideo {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .banner_main h1, .banner_main p {
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    .banner_main .btn {
+        background-color: #007bff;
+        border: none;
     }
 
     .check-availability {
@@ -238,11 +226,12 @@
     }
 
     .our_room .titlepage, .restaurant .titlepage {
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
-    .titlepage h2 {
-        font-size: 2.5rem;
+    .about_img figure img {
+        max-width: 100%;
+        height: auto;
     }
 </style>
 

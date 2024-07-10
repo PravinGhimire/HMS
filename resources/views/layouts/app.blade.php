@@ -33,14 +33,14 @@
         @if(auth()->user()->role == 'admin')
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-light sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-hotel"></i>
                 </div>
-                <div class="sidebar-brand-text mx-2">EliteStay</div>
+                <div class="sidebar-brand-text mx-2 text-dark">EliteStay</div>
             </a>
 
             <!-- Divider -->
@@ -48,7 +48,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="/dashboard">
+                <a class="nav-link text-dark" href="/dashboard">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -59,7 +59,7 @@
 
             <!-- Restaurant Management -->
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route('resturant.index') }}">
+                <a class="nav-link text-dark" href="{{ route('resturant.index') }}">
                     <i class="fas fa-hamburger"></i>
                     <span>Restaurants</span>
                 </a>
@@ -67,51 +67,51 @@
 
             <!-- Other Menu Items -->
             <li class="nav-item active">
-                <a class="nav-link" href="/rooms">
+                <a class="nav-link text-dark" href="/rooms">
                     <i class="fas fa-bed"></i>
                     <span>Rooms</span>
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/roomdetails">
+                <a class="nav-link text-dark" href="/roomdetails">
                     <i class="fas fa-box"></i>
                     <span>Room Details</span>
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/gallery">
+                <a class="nav-link text-dark" href="/gallery">
                     <i class="fas fa-images"></i>
                     <span>Gallery</span>
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/user">
+                <a class="nav-link text-dark" href="/user">
                     <i class="fas fa-users"></i>
                     <span>Users</span>
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/userbook">
+                <a class="nav-link text-dark" href="/userbook">
                     <i class="fas fa-clipboard"></i>
                     <span>Bookings</span>
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/slider">
+                <a class="nav-link text-dark" href="/slider">
                     <i class="fas fa-sliders-h"></i>
                     <span>Sliders</span>
                 </a>
             </li>
-            <li class="nav-item active">
+            <!-- <li class="nav-item active">
                 <a class="nav-link" href="/feedback">
                     <i class="fas fa-comments"></i>
                     <span>Feedbacks</span>
                 </a>
-            </li>
+            </li> -->
 
             <!-- Logout -->
             <li class="nav-item active">
-                <a class="nav-link" href="/logout">
+                <a class="nav-link text-dark" href="/logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <span>Logout</span>
                 </a>
@@ -120,86 +120,89 @@
 
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-            <!-- Main Content -->
-            <div id="content">
-                <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-gradient-info topbar mb-4 static-top shadow">
+    <!-- Main Content -->
+    <div id="content">
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light  topbar mb-4 static-top shadow">
 
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
 
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                        <li class="nav-item dropdown no-arrow d-sm-none">
-                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-search fa-fw"></i>
-                            </a>
-                            <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                                <form class="form-inline mr-auto w-100 navbar-search">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">
-                                                <i class="fas fa-search fa-sm"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
+                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <!-- Dropdown - Messages -->
+                    <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                        <form class="form-inline mr-auto w-100 navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <span class="nav-link active toggle">
-                            <div><span class="mr-1 d-none d-lg-inline text-slate-800 small">
-                                    Welcome, Admin
-                                </span></div>
-                            </span>
-                        </li>
-                        <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-bell fa-fw"></i>
-                                <!-- Counter - Alerts -->
-                                <span class="badge badge-danger badge-counter">5+</span>
-                            </a>
-                            <!-- Dropdown - Alerts -->
-                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                <h6 class="dropdown-header">
-                                    Notification
-                                </h6>
-                                @foreach($forms->take(5) as $form)
-                                <a class="dropdown-item d-flex align-items-center" href="#">
-                                    <!-- Your notification content here -->
-                                    <div class="mr-3">
+                        </form>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link active toggle">
+                        <div><span class="mr-1 d-none d-lg-inline text-dark small"> <!-- Changed text color to white -->
+                                Welcome, Admin
+                            </span></div>
+                    </span>
+                </li>
+                <li class="nav-item dropdown no-arrow mx-1">
+                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-bell fa-fw"></i>
+                        <!-- Counter - Alerts -->
+                        <span class="badge badge-danger badge-counter">5+</span>
+                    </a>
+                    <!-- Dropdown - Alerts -->
+                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                        <h6 class="dropdown-header">
+                            Notification
+                        </h6>
+                        @foreach($forms->take(5) as $form)
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <!-- Your notification content here -->
+                            <div class="mr-3">
+                                @if ($form->status === 'Booked')
+                                <i class="fas fa-check-circle fa-2x text-success"></i>
+                                @elseif ($form->status === 'Cancelled')
+                                <i class="fas fa-times-circle fa-2x text-danger"></i>
+                                @endif
+                            </div>
+                            <div>
+                                <span class="font-weight-bold">
+                                    <p>
                                         @if ($form->status === 'Booked')
-                                        <i class="fas fa-check-circle fa-2x text-success"></i>
+                                        {{ $form->name }} has booked {{ $form->room->room_type }}
                                         @elseif ($form->status === 'Cancelled')
-                                        <i class="fas fa-times-circle fa-2x text-danger"></i>
+                                        {{ $form->name }} has cancelled booking for {{ $form->room->room_type }}
                                         @endif
-                                    </div>
-                                    <div>
-                                        <span class="font-weight-bold">
-                                            <p>
-                                                @if ($form->status === 'Booked')
-                                                {{ $form->name }} has booked {{ $form->room->room_type }}
-                                                @elseif ($form->status === 'Cancelled')
-                                                {{ $form->name }} has cancelled booking for {{ $form->room->room_type }}
-                                                @endif
-                                            </p>
-                                        </span>
-                                    </div>
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                @endforeach
-                                <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.show')}}">Show all records</a>
+                                    </p>
+                                </span>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active toggle" href="/">
-                                <span class="d-lg-inline text-slate-800 small mr-2">View Site</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-                <!-- End of Topbar -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        @endforeach
+                        <a class="dropdown-item text-center small text-gray-500" href="{{route('booking.show')}}">Show all records</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active toggle" href="/">
+                        <span class="d-lg-inline text-dark small mr-2">View Site</span> <!-- Changed text color to white -->
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- End of Topbar -->
+
+
+
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">

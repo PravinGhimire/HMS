@@ -38,7 +38,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-hotel"></i>
+                    <i class="fas fa-hotel"style="color: #00040a;"></i>
                 </div>
                 <div class="sidebar-brand-text mx-2 text-dark">EliteStay</div>
             </a>
@@ -49,7 +49,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/dashboard">
-                    <i class="fas fa-tachometer-alt"></i>
+                    <i class="fas fa-tachometer-alt"style="color: #00040a;"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
@@ -60,7 +60,7 @@
             <!-- Restaurant Management -->
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="{{ route('resturant.index') }}">
-                    <i class="fas fa-hamburger"></i>
+                    <i class="fas fa-hamburger"style="color: #00040a;"></i>
                     <span>Restaurants</span>
                 </a>
             </li>
@@ -68,38 +68,37 @@
             <!-- Other Menu Items -->
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/rooms">
-                    <i class="fas fa-bed"></i>
+                    <i class="fas fa-bed"style="color: #00040a;"></i>
                     <span>Rooms</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/roomdetails">
-                    <i class="fas fa-box"></i>
+                    <i class="fas fa-box"style="color: #00040a;"></i>
                     <span>Room Details</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/gallery">
-                    <i class="fas fa-images"></i>
+                    <i class="fas fa-images"style="color: #00040a;"></i>
                     <span>Gallery</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/user">
-                    <i class="fas fa-users"></i>
+                    <i class="fas fa-users"style="color: #00040a;"></i>
                     <span>Users</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/userbook">
-                    <i class="fas fa-clipboard"></i>
+                    <i class="fas fa-clipboard"style="color: #00040a;"></i>
                     <span>Bookings</span>
                 </a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/slider">
-                    <i class="fas fa-sliders-h"></i>
-                    <span>Sliders</span>
+                <i class="fas fa-sliders-h" style="color: #00040a;"></i>                    <span>Sliders</span>
                 </a>
             </li>
             <!-- <li class="nav-item active">
@@ -112,7 +111,7 @@
             <!-- Logout -->
             <li class="nav-item active">
                 <a class="nav-link text-dark" href="/logout">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-sign-out-alt"style="color: #00040a;"></i>
                     <span>Logout</span>
                 </a>
             </li>

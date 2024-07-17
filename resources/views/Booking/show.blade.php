@@ -3,8 +3,10 @@
 @section('content')
 @include('layouts.message')
 
-<h2 class="text-4xl font-bold border-b-4 text-black">Booking Records</h2>
-
+<div class="flex justify-between items-center mb-4 border-b-4">
+    <h2 class="text-4xl font-bold  text-black">Booking Records</h2>
+    <a href="{{ route('userbook') }}" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i> Exit</a>
+</div>
 <table id="example" class="table table-striped" style="width:100%">
     <thead>
         <tr>

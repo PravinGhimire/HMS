@@ -92,6 +92,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/roomdetails/delete', [RoomDetailsController::class, 'delete'])->name('roomdetails.delete');
 
     // Booking Records
+    Route::get('/bookings', [BookingController::class, 'index'])->name('booking.index');
+
     Route::get('booking/show', [BookingController::class, 'show'])->name('booking.show');
     Route::get('userbook', [BookingController::class, 'userbook'])->name('userbook');
     Route::post('/booking/store', [BookingController::class, 'store'])->name('booking.store');

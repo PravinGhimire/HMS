@@ -19,6 +19,12 @@ class BookingController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function index()
+    {
+        $bookings = Booking::where('user_id', auth()->id())->paginate(10); 
+        $forms=Booking::all();
+                return view('booking.index', compact('bookings','forms'));
+    }
     public function show(Request $request)
     {
         // Retrieve the logged-in user
@@ -119,19 +125,19 @@ class BookingController extends Controller
     public function update(Request $request, $id)
     {
         $booking = Booking::findOrFail($id);
-
+    
         $request->validate([
             // Add validation rules for other fields as needed...
             'payment_status' => 'required|in:Pending,Received',
         ]);
-
+    
         // Update the payment status
         $booking->payment_status = $request->input('payment_status');
         $booking->save();
-
-        return redirect()->route('booking.show')->with('success', 'Payment updated successfully');
+    
+        return redirect()->route('booking.show', ['id' => $id])->with('success', 'Payment updated successfully');
     }
-
+    
     /**
      * Update the specified resource in storage.
      */

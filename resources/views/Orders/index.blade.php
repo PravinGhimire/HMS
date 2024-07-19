@@ -1,47 +1,82 @@
-@extends('layouts.app')
+@include('layouts.message')
 
-@section('content')
-    <div class="container">
-        <h2 class="text-4xl font-bold border-b-4 text-black mb-4">Customer Orders</h2>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Food</th>
-                    <th>Customer Name</th>
-                    <th>Customer Phone</th>
-                    <th>Quantity</th>
-                    <th>Order Date</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($orders as $order)
-                    <tr>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->food }}</td>
-                        <td>{{ $order->customer_name }}</td>
-                        <td>{{ $order->customer_phone }}</td>
-                        <td>{{ $order->quantity }}</td>
-                        <td>{{ $order->created_at->format('Y-m-d') }}</td>
-                        <td>{{ $order->status }}</td>
-                        <td>
-                            <a href="{{ route('orders.edit', $order->id) }}" class="btn btn-primary">Edit</a>
-                            <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+<!DOCTYPE html>
+<html lang="en">
 
-        <!-- Pagination Links -->
-        <div class="d-flex justify-content-center mt-4">
-            {{ $orders->links() }}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - New Era</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
+    <style>
+        .card {
+            margin-top: 25px;
+            margin-bottom: 5px; /* Adjust margin-top as needed */
+        }
+    </style>
+</head>
+
+<body class="main-layout">
+    <header>
+        @include('header')
+    </header>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-bold">My Orders</div>
+
+                    <div class="card-body">
+                        @if($orders->isEmpty())
+                            <p>You have no orders at the moment.</p>
+                        @else
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover" style="background-color: transparent;">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th>SN</th>
+                                            <th>Food</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @php
+                                        $orderCount = ($orders->currentPage() - 1) * $orders->perPage();
+                                        @endphp
+
+                                        @foreach($orders as $order)
+                                        @php
+                                        $orderCount++;
+                                        @endphp
+
+                                        <tr>
+                                            <td>{{ $orderCount }}</td>
+                                            <td>{{ $order->food }}</td>
+                                            <td>{{ $order->quantity }}</td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <div class="d-flex justify-content-center mt-4">
+                                    {{ $orders->links() }}
+                                </div>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-@endsection
+
+    <footer>
+        @include('footer')
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

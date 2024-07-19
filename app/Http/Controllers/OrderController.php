@@ -16,50 +16,44 @@ class OrderController extends Controller
     {
         $orders = Order::paginate(10);
         $forms = Booking::all();
+
         return view('orders.index', compact('orders','forms'));
     }
 
    // In OrderController.php
-public function create($id)
-{
-    $resturant = Resturant::findOrFail($id);
-    return view('order-food', compact('resturant'));
-}
-
-public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'food' => 'required|string|max:255',
-        'customer_name' => 'required|string|max:255',
-        'customer_email' => 'required|email|max:255',
-        'customer_phone' => 'required|string|max:15',
-        'quantity' => 'required|integer',
-        'resturant_id' => 'required|exists:resturants,id',
-    ]);
-
-    // Fetch the resturant to get the rate
-    $resturant = Resturant::findOrFail($validatedData['resturant_id']);
-
-    $order = new Order();
-    $order->food = $validatedData['food'];
-    $order->customer_name = $validatedData['customer_name'];
-    $order->customer_email = $validatedData['customer_email'];
-    $order->customer_phone = $validatedData['customer_phone'];
-    $order->quantity = $validatedData['quantity'];
-    $order->resturant_id = $validatedData['resturant_id'];
-    $order->rate = $resturant->rate; // Assign the rate from the resturant
-    $order->status = 'Pending'; // Set the default status
-
-    $order->save();
-
-    return redirect()->route('orders.index')->with('success', 'Order placed successfully!');
-}
-public function show($id)
-{
-    $order = Order::findOrFail($id);
-    return view('orders.show', compact('order'));
-}
-
+   public function store(Request $request)
+   {
+       $validatedData = $request->validate([
+           'food' => 'required|string|max:255',
+           'customer_name' => 'required|string|max:255',
+           'customer_email' => 'required|email|max:255',
+           'customer_phone' => 'required|string|max:15',
+           'quantity' => 'required|integer',
+           'resturant_id' => 'required|exists:resturants,id',
+       ]);
+   
+       // Fetch the resturant to get the rate
+       $resturant = Resturant::findOrFail($validatedData['resturant_id']);
+   
+       $order = new Order();
+       $order->food = $validatedData['food'];
+       $order->customer_name = $validatedData['customer_name'];
+       $order->customer_email = $validatedData['customer_email'];
+       $order->customer_phone = $validatedData['customer_phone'];
+       $order->quantity = $validatedData['quantity'];
+       $order->resturant_id = $validatedData['resturant_id'];
+    //    $order->rate = $resturant->rate; // Assign the rate from the resturant
+       $order->status = 'Pending'; // Set the default status
+   
+       $order->save();
+   
+       return redirect()->back()->with('success', 'Order placed successfully!');
+   }
+   public function show($id)
+   {
+       $order = Order::findOrFail($id);
+       return view('orders.show', compact('order'));
+   }
 // Show the form for editing the specified resource.
 public function edit($id)
 {
@@ -96,6 +90,14 @@ public function destroy($id)
 }
 // app/Http/Controllers/OrderController.php
 
+
+public function details()
+{
+    $orders = Order::paginate(10);
+        $forms = Booking::all();
+        
+        return view('orders.details', compact('orders','forms'));
+}
 
 
 public function update(Request $request, $id)

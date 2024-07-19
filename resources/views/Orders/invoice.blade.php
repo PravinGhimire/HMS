@@ -117,7 +117,7 @@
     </div>
     <div class="justify-center text-center mt-4">
         <button onclick="window.print()" class="btn btn-primary">Print</button>
-        <a href="{{ route('orders.index') }}" class="btn btn-secondary">Exit</a>
+        <a href="{{ route('orders.details') }}" class="btn btn-secondary">Exit</a>
     </div>
 </body>
 </html>

@@ -62,23 +62,22 @@ class BookingController extends Controller
         if (auth()->check()) {
             $data = $request->validate([
                 'name' => 'required',
-                'email' => 'required',
+                'email' => 'required|email',
                 'check_in' => 'required|date|after_or_equal:today',
                 'check_out' => 'required|date|after_or_equal:check_in',
-                'noofpeople' => 'required',
-                'room_id' => 'required',
+                'noofpeople' => 'required|integer',
+                'room_id' => 'required|integer',
             ]);
 
             $data['status'] = 'Booked';
-            $data['user_id'] = auth()->user()->id; // Use auth()->user() to get the authenticated user
+            $data['user_id'] = auth()->user()->id; // Use authenticated user ID
             $booking = Booking::create($data);
             $user = auth()->user();
             Notification::send($user, new BookingConfirmed($booking));
 
-            return redirect()->back()->with('Success', 'Room Booked Successfully')
-                ->with('booking_completed', 1);
+            return response()->json(['success' => true, 'message' => 'Room booked successfully!']);
         } else {
-            return redirect()->route('login')->with('success', 'You need to log in to make a booking.');
+            return response()->json(['success' => false, 'message' => 'You need to log in to make a booking.']);
         }
     }
 
@@ -167,38 +166,17 @@ class BookingController extends Controller
     // Add checkAvailability method
     public function checkAvailability(Request $request)
     {
-        // Validate the request
+        // Validate request data
         $request->validate([
             'check_in' => 'required|date|after_or_equal:today',
-            'check_out' => 'required|date|after:check_in',
+            'check_out' => 'required|date|after_or_equal:check_in',
         ]);
 
-        // Get the check-in and check-out dates
-        $check_in = $request->input('check_in');
-        $check_out = $request->input('check_out');
+        // Perform availability check logic
+        $available = true; // Replace with your availability check logic
 
-        // Fetch the room ID from the request
-        $room_id = $request->input('room_id');
-
-        // Check if the room is available during the specified period
-        $available = !Booking::where('room_id', $room_id)
-            ->where(function ($query) use ($check_in, $check_out) {
-                $query->whereBetween('check_in', [$check_in, $check_out])
-                      ->orWhereBetween('check_out', [$check_in, $check_out])
-                      ->orWhereRaw('? BETWEEN check_in AND check_out', [$check_in])
-                      ->orWhereRaw('? BETWEEN check_in AND check_out', [$check_out]);
-            })
-            ->exists();
-
-        if ($available) {
-            return redirect()->back()->with([
-                'availability_checked' => true,
-                'check_in' => $check_in,
-                'check_out' => $check_out,
-                'success' => 'The room is available for the selected dates.'
-            ]);
-        } else {
-            return redirect()->back()->with('error', 'The room is not available for the selected dates.');
-        }
+        // Return JSON response
+        return response()->json(['available' => $available]);
     }
+    
 }

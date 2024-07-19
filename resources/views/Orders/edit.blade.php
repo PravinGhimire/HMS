@@ -57,7 +57,7 @@
         </div>
         <div class="card-footer">
             @if ($order->status == 'Completed')
-            <a href="{{ route('orders.index') }}" class="btn btn-secondary">Exit</a>
+            <a href="{{ route('orders.details') }}" class="btn btn-secondary">Exit</a>
             <a href="{{ route('orders.invoice', $order->id) }}" class="btn btn-secondary" target="_blank">Generate Invoice</a>
             @endif
         </div>

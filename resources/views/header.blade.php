@@ -86,7 +86,7 @@
                                         <li><a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a></li>
                                     @endif
                                     <li><a class="dropdown-item" href="{{ route('booking.index') }}">My Bookings</a></li>
-                                    <li><a class="dropdown-item" href="#">My Orders</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('orders.index') }}">My Orders</a></li>
                                     <li><a class="dropdown-item" href="{{ route('logout') }}">Logout</a></li>
                                 </ul>
                             </li>

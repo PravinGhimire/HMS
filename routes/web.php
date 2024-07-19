@@ -126,6 +126,7 @@ Route::middleware('auth')->group(function () {
     // In your web.php or appropriate routes file
 Route::get('/resturant/{id}/order', [OrderController::class, 'create'])->name('order.create');
 Route::post('/resturant/{id}/order', [OrderController::class, 'store'])->name('order.store');
+Route::get('/orders/details', [OrderController::class, 'details'])->name('orders.details');
 
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::resource('orders', OrderController::class);

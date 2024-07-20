@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Feedback;
 use App\Models\Gallery;
 use App\Models\Resturant;
 use App\Models\Roomdetails;
@@ -19,7 +20,6 @@ class PagesController extends Controller
         $resturants = Resturant::all();
         $galleries = Gallery::all();
         $sliders = Slider::all();
-        
         return view('welcome', compact('rooms', 'resturants', 'galleries', 'sliders'));
     }
     

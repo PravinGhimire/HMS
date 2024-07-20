@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2024 at 05:20 PM
+-- Generation Time: Jul 20, 2024 at 09:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -47,21 +47,23 @@ CREATE TABLE `bookings` (
 --
 
 INSERT INTO `bookings` (`id`, `name`, `email`, `check_in`, `check_out`, `noofpeople`, `room_id`, `user_id`, `status`, `payment_status`, `created_at`, `updated_at`) VALUES
-(4, 'carlos', 'carlos62@gmail.com', '2023-08-21', '2023-08-26', 2, 2, 13, 'Booked', 'Pending', '2023-08-25 22:23:29', '2023-08-25 22:23:29'),
+(4, 'carlos', 'carlos62@gmail.com', '2023-08-21', '2023-08-26', 2, 2, 13, 'Booked', 'Received', '2023-08-25 22:23:29', '2024-07-17 07:40:09'),
 (5, 'carlos shah', 'carlos62@gmail.com', '2023-08-22', '2023-08-22', 1, 3, 13, 'Booked', 'Received', '2023-08-25 22:27:00', '2023-09-07 06:29:58'),
 (9, 'Rijalss', 'rijal@gmail.com', '2023-08-23', '2023-08-26', 1, 3, 6, 'Booked', 'Pending', '2023-08-26 00:13:02', '2023-08-26 00:13:02'),
-(12, 'carlos wrat', 'carlos62@gmail.com', '2023-08-22', '2023-08-29', 1, 3, 13, 'Booked', 'Pending', '2023-08-29 07:00:13', '2023-08-29 07:00:13'),
-(14, 'Nabs', 'nabs@gmail.com', '2023-08-30', '2023-08-31', 1, 3, 14, 'Booked', 'Pending', '2023-08-30 23:18:07', '2023-08-30 23:18:07'),
-(15, 'carlos', 'carlos62@gmail.com', '2023-08-30', '2023-08-31', 1, 1, 13, 'Booked', 'Pending', '2023-08-31 07:17:34', '2023-08-31 07:17:34'),
+(12, 'carlos wrat', 'carlos62@gmail.com', '2023-08-22', '2023-08-29', 1, 3, 13, 'Booked', 'Received', '2023-08-29 07:00:13', '2024-07-17 07:38:28'),
+(14, 'Nabs', 'nabs@gmail.com', '2023-08-30', '2023-08-31', 1, 3, 14, 'Booked', 'Received', '2023-08-30 23:18:07', '2024-07-17 07:43:19'),
+(15, 'carlos', 'carlos62@gmail.com', '2023-08-30', '2023-08-31', 1, 1, 13, 'Booked', 'Received', '2023-08-31 07:17:34', '2024-07-17 07:37:55'),
 (16, 'Amrit don', 'amritdon@gmail.com', '2023-08-31', '2023-08-31', 1, 1, 13, 'Booked', 'Received', '2023-08-31 07:47:12', '2023-09-09 08:03:37'),
 (17, 'Amrit don', 'amritdon@gmail.com', '2023-08-31', '2023-08-31', 1, 1, 13, 'Booked', 'Received', '2023-08-31 07:52:26', '2023-09-14 23:34:24'),
-(19, 'Amrit don', 'amritdon@gmail.com', '2023-08-31', '2023-08-31', 1, 1, 13, 'Booked', 'Received', '2023-08-31 07:52:51', '2023-09-14 01:19:27'),
-(22, 'Amrit don', 'amritdon@gmail.com', '2023-08-31', '2023-08-31', 1, 1, 13, 'Cancelled', 'Received', '2023-08-31 07:55:14', '2023-09-14 01:32:39'),
-(23, 'rijal', 'rijal@gmail.com', '2023-08-31', '2023-08-31', 1, 2, 13, 'Booked', 'Received', '2023-08-31 08:27:20', '2023-09-09 08:07:19'),
 (34, 'Amrit don', 'amritdon@gmail.com', '2023-09-12', '2023-09-13', 1, 2, 5, 'Booked', 'Received', '2023-09-05 22:36:45', '2023-09-09 08:03:52'),
 (35, 'Kads', 'kads@gmail.com', '2023-09-08', '2023-09-09', 1, 2, 15, 'Cancelled', 'Received', '2023-09-08 08:17:22', '2023-09-08 08:34:21'),
 (43, 'Prabin Ghimire', 'ghimireprabin62@gmail.com', '2023-09-20', '2023-08-15', 1, 3, 5, 'Booked', 'Received', '2023-09-14 23:39:11', '2024-06-08 11:04:29'),
-(44, 'Pravin Ghimire', 'prekshya@gmail.com', '2024-06-12', '2024-06-19', 1, 2, 4, 'Booked', 'Pending', '2024-06-08 10:49:51', '2024-06-08 10:49:51');
+(44, 'Pravin Ghimire', 'prekshya@gmail.com', '2024-06-12', '2024-06-19', 1, 2, 4, 'Booked', 'Pending', '2024-06-08 10:49:51', '2024-06-08 10:49:51'),
+(45, 'userAdmin', 'prekshya@gmail.com', '2024-06-28', '2024-06-29', 2, 6, 16, 'Booked', 'Received', '2024-06-28 09:43:00', '2024-07-16 10:21:17'),
+(46, 'Prabin Ghimire', 'prekshya@gmail.com', '2024-07-02', '2024-07-03', 4, 6, 16, 'Booked', 'Received', '2024-07-02 00:14:41', '2024-07-17 07:32:00'),
+(47, 'prekshya guuu', 'prekshya@gmail.com', '2024-07-18', '2024-07-19', 3, 6, 16, 'Cancelled', 'Pending', '2024-07-17 08:10:00', '2024-07-17 08:10:46'),
+(48, 'prekshya guuu', 'prekshya@gmail.com', '2024-07-19', '2024-07-20', 2, 4, 16, 'Cancelled', 'Pending', '2024-07-18 09:49:45', '2024-07-18 09:50:24'),
+(68, 'prekshya guuu', 'prekshya@gmail.com', '2024-07-19', '2024-07-20', 1, 1, 16, 'Booked', 'Pending', '2024-07-19 03:41:58', '2024-07-19 03:41:58');
 
 -- --------------------------------------------------------
 
@@ -88,12 +90,19 @@ CREATE TABLE `failed_jobs` (
 CREATE TABLE `feedback` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `phone_number` int(11) NOT NULL,
-  `message` varchar(255) NOT NULL,
+  `photo` varchar(255) DEFAULT NULL,
+  `comment` text NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `photo`, `comment`, `created_at`, `updated_at`) VALUES
+(1, 'hari yadav', '1721454624.jpg', 'The rooms were spacious and spotless, with great décor and crisp bed sheets. The breakfast buffet was delicious, with a huge variety of options! The staff were attentive and went out of their way to ensure that we were comfortable.', '2024-07-20 00:05:24', '2024-07-20 00:05:24'),
+(2, 'Darius', '1721454971.jpg', 'Location is very convenient, easy to move around. Staff was cooperative, since we were in a big group and we were demanding, they fulfilled all. The owner of the hotel catered us well, guided us in setting up the itinerary and arranging the services without charging extra cost. In short it was a memorable stay there.', '2024-07-20 00:11:11', '2024-07-20 00:11:11');
 
 -- --------------------------------------------------------
 
@@ -114,12 +123,12 @@ CREATE TABLE `galleries` (
 --
 
 INSERT INTO `galleries` (`id`, `priority`, `photopath`, `created_at`, `updated_at`) VALUES
-(1, 1, '1684421709_gallery4.jpg', '2023-05-14 06:16:37', '2023-05-18 09:10:09'),
+(1, 1, '1721457496_r2.jpg', '2023-05-14 06:16:37', '2024-07-20 00:53:16'),
 (4, 4, '1684421691_gallery6.jpg', '2023-05-14 06:18:00', '2023-05-18 09:09:51'),
 (5, 2, '1684421732_gallery1.jpg', '2023-05-18 09:10:32', '2023-05-18 09:10:32'),
-(6, 3, '1684421757_gallery3.jpg', '2023-05-18 09:10:57', '2023-05-18 09:10:57'),
-(9, 7, '1685376597_1685362576_gallery8.jpg', '2023-05-29 10:23:25', '2023-05-29 10:24:57'),
-(10, 5, '1685376534_1682942805_gallery3.jpg', '2023-05-29 10:23:54', '2023-05-29 10:23:54'),
+(6, 3, '1721456732_room7.jpg', '2023-05-18 09:10:57', '2024-07-20 00:40:32'),
+(9, 7, '1721457515_r5.jpg', '2023-05-29 10:23:25', '2024-07-20 00:53:35'),
+(10, 5, '1721456752_single.jpg', '2023-05-29 10:23:54', '2024-07-20 00:40:52'),
 (12, 6, '1694749844_1682942821_gallery4.jpg', '2023-09-14 22:05:44', '2023-09-14 22:05:44');
 
 -- --------------------------------------------------------
@@ -154,7 +163,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (29, '2024_06_04_024317_create__resturants_table', 4),
 (30, '2024_06_08_070928_create_orders_table', 5),
 (31, '2024_06_12_062519_create_orders_table', 6),
-(32, '2024_06_18_142841_add_resturant_id_to_orders_table', 7);
+(32, '2024_06_18_142841_add_resturant_id_to_orders_table', 7),
+(33, '2024_07_20_053643_create_feedback_table', 8);
 
 -- --------------------------------------------------------
 
@@ -180,7 +190,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `resturant_id`, `food`, `customer_name`, `customer_email`, `customer_phone`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
-(1, 5, 'burger', 'prekshya guu', 'prekshya@gmail.com', '456789', 2, 'Completed', '2024-06-18 08:53:50', '2024-06-18 08:54:57');
+(1, 5, 'burger', 'prekshya guu', 'prekshya@gmail.com', '456789', 2, 'Completed', '2024-06-18 08:53:50', '2024-06-18 08:54:57'),
+(2, 5, 'burger', 'prekshya guu', 'prekshya@gmail.com', '456789', 2, 'Completed', '2024-07-02 00:15:42', '2024-07-02 01:11:17'),
+(3, 6, 'pizza', 'prekshya guu', 'prekshya@gmail.com', '9811342424', 2, 'Pending', '2024-07-18 09:46:58', '2024-07-18 09:46:58');
 
 -- --------------------------------------------------------
 
@@ -244,9 +256,11 @@ CREATE TABLE `resturants` (
 --
 
 INSERT INTO `resturants` (`id`, `priority`, `food`, `quantity`, `rate`, `photopath`, `created_at`, `updated_at`) VALUES
-(4, '4', 'taas', '1plate', 400.00, '1717829913_taad.jpg', '2024-06-08 00:07:59', '2024-06-08 01:13:33'),
-(5, '5', 'burger', '1plate', 400.00, '1718294093_Green Modern Staycation Hotel Instagram Post (1).png', '2024-06-08 00:38:36', '2024-06-13 10:09:53'),
-(6, '1', 'pizza', '1plate', 550.00, '1718294111_Green Modern Staycation Hotel Instagram Post (2).png', '2024-06-12 01:09:37', '2024-06-13 10:10:11');
+(4, '4', 'taas', '1plate', 400.00, '1719902393_taad.jpg', '2024-06-08 00:07:59', '2024-07-02 00:54:53'),
+(5, '5', 'burger', '1plate', 300.00, '1718294093_Green Modern Staycation Hotel Instagram Post (1).png', '2024-06-08 00:38:36', '2024-07-16 10:23:44'),
+(6, '1', 'pizza', '1plate', 550.00, '1718294111_Green Modern Staycation Hotel Instagram Post (2).png', '2024-06-12 01:09:37', '2024-06-13 10:10:11'),
+(7, '2', 'Fried Chicken', '1plate', 350.00, '1719902599_friedchicken.png', '2024-07-02 00:58:19', '2024-07-02 00:58:19'),
+(8, '3', 'Indian Platter', '1plate', 550.00, '1720588541_naan.jpg', '2024-07-09 23:30:41', '2024-07-09 23:30:41');
 
 -- --------------------------------------------------------
 
@@ -272,11 +286,12 @@ CREATE TABLE `roomdetails` (
 --
 
 INSERT INTO `roomdetails` (`id`, `priority`, `description`, `room_size`, `bed_size`, `view`, `photopath`, `room_id`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Our hotel is located in a quiet and peaceful neighborhood, providing  a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which  are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.', '45-50', 'king size', 'River view', '1684422096_1683777527_room-4.jpg', 1, '2023-05-11 22:56:03', '2023-05-18 09:18:14'),
+(2, 1, 'Our hotel is located in a quiet and peaceful neighborhood, providing  a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which  are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.', '45-50', 'king size', 'River view', '1721457600_room7.jpg', 1, '2023-05-11 22:56:03', '2024-07-20 00:55:00'),
 (3, 2, 'These are larger than standard rooms and come with additional amenities such as a seating area, a work desk, and a minibar.', '45*50', 'king size', 'River view', '1684422112_1683732522_room-1.png', 2, '2023-05-11 23:00:09', '2023-05-18 09:16:52'),
 (5, 3, 'These are designed for families with children and often come with a larger bed and a sofa bed or bunk beds', '45-50sqm', 'Prince Size', 'mountain view', '1684422165_room3.jpg', 4, '2023-05-17 10:51:42', '2023-05-18 09:17:45'),
-(6, 4, 'A single room is a type of accommodation typically designed for one person. It is a private space that offers a comfortable and convenient stay for solo travelers or individuals seeking privacy. Single rooms are commonly found in hotels, hostels, guesthouses, and other lodging establishments.', '50*50', 'Master Size', 'Beach', '1684467638_room3.jpg', 3, '2023-05-18 21:55:38', '2023-05-25 02:15:51'),
-(7, 5, 'High-quality furnishings with opulent, expensive touches, attention to aesthetic detail, a quiet room with fresh air, original art on the walls, windows that open, robes and slippers, adequate storage, hangers, desk, reading chair, safe, good-size flat-screen TV, iPhone/iPod dock, coffee maker, full-length mirror, effective heating/AC system…And of course a King bed with a good mattress, high-quality sheets and a variety of pillow types', '44', '5', 'beach', '1718293924_Green Modern Staycation Hotel Instagram Post (3).png', 6, '2024-06-13 10:07:04', '2024-06-13 10:07:04');
+(6, 4, 'A single room is a type of accommodation typically designed for one person. It is a private space that offers a comfortable and convenient stay for solo travelers or individuals seeking privacy. Single rooms are commonly found in hotels, hostels, guesthouses, and other lodging establishments.', '50*50', 'Master Size', 'Beach', '1721457623_r4.jpg', 3, '2023-05-18 21:55:38', '2024-07-20 00:55:23'),
+(7, 5, 'High-quality furnishings with opulent, expensive touches, attention to aesthetic detail, a quiet room with fresh air, original art on the walls, windows that open, robes and slippers, adequate storage, hangers, desk, reading chair, safe, good-size flat-screen TV, iPhone/iPod dock, coffee maker, full-length mirror, effective heating/AC system…And of course a King bed with a good mattress, high-quality sheets and a variety of pillow types', '44', '5', 'beach', '1721457646_standard room.jpg', 6, '2024-06-13 10:07:04', '2024-07-20 00:55:46'),
+(8, 6, 'a luxurious and spacious retreat, featuring elegant decor, a separate living area, and top-notch amenities. The bathroom is pristine, with a large bathtub and premium toiletries. Guests can enjoy stunning city views and convenient access to hotel facilities. Exceptional service and attention to detail make the stay memorable, though the suite\'s premium price reflects its high quality. Overall, it\'s an excellent choice for a lavish and comfortable experience', '44', 'master', 'lake', '1721457958_suiteroom1.jpg', 7, '2024-07-20 01:00:58', '2024-07-20 01:00:58');
 
 -- --------------------------------------------------------
 
@@ -299,11 +314,12 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `room_type`, `rate`, `priority`, `created_at`, `updated_at`, `photopath`) VALUES
-(1, 'Single Room', 1000, 1, '2023-05-10 22:12:45', '2023-05-10 22:12:45', '1683777465_room-4.jpg'),
-(2, 'Deluxe Room', 1500, 2, '2023-05-11 22:57:17', '2023-05-11 22:57:17', '1683866537_room-2.jpg'),
-(3, 'Double Bed Room', 1050, 3, '2023-05-13 23:39:02', '2023-05-13 23:39:02', '1684041842_room-5.jpg'),
-(4, 'Apartment', 1000, 4, '2023-05-17 09:17:30', '2023-05-17 09:17:30', '1684335750_1682865590_room6.jpg'),
-(6, 'Luxurious Room', 2500, 5, '2024-06-13 10:04:14', '2024-06-13 10:04:14', '1718293754_Green Modern Staycation Hotel Instagram Post (3).png');
+(1, 'Single Room', 1000, 1, '2023-05-10 22:12:45', '2023-05-10 22:12:45', '1721458152_r2.jpg'),
+(2, 'Deluxe Room', 1500, 2, '2023-05-11 22:57:17', '2023-05-11 22:57:17', 'r5.jpg'),
+(3, 'Double Bed Room', 1050, 3, '2023-05-13 23:39:02', '2023-05-13 23:39:02', '1721457457_r4.jpg'),
+(4, 'Apartment', 1000, 4, '2023-05-17 09:17:30', '2023-05-17 09:17:30', '1721457087_single.jpg'),
+(6, 'Luxurious Room', 2500, 5, '2024-06-13 10:04:14', '2024-06-13 10:04:14', '1721456552_standard room.jpg'),
+(7, 'Suit Room', 4500, 6, '2024-06-18 20:56:56', '2024-06-18 20:56:56', 'suiteroom.jpg');
 
 -- --------------------------------------------------------
 
@@ -384,8 +400,7 @@ ALTER TABLE `failed_jobs`
 -- Indexes for table `feedback`
 --
 ALTER TABLE `feedback`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `feedback_email_unique` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `galleries`
@@ -460,7 +475,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -472,7 +487,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `galleries`
@@ -484,13 +499,13 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -502,19 +517,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `resturants`
 --
 ALTER TABLE `resturants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `roomdetails`
 --
 ALTER TABLE `roomdetails`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `rooms`
 --
 ALTER TABLE `rooms`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `sliders`

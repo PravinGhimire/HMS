@@ -79,6 +79,12 @@
                 </a>
             </li>
             <li class="nav-item active">
+                <a class="nav-link text-dark" href="/feedback">
+                    <i class="fas fa-bed"style="color: #00040a;"></i>
+                    <span>Feedback</span>
+                </a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link text-dark" href="/gallery">
                     <i class="fas fa-images"style="color: #00040a;"></i>
                     <span>Gallery</span>

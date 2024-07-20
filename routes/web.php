@@ -5,7 +5,6 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BookingsController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\dashboardcontroller;
-use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PagesController;
@@ -56,7 +55,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/rooms/create', [RoomController::class, 'create'])->name('rooms.create');
     Route::post('/rooms/store', [RoomController::class, 'store'])->name('rooms.store');
     Route::get('/rooms/{id}/edit', [RoomController::class, 'edit'])->name('rooms.edit');
-    Route::post('/rooms/{id}/update', [RoomController::class, 'update'])->name('rooms.update');
+    Route::put('/rooms/{id}/update', [RoomController::class, 'update'])->name('rooms.update');
     Route::post('/rooms/delete', [RoomController::class, 'delete'])->name('rooms.delete');
 
     // Users
@@ -102,10 +101,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/booking/{id}/edit', [BookingController::class, 'edit'])->name('booking.edit');
     Route::post('/booking/{id}', [BookingController::class, 'update'])->name('booking.update');
 
-    // Feedback
-    Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
-    Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
-    Route::post('/feedback/delete', [FeedbackController::class, 'delete'])->name('feedback.delete');
+   
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -9,17 +9,18 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('feedback', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->integer('phone_number');
-            $table->string('message');
-            $table->timestamps();
-        });
-    }
+  // database/migrations/xxxx_xx_xx_create_feedback_table.php
+public function up()
+{
+    Schema::create('feedback', function (Blueprint $table) {
+        $table->id();
+        $table->string('name');
+        $table->string('photo')->nullable();
+        $table->text('comment');
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.

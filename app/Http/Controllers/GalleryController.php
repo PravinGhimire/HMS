@@ -67,7 +67,9 @@ class GalleryController extends Controller
      */
     public function edit(Gallery $gallery)
     {
-        return view('gallery.edit',compact('gallery'));
+        $forms = Booking::all();
+
+        return view('gallery.edit',compact('gallery','forms'));
     }
 
     /**

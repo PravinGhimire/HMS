@@ -33,16 +33,13 @@
         @if(auth()->user()->role == 'admin')
 
         <!-- Sidebar -->
-        <ul class="navbar-nav bg-light sidebar sidebar-dark accordion" id="accordionSidebar">
-
-            <!-- Sidebar - Brand -->
+        <ul class="navbar-nav bg-gradient-light sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-hotel"style="color: #00040a;"></i>
+                    <i class="fas fa-hotel" style="color: #00040a;"></i>
                 </div>
                 <div class="sidebar-brand-text mx-2 text-dark">EliteStay</div>
             </a>
-
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
@@ -76,12 +73,6 @@
                 <a class="nav-link text-dark" href="/roomdetails">
                     <i class="fas fa-box"style="color: #00040a;"></i>
                     <span>Room Details</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="/feedback">
-                    <i class="fas fa-bed"style="color: #00040a;"></i>
-                    <span>Feedback</span>
                 </a>
             </li>
             <li class="nav-item active">

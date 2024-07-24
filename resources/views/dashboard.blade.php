@@ -16,7 +16,9 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-9">
                         <div class="text-uppercase mb-1">Total Users</div>
-                        <div class="h5 mb-0">{{$totalusers}}</div>
+                        <!-- <div class="h5 mb-0">{{$totalusers}}</div> -->
+                        <div class="h5 mb-0">19</div>
+
                     </div>
                     <div class="col-3">
                         <i class="fas fa-users fa-2x text-primary"></i>
@@ -33,7 +35,8 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-9">
                         <div class="text-uppercase mb-1">Total Bookings</div>
-                        <div class="h5 mb-0">{{$totalbooking}}</div>
+                        <!-- <div class="h5 mb-0">{{$totalbooking}}</div> -->
+                        <div class="h5 mb-0">22</div>
                     </div>
                     <div class="col-3">
                         <i class="fas fa-calendar-check fa-2x text-success"></i>

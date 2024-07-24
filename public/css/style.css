@@ -34,7 +34,7 @@ header {
 .our_room .room {
     text-align: center;
     background-color: #fff;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     padding: 50px 5px 30px 0;
     border-radius: 10px; /* Added border radius */
     transition: ease-in-out 0.3s; /* Added transition */
@@ -80,11 +80,7 @@ header {
 }
 /*resturant*/
 /* Container Styles */
-.resturant .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
+
 
 /* Title Styles */
 /* .resturant .titlepage h2 {
@@ -96,16 +92,13 @@ header {
 
 /* Card Styles */
 .resturant .menu-item {
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 400px; /* Fixed height to reduce card size */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px; /* Added padding for better spacing */
+    text-align: center;
+    background-color: #fff;
+    margin-bottom: 30px;
+    padding: 50px 5px 30px 0;
+    border-radius: 10px; /* Added border radius */
+    transition: ease-in-out 0.3s; /* Added transition */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Added box shadow */
 }
 
 .resturant .menu-item:hover {

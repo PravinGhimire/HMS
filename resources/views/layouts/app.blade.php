@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>EliteStay</title>
+    <title>SajiloStay</title>
     <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
 
     <!-- Fonts -->
@@ -36,9 +36,9 @@
         <ul class="navbar-nav bg-gradient-light sidebar sidebar-dark accordion" id="accordionSidebar">
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/dashboard">
                 <div class="sidebar-brand-icon">
-                    <i class="fas fa-hotel" style="color: #00040a;"></i>
+                  
                 </div>
-                <div class="sidebar-brand-text mx-2 text-dark">EliteStay</div>
+                <div class="sidebar-brand-text mx-2 text-dark">SajiloStay</div>
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">

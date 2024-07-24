@@ -103,7 +103,7 @@
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0);
-    border: 2px solid black; /* Add border with blue color */
+    border: 4px lightgray; /* Add border with blue color */
     margin-top: 20px;
     position: relative; /* Ensure it's correctly positioned */
     z-index: 10; /* Ensure it appears above other content */
@@ -309,7 +309,7 @@ footer {
          <!-- Check Availability Section -->
          
         <!-- Check Availability Section -->
-<div class="col-md-3">
+<div class="col-md-3 container">
     <div class="availability-form">
         <h3>Check Availability</h3>
         <form id="checkAvailabilityForm" method="POST" action="{{ route('booking.checkAvailability') }}">

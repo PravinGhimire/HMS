@@ -1,5 +1,5 @@
-
-                    <html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,7 +9,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
-       .flip-card {
+        .flip-card {
             perspective: 1000px;
         }
 
@@ -35,19 +35,27 @@
         .flip-card-back {
             transform: rotateY(180deg);
         }
+
+        .footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #f1f1f1;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
     </style>
 </head>
 
-<body class="bg-gray-100 h-full  p-14 flex items-center justify-center">
+<body class="bg-gray-100 h-full p-14 flex items-center justify-center">
     <div class="flip-card w-full max-w-md">
         <div class="flip-card-inner mt-6">
             <!-- Login Form -->
             <div class="flip-card-front bg-green-200 p-8 shadow-2xl rounded-2xl">
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
-                     <div class=" text-center items-center justify-center">
-                        <img src="{{asset('images/looo.png')}}" class=" rounded-full h-32  m-auto" alt="">
-                       <div></div>
+                    <div class="text-center items-center justify-center">
+                        <img src="{{ asset('images/lo.png') }}" class="rounded-full h-32 m-auto mb-1" alt="">
                     </div>
 
                     <div class="mb-4">
@@ -86,10 +94,8 @@
             <div class="flip-card-back bg-green-100 p-8 shadow-2xl rounded-2xl">
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
-                    <div class=" text-center items-center justify-center">
-                        <img src="{{asset('images/looo.png')}}" class=" rounded-full h-32  m-auto" alt="">
-                      
-                 
+                    <div class="text-center items-center justify-center">
+                        <img src="{{ asset('images/looo.png') }}" class="rounded-full h-32 m-auto" alt="">
                         <h2 class="text-2xl font-semibold mt-4">Please Register</h2>
                     </div>
 
@@ -134,6 +140,11 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 SajiloStay. All rights reserved.</p>
+    </footer>
 
     <script>
         document.querySelector('.flip-card').classList.remove('flip');

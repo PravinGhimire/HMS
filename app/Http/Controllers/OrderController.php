@@ -21,6 +21,13 @@ class OrderController extends Controller
     }
 
    // In OrderController.php
+   public function create($id)
+   {
+       $resturant = Resturant::findOrFail($id);
+       // Redirect back to the previous page with the resturant data
+       return redirect()->back()->with('resturant', $resturant);
+   }
+   
    public function store(Request $request)
    {
        $validatedData = $request->validate([

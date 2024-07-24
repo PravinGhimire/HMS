@@ -35,27 +35,23 @@
                 <form action="{{ route('order.store', $resturant->id) }}" method="POST">
                     @csrf
                     <input type="hidden" name="resturant_id" value="{{ $resturant->id }}">
-                    <div class="form-group mb-3">
+                    <div class="mb-3">
                         <label for="food" class="form-label">Food</label>
-                        <input type="text" class="form-control" id="food" value="{{$resturant->food}}" name="food" required >
+                        <input type="text" class="form-control" id="food" value="{{ $resturant->food }}" name="food" required readonly>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="mb-3">
                         <label for="customer_name" class="form-label">Customer Name</label>
                         <input type="text" class="form-control" id="customer_name" name="customer_name" required>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="mb-3">
                         <label for="customer_email" class="form-label">Customer Email</label>
                         <input type="email" class="form-control" id="customer_email" name="customer_email" required>
                     </div>
-                    <div class="form-group mb-3">
+                    <div class="mb-3">
                         <label for="customer_phone" class="form-label">Customer Phone</label>
                         <input type="text" class="form-control" id="customer_phone" name="customer_phone" required>
                     </div>
-                    <!-- <div class="form-group mb-3">
-                        <label for="customer_address" class="form-label">Customer Address</label>
-                        <input type="text" class="form-control" id="customer_address" name="customer_address" required>
-                    </div> -->
-                    <div class="form-group mb-3">
+                    <div class="mb-3">
                         <label for="quantity" class="form-label">Quantity</label>
                         <input type="number" class="form-control" id="quantity" name="quantity" required>
                     </div>
@@ -65,6 +61,7 @@
         </div>
     </div>
 </div>
+
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>

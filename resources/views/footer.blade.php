@@ -3,14 +3,14 @@
         <div class="row">
             <div class="col-md-4 mb-4">
                 <h3>About Us</h3>
-                <p>Welcome to our hotel EliteStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities.</p>
+                <p>Welcome to our Hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities.</p>
             </div>
             <div class="col-md-4 mb-4">
                 <h3>Contact Us</h3>
                 <p>1245 Main Street</p>
                 <p>Nawalpur, Nepal</p>
                 <p>Phone: (+977) 9800000000</p>
-                <p>Email: <a href="mailto:halka@email.com" class="text-dark">halka@email.com</a></p>
+                <p>Email: <a href="mailto:halka@email.com" class="text-dark">Sajilostay@gamil.com</a></p>
             </div>
             <div class="col-md-4 mb-4">
                 <h3>Connect with Us</h3>

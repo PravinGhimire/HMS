@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row justify-content-center align-items-center" style="height: 100vh;">
             <div class="col-md-8 text-center text-white">
-                <h1 class="display-4 font-weight-bold animate__animated animate__fadeInDown">Welcome to EliteStay</h1>
+                <h1 class="display-4 font-weight-bold animate__animated animate__fadeInDown">Welcome to SajiloStay</h1>
                 <p class="lead animate__animated animate__fadeInUp">Experience luxury and comfort like never before.</p>
                 <a href="#room" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp">Book Now</a>
             </div>
@@ -53,7 +53,7 @@
             <div class="col-md-5">
                 <div class="titlepage animate__animated animate__fadeInLeft">
                     <h2>About Us</h2>
-                    <p>Welcome to our hotel EliteStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.</p>
+                    <p>Welcome to our hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.</p>
                     <a class="btn btn-primary" href="/about" role="button">Read More</a>
                 </div>
             </div>
@@ -122,23 +122,23 @@
 <!-- Add custom CSS for better styling -->
  <style>
 .banner_main {
-        position: relative;
-        height: 80vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: rgba(0, 0, 0, 0.6);
-    }
+    position: relative;
+    height: 67vh; /* Adjust this value to reduce the height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+}
 
-    #heroVideo {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
+#heroVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
 
     .banner_main h1, .banner_main p {
         color: #fff;
@@ -231,8 +231,63 @@
 
     .about_img figure img {
         max-width: 100%;
-        height: auto;
+        height:50%;
     }
+    /* Adjust styling for Restaurant Section to match Room Section */
+/* Ensure the Restaurant Section has similar styling as the Room Section */
+.resturant {
+    padding: 40px 0; /* Matches padding of the Room Section */
+}
+
+.resturant .container {
+    padding-left: 25px; /* Consistent padding with other sections */
+    padding-right: 25px;
+}
+
+.resturant .titlepage {
+    margin-bottom: 40px; /* Consistent margin with the Room Section */
+}
+
+/* Card Styling */
+.resturant .menu-item {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    margin-bottom: 30px; /* Ensures consistent spacing between cards */
+}
+
+.resturant .menu-item:hover {
+    transform: translateY(-10px);
+}
+
+.resturant .menu-content {
+    padding: 15px; /* Matches padding inside the room card */
+}
+
+.resturant .menu-content h3 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+}
+
+.resturant .menu-content .btn {
+    background-color: #007bff;
+    border: none;
+    margin-top: 10px; /* Consistent with Room Section buttons */
+}
+
+/* Ensure cards have the same size and alignment */
+.resturant .row .col-md-4 {
+    margin-bottom: 30px; /* Ensures consistent spacing between rows */
+}
+
+.resturant .menu-content img {
+    width: 100%;
+    height: auto; /* Ensures images fit the container */
+}
+
+
 </style>
 
 <!-- Add smooth scroll script -->

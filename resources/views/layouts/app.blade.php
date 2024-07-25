@@ -14,6 +14,8 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
     <link href="{{ asset('vendorr/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link href="{{ asset('csss/sb-admin-2.min.css') }}" rel="stylesheet">
@@ -74,17 +76,11 @@
                     <i class="fas fa-box"style="color: #00040a;"></i>
                     <span>Room Details</span>
                 </a>
-            </li>
+            </li> 
             <li class="nav-item active">
-                <a class="nav-link text-dark" href="/gallery">
-                    <i class="fas fa-images"style="color: #00040a;"></i>
-                    <span>Gallery</span>
-                </a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link text-dark" href="/user">
-                    <i class="fas fa-users"style="color: #00040a;"></i>
-                    <span>Users</span>
+                <a class="nav-link  text-dark" href="/amenities">
+                <i class='fas fa-bullhorn' style="color: #00040a;"></i>
+                    <span>Amenities</span>
                 </a>
             </li>
             <li class="nav-item active">
@@ -94,16 +90,25 @@
                 </a>
             </li>
             <li class="nav-item active">
+                <a class="nav-link text-dark" href="/user">
+                    <i class="fas fa-users"style="color: #00040a;"></i>
+                    <span>Users</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link text-dark" href="/gallery">
+                    <i class="fas fa-images"style="color: #00040a;"></i>
+                    <span>Gallery</span>
+                </a>
+            </li>
+          
+          
+            <li class="nav-item active">
                 <a class="nav-link text-dark" href="/slider">
                 <i class="fas fa-sliders-h" style="color: #00040a;"></i>                    <span>Sliders</span>
                 </a>
             </li>
-            <!-- <li class="nav-item active">
-                <a class="nav-link" href="/feedback">
-                    <i class="fas fa-comments"></i>
-                    <span>Feedbacks</span>
-                </a>
-            </li> -->
+           
 
             <!-- Logout -->
             <li class="nav-item active">

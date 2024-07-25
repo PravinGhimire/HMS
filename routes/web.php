@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AmenityController;
 use App\Http\Controllers\AvailabilityController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\BookingsController;
@@ -41,6 +42,7 @@ Route::get('/gallerys', [PagesController::class, 'gallerys']);
 Route::get('/bookingview', [PagesController::class, 'bookingview'])->name('bookingview');
 Route::get('/resturant', [PagesController::class, 'resturant'])->name('resturant');
 Route::post('/new-route-url', [AvailabilityController::class, 'checkAvailability'])->name('checkAvailability');
+Route::post('/check-availability', [RoomController::class, 'checkAvailability'])->name('availability.check');
 
 Route::post('/room-availability', [RoomDetailsController::class,'checkRoomAvailability'])->name('roomAvailability');
 Route::post('/check-availability', [BookingController::class, 'checkAvailability'])->name('booking.checkAvailability');
@@ -127,7 +129,13 @@ Route::get('/orders/details', [OrderController::class, 'details'])->name('orders
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::resource('orders', OrderController::class);
     Route::get('/orders/{order}/invoice', [OrderController::class, 'generateInvoice'])->name('orders.invoice');
-  
+  //amenties
+    Route::get('/amenities', [AmenityController::class, 'index'])->name('amenities.index');
+    Route::get('/amenities/create', [AmenityController::class, 'create'])->name('amenities.create');
+    Route::post('/amenities', [AmenityController::class, 'store'])->name('amenities.store');
+    Route::post('amenities/delete', [AmenityController::class, 'destroy'])->name('amenities.destroy');
+    Route::get('/amenities/{amenity}/edit', [AmenityController::class, 'edit'])->name('amenities.edit');
+    Route::put('/amenities/{amenity}', [AmenityController::class, 'update'])->name('amenities.update');
 
 });
 

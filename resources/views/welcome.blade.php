@@ -8,35 +8,38 @@
         Your browser does not support HTML5 video.
     </video>
     <div class="container">
-        <div class="row justify-content-center align-items-center" style="height: 100vh;">
+        <div class="row justify-content-center align-items-center" style="height: 67vh;">
             <div class="col-md-8 text-center text-white">
                 <h1 class="display-4 font-weight-bold animate__animated animate__fadeInDown">Welcome to SajiloStay</h1>
                 <p class="lead animate__animated animate__fadeInUp">Experience luxury and comfort like never before.</p>
-                <a href="#room" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp">Book Now</a>
+                <a href="#about" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp">Discover More</a>
             </div>
         </div>
     </div>
 </section>
 
-
 <!-- Check Availability Section -->
 <section class="check-availability my-4 py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-16">
                 <h2 class="text-center mb-4">Check Room Availability</h2>
                 <form action="{{ route('checkAvailability') }}" method="POST" id="checkAvailabilityForm" class="bg-white p-4 rounded shadow">
                     @csrf
                     <div class="row mb-3">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="checkin" class="form-label">Check-In Date</label>
                             <input type="date" class="form-control" id="checkin" name="checkin" required>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <label for="checkout" class="form-label">Check-Out Date</label>
                             <input type="date" class="form-control" id="checkout" name="checkout" required>
                         </div>
-                        <div class="col-md-4 d-flex align-items-end">
+                        <div class="col-md-3">
+                            <label for="no of people" class="form-label">No of People</label>
+                            <input type="text" class="form-control" id="checkout" name="checkout" required>
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
                             <button type="submit" class="btn btn-primary w-100">Check Availability</button>
                         </div>
                     </div>
@@ -65,62 +68,206 @@
         </div>
     </div>
 </section>
-
-<!-- Our Rooms Section -->
-<section class="our_room my-5" id="room">
+<!-- Amenities Section -->
+<section class="amenities my-5" id="amenities">
     <div class="container">
         <div class="titlepage text-center animate__animated animate__fadeInUp">
-            <h2>Accommodations</h2>
-            <p>Experience the epitome of comfort and luxury in our exquisitely designed rooms. Whether you're here for business or leisure, our rooms offer the perfect blend of elegance and convenience to ensure your stay is unforgettable.</p>
+            <h2>Our Services</h2>
+            <p>Enjoy a range of facilities designed for your comfort and convenience.</p>
         </div>
-        <div class="row">
-            @foreach($rooms as $room)
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="room animate__animated animate__zoomIn">
-                        <div class="room_img">
-                            <figure><img src="{{ asset('images/rooms/' . $room->photopath) }}" class="img-fluid" alt="Room Image" /></figure>
-                        </div>
-                        <div class="bed_room text-center">
-                            <h3>{{ $room->room_type }}</h3>
-                            <p>Rate: Nrs. {{ $room->rate }}</p>
-                            <div class="amenities mt-3 mb-2">
-                                <p><i class="fas fa-wifi"></i> Free Wi-Fi &nbsp; <i class="fas fa-tv"></i> Cable TV &nbsp; <i class="fas fa-snowflake"></i> Air Conditioning</p>
-                            </div>
-                            <a class="book_btn btn btn-success" href="{{ route('rums', $room->id) }}">Book Now</a>
-                        </div>
-                    </div>
+        <div class="row text-center">
+            <!-- Amenity 1 -->
+            @foreach($amenities as $amenity)
+            <div class="col-md-4 mb-4">
+                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
+                    <i class="fas fa-{{ $amenity->icon }} fa-3x mb-3" style="color:#007bff;"></i>
+                    <h4>{{ $amenity->name }}</h4>
+                    <p>{{ $amenity->description }}</p>
                 </div>
-            @endforeach
-        </div>
-    </div>
-</section>
-
-<!-- Restaurant Section -->
-<section class="resturant my-5" id="resturant">
-    <div class="container">
-        <div class="titlepage text-center animate__animated animate__fadeInUp">
-            <h2>Our Menu</h2>
-        </div>
-        <div class="row">
-            @foreach($resturants as $resturant)
-                <div class="col-md-4 col-sm-6 mb-4">
-                    <div class="menu-item animate__animated animate__zoomIn">
-                        <div class="menu-content">
-                            <figure><img src="{{ asset('images/resturants/' . $resturant->photopath) }}" alt="Food Image" class="img-fluid"></figure>
-                            <h3>Food: {{ $resturant->food }}</h3>
-                            <h3>Quantity: {{ $resturant->quantity }}</h3>
-                            <h3>Rate: Nrs. {{ $resturant->rate }}</h3>
-                            <a href="{{ route('order.create', $resturant->id) }}" class="  btn btn-primary">Order Now</a>
-                        </div>
-                    </div>
+            </div>
+        @endforeach
+         
+            <!-- Amenity 4 -->
+            <!-- <div class="col-md-4 mb-4">
+                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
+                <i class="fas fa-snowflake fa-3x mb-3" style="color: #ffc107;"></i>                    <h4>Air Conditioning</h4>
+                    <p>Stay comfortable with individually controlled air conditioning in all rooms.</p>
                 </div>
-            @endforeach
+            </div> -->
+            <!-- Amenity 5 -->
+            <div class="col-md-4 mb-4">
+                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
+                    <i class="fas fa-parking fa-3x mb-3" style="color: #17a2b8;"></i>
+                    <h4>Free Parking</h4>
+                    <p>Convenient and secure parking available for all guests at no additional cost.</p>
+                </div>
+            </div>
+            <!-- Amenity 6 -->
+            <div class="col-md-4 mb-4">
+                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
+                    <i class="fas fa-swimming-pool fa-3x mb-3" style="color: #6610f2;"></i>
+                    <h4>Swimming Pool</h4>
+                    <p>Relax and unwind in our beautifully maintained swimming pool.</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- Add custom CSS for better styling -->
- <style>
+<style>
+.amenities {
+    padding: 40px 0;
+}
+
+.amenity-card {
+    background: #ffffff;
+    color: #343a40;
+    border: 1px solid #e0e0e0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.amenity-card:hover {
+    background: #f1f1f1;
+    transform: translateY(-5px);
+}
+
+.amenity-card i {
+    color: #007bff; /* Default icon color */
+}
+
+.amenity-card h4 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #343a40;
+}
+
+.amenity-card p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.amenity-card i {
+    transition: color 0.3s;
+}
+
+.amenity-card:hover i {
+    color: #007bff; /* Change icon color on hover */
+}
+</style>
+
+<!-- Add Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+<!-- Customer Reviews Section -->
+<!-- Testimonials Section -->
+<section class="testimonials my-5" id="testimonials">
+    <div class="container">
+        <div class="titlepage text-center animate__animated animate__fadeInUp">
+            <h2>What Our Guests Say</h2>
+            <p>Read feedback from our valued guests about their experiences.</p>
+        </div>
+        <div class="row">
+            <!-- Testimonial 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card bg-light p-4 rounded shadow text-center animate__animated animate__fadeInUp">
+                    <div class="testimonial-content">
+                        <p>"SajiloStay provided an incredible experience! The room was comfortable, and the staff went above and beyond to make our stay memorable."</p>
+                    </div>
+                    <div class="testimonial-author mt-3">
+                        <img src="{{ asset('images/guest1.jpg') }}" class="rounded-circle" alt="Guest 1" width="80" height="80">
+                        <h5 class="mt-2">John Doe</h5>
+                        <p class="text-muted">Regular Guest</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card bg-light p-4 rounded shadow text-center animate__animated animate__fadeInUp">
+                    <div class="testimonial-content">
+                        <p>"The amenities at SajiloStay were top-notch, and the location was perfect for exploring the city. Highly recommend!"</p>
+                    </div>
+                    <div class="testimonial-author mt-3">
+                        <img src="{{ asset('images/guest2.jpg') }}" class="rounded-circle" alt="Guest 2" width="80" height="80">
+                        <h5 class="mt-2">Emily Davis</h5>
+                        <p class="text-muted">First-time Visitor</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="testimonial-card bg-light p-4 rounded shadow text-center animate__animated animate__fadeInUp">
+                    <div class="testimonial-content">
+                        <p>"Exceptional service and a beautiful hotel. We enjoyed every moment of our stay and will definitely return."</p>
+                    </div>
+                    <div class="testimonial-author mt-3">
+                        <img src="{{ asset('images/guest3.jpg') }}" class="rounded-circle" alt="Guest 3" width="80" height="80">
+                        <h5 class="mt-2">Danny Hernz</h5>
+                        <p class="text-muted">Frequent Traveler</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add custom CSS for better styling -->
+<style>
+.testimonials {
+    padding: 40px 0;
+}
+
+.testimonial-card {
+    background: #ffffff;
+    color: #343a40;
+    border: 1px solid #e0e0e0;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.testimonial-card:hover {
+    background: #f1f1f1;
+    transform: translateY(-5px);
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.testimonial-author img {
+    border: 3px solid #007bff;
+}
+
+.testimonial-author h5 {
+    margin-top: 10px;
+    font-size: 1.25rem;
+    color: #343a40;
+}
+
+.testimonial-author p {
+    color: #6c757d;
+}
+</style>
+
+<!-- Add smooth scroll script if needed -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const links = document.querySelectorAll('a[href^="#"]');
+        for (const link of links) {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth"
+                });
+            });
+        }
+    });
+</script>
+
+
+<!-- Add custom CSS for better styling -->
+<style>
 .banner_main {
     position: relative;
     height: 67vh; /* Adjust this value to reduce the height */
@@ -140,157 +287,152 @@
     z-index: -1;
 }
 
-    .banner_main h1, .banner_main p {
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    }
-
-    .banner_main .btn {
-        background-color: #007bff;
-        border: none;
-    }
-
-    .check-availability {
-        background: #f7f7f7;
-        padding: 50px 0;
-    }
-
-    .check-availability .form-label {
-        font-weight: bold;
-    }
-
-    .titlepage h2 {
-        font-size: 2.5rem;
-        font-weight: bold;
-    }
-
-    .titlepage p {
-        font-size: 1.1rem;
-        color: #6c757d;
-    }
-
-    .room, .menu-item {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        transition: transform 0.3s;
-    }
-
-    .room:hover, .menu-item:hover {
-        transform: translateY(-10px);
-    }
-
-    .bed_room h3 {
-        font-size: 1.25rem;
-        margin-top: 15px;
-    }
-
-    .bed_room p {
-        color: #6c757d;
-    }
-
-    .bed_room .amenities {
-        font-size: 0.9rem;
-        color: #6c757d;
-    }
-
-    .bed_room .book_btn {
-        margin-top: 10px;
-        background-color: #28a745;
-        border: none;
-    }
-
-    .menu-content h3 {
-        font-size: 1.25rem;
-        margin: 10px 0;
-    }
-
-    .menu-content .btn {
-        background-color: #007bff;
-        border: none;
-    }
-
-    .img-container {
-        height: 200px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-
-    .img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .our_room .titlepage, .restaurant .titlepage {
-        margin-bottom: 40px;
-    }
-
-    .about_img figure img {
-        max-width: 100%;
-        height:50%;
-    }
-    /* Adjust styling for Restaurant Section to match Room Section */
-/* Ensure the Restaurant Section has similar styling as the Room Section */
-.resturant {
-    padding: 40px 0; /* Matches padding of the Room Section */
+.banner_main h1, .banner_main p {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-.resturant .container {
-    padding-left: 25px; /* Consistent padding with other sections */
-    padding-right: 25px;
+.banner_main .btn {
+    background-color: #007bff;
+    border: none;
 }
 
-.resturant .titlepage {
-    margin-bottom: 40px; /* Consistent margin with the Room Section */
+.check-availability {
+    background: #f7f7f7;
+    padding: 50px 0;
 }
 
-/* Card Styling */
-.resturant .menu-item {
+.check-availability .form-label {
+    font-weight: bold;
+}
+
+.titlepage h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.titlepage p {
+    font-size: 1.1rem;
+    color: #6c757d;
+}
+
+.room, .menu-item, .service-card, .review-card {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s;
-    margin-bottom: 30px; /* Ensures consistent spacing between cards */
 }
 
-.resturant .menu-item:hover {
+.room:hover, .menu-item:hover, .service-card:hover, .review-card:hover {
     transform: translateY(-10px);
 }
 
-.resturant .menu-content {
-    padding: 15px; /* Matches padding inside the room card */
+.bed_room h3 {
+    font-size: 1.25rem;
+    margin-top: 15px;
 }
 
-.resturant .menu-content h3 {
+.bed_room p {
+    color: #6c757d;
+}
+
+.bed_room .amenities {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.bed_room .book_btn {
+    margin-top: 10px;
+    background-color: #28a745;
+    border: none;
+}
+
+.menu-content h3, .service-card h3, .review-card h3 {
     font-size: 1.25rem;
     margin: 10px 0;
 }
 
-.resturant .menu-content .btn {
+.menu-content .btn, .service-card .btn, .review-card .btn {
     background-color: #007bff;
     border: none;
-    margin-top: 10px; /* Consistent with Room Section buttons */
+    margin-top: 10px;
 }
 
-/* Ensure cards have the same size and alignment */
-.resturant .row .col-md-4 {
-    margin-bottom: 30px; /* Ensures consistent spacing between rows */
+.img-container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-.resturant .menu-content img {
+.img-container img {
     width: 100%;
-    height: auto; /* Ensures images fit the container */
+    height: 100%;
+    object-fit: cover;
 }
 
+.our_room .titlepage, .resturant .titlepage, .services .titlepage, .customer-reviews .titlepage {
+    margin-bottom: 40px;
+}
 
+.about_img figure img {
+    max-width: 100%;
+    height: 50%;
+}
+
+.services {
+    padding: 40px 0;
+}
+
+.services .service-card {
+    background: #f8f9fa;
+    color: #343a40;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.services .service-card:hover {
+    background: #e9ecef;
+    transform: translateY(-10px);
+}
+
+.services .service-card i {
+    color: #007bff; /* Icon color */
+}
+
+.services .service-card h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+}
+
+.services .service-card p {
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.review-card {
+    background: #f8f9fa;
+}
+
+.review-card .review-author img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid #007bff;
+}
+
+.review-card .review-author p {
+    color: #6c757d;
+}
+
+.review-card p {
+    color: #343a40;
+}
+
+/* Add smooth scroll script */
 </style>
 
-<!-- Add smooth scroll script -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const links = document.querySelectorAll('a[href^="#"]');

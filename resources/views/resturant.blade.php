@@ -68,7 +68,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="title">
-                        <h2 class="menu-title">Our Menu</h2>
+                        <h2 class="menu-title mt-5 text-center">Our Menu</h2>
                     </div>
                 </div>
             </div>

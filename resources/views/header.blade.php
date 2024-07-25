@@ -64,13 +64,13 @@
                             <a class="nav-link" href="/about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/room">Our Room</a>
+                            <a class="nav-link " href="/room">Our Room</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Gallery</a>
+                            <a class="nav-link" href="/gallery">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#resturant">Restaurant</a>
+                            <a class="nav-link" href="/resturant">Restaurant</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto">

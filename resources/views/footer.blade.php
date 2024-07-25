@@ -1,18 +1,18 @@
-<footer class="footer bg-light text-dark py-5">
+<footer class="footer bg-light text-dark py-3">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-3">
                 <h3>About Us</h3>
                 <p>Welcome to our Hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities.</p>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-3">
                 <h3>Contact Us</h3>
                 <p>1245 Main Street</p>
                 <p>Nawalpur, Nepal</p>
                 <p>Phone: (+977) 9800000000</p>
-                <p>Email: <a href="mailto:halka@email.com" class="text-dark">Sajilostay@gamil.com</a></p>
+                <p>Email: <a href="mailto:halka@email.com" class="text-dark">Sajilostay@gmail.com</a></p>
             </div>
-            <div class="col-md-4 mb-4">
+            <div class="col-md-4 mb-3">
                 <h3>Connect with Us</h3>
                 <ul class="list-unstyled d-flex justify-content-start">
                     <li class="me-3"><a href="#" class="text-dark"><i class="fab fa-facebook fa-2x"></i></a></li>
@@ -23,7 +23,7 @@
             </div>
         </div>
     </div>
-    <div class="bottom-bar bg-light text-center py-3">
+    <div class="bottom-bar bg-light text-center py-2">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">

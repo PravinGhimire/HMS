@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Amenity;
 use App\Models\Booking;
 use App\Models\Feedback;
 use App\Models\Gallery;
@@ -20,7 +21,8 @@ class PagesController extends Controller
         $resturants = Resturant::all();
         $galleries = Gallery::all();
         $sliders = Slider::all();
-        return view('welcome', compact('rooms', 'resturants', 'galleries', 'sliders'));
+        $amenities= Amenity::all();
+        return view('welcome', compact('rooms', 'resturants', 'galleries', 'sliders','amenities'));
     }
     
     public function about()
@@ -30,6 +32,7 @@ class PagesController extends Controller
     public function room()
     {
         $rooms = Rooms::all();
+        
         return view('room', compact('rooms'));
     } public function room1()
     {

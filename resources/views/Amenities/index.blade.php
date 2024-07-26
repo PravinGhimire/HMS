@@ -75,7 +75,7 @@
                         <td>{{ $amenity->id }}</td>
                         <td>{{ $amenity->name }}</td>
                         <td>{{ $amenity->description }}</td>
-                        <td><i class="{{ $amenity->icon }}" ></i></td>
+                        <td><i class="{{ $amenity->icon }}" style='color: {{ $amenity->color }};'></i></td>
                         <td>
                             <div class="btn-group">
                                 <a href="{{ route('amenities.edit', $amenity->id) }}" class="btn btn-primary"><i class="fas fa-edit"></i></a>

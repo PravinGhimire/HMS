@@ -80,28 +80,13 @@
             @foreach($amenities as $amenity)
             <div class="col-md-4 mb-4">
                 <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
-                    <i class="fas fa-{{ $amenity->icon }} fa-3x mb-3" style="color:#007bff;"></i>
-                    <h4>{{ $amenity->name }}</h4>
+                <td><i class="{{ $amenity->icon }} mb-3" style='color: {{ $amenity->color }};'></i></td>
+                <h4>{{ $amenity->name }}</h4>
                     <p>{{ $amenity->description }}</p>
                 </div>
             </div>
         @endforeach
          
-            <!-- Amenity 4 -->
-            <!-- <div class="col-md-4 mb-4">
-                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
-                <i class="fas fa-snowflake fa-3x mb-3" style="color: #ffc107;"></i>                    <h4>Air Conditioning</h4>
-                    <p>Stay comfortable with individually controlled air conditioning in all rooms.</p>
-                </div>
-            </div> -->
-            <!-- Amenity 5 -->
-            <div class="col-md-4 mb-4">
-                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
-                    <i class="fas fa-parking fa-3x mb-3" style="color: #17a2b8;"></i>
-                    <h4>Free Parking</h4>
-                    <p>Convenient and secure parking available for all guests at no additional cost.</p>
-                </div>
-            </div>
             <!-- Amenity 6 -->
             <div class="col-md-4 mb-4">
                 <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">

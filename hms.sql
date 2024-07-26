@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 20, 2024 at 09:01 AM
+-- Generation Time: Jul 26, 2024 at 08:21 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Database: `hms`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `amenities`
+--
+
+CREATE TABLE `amenities` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `icon` varchar(255) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `color` varchar(255) NOT NULL DEFAULT '#28a745'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `amenities`
+--
+
+INSERT INTO `amenities` (`id`, `name`, `description`, `icon`, `created_at`, `updated_at`, `color`) VALUES
+(1, 'Free Pickup', 'Free Pickup helps to feel relax and tension free while arriving to hotel', 'fas fa-car fa-3x mb-3', '2024-07-25 10:02:44', '2024-07-26 00:04:32', '#2953a8'),
+(2, 'Free Wi-Fi', 'Stay connected with our high-speed internet throughout the hotel.', 'fas fa-wifi fa-3x mb-3  style=\"color: #007bff;\"', '2024-07-25 10:11:14', '2024-07-26 00:07:03', '#0f0f10'),
+(3, 'Coffee Maker', 'Start your day with a fresh cup of coffee from the in-room coffee maker.', 'fas fa-coffee fa-3x mb-3 bg-green\"', '2024-07-25 10:17:06', '2024-07-26 00:04:56', '#b30542'),
+(4, 'Air Conditioning', 'Stay comfortable with individually controlled air conditioning in all rooms.', 'fas fa-snowflake fa-3x mb-3', '2024-07-25 10:35:15', '2024-07-25 10:35:15', '#ffc107'),
+(5, 'Free Parking', 'Convenient and secure parking available for all guests at no additional cost.', 'fas fa-parking fa-3x', '2024-07-25 23:58:10', '2024-07-25 23:58:10', '#17a2b8');
 
 -- --------------------------------------------------------
 
@@ -164,7 +191,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (30, '2024_06_08_070928_create_orders_table', 5),
 (31, '2024_06_12_062519_create_orders_table', 6),
 (32, '2024_06_18_142841_add_resturant_id_to_orders_table', 7),
-(33, '2024_07_20_053643_create_feedback_table', 8);
+(33, '2024_07_20_053643_create_feedback_table', 8),
+(34, '2024_07_25_152010_create_amenities_table', 9),
+(35, '2024_07_25_160603_add_color_to_amenities_table', 10);
 
 -- --------------------------------------------------------
 
@@ -192,7 +221,8 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `resturant_id`, `food`, `customer_name`, `customer_email`, `customer_phone`, `quantity`, `status`, `created_at`, `updated_at`) VALUES
 (1, 5, 'burger', 'prekshya guu', 'prekshya@gmail.com', '456789', 2, 'Completed', '2024-06-18 08:53:50', '2024-06-18 08:54:57'),
 (2, 5, 'burger', 'prekshya guu', 'prekshya@gmail.com', '456789', 2, 'Completed', '2024-07-02 00:15:42', '2024-07-02 01:11:17'),
-(3, 6, 'pizza', 'prekshya guu', 'prekshya@gmail.com', '9811342424', 2, 'Pending', '2024-07-18 09:46:58', '2024-07-18 09:46:58');
+(3, 6, 'pizza', 'prekshya guu', 'prekshya@gmail.com', '9811342424', 2, 'Pending', '2024-07-18 09:46:58', '2024-07-18 09:46:58'),
+(4, 4, 'Thakali Khana Set', 'Prabin', 'ghimireprabin62@gmail.com', '98777777', 2, 'Pending', '2024-07-24 02:51:29', '2024-07-24 02:51:29');
 
 -- --------------------------------------------------------
 
@@ -256,7 +286,7 @@ CREATE TABLE `resturants` (
 --
 
 INSERT INTO `resturants` (`id`, `priority`, `food`, `quantity`, `rate`, `photopath`, `created_at`, `updated_at`) VALUES
-(4, '4', 'taas', '1plate', 400.00, '1719902393_taad.jpg', '2024-06-08 00:07:59', '2024-07-02 00:54:53'),
+(4, '4', 'Thakali Khana Set', '1plate', 400.00, '1721804981_thakali.jpg', '2024-06-08 00:07:59', '2024-07-24 01:24:41'),
 (5, '5', 'burger', '1plate', 300.00, '1718294093_Green Modern Staycation Hotel Instagram Post (1).png', '2024-06-08 00:38:36', '2024-07-16 10:23:44'),
 (6, '1', 'pizza', '1plate', 550.00, '1718294111_Green Modern Staycation Hotel Instagram Post (2).png', '2024-06-12 01:09:37', '2024-06-13 10:10:11'),
 (7, '2', 'Fried Chicken', '1plate', 350.00, '1719902599_friedchicken.png', '2024-07-02 00:58:19', '2024-07-02 00:58:19'),
@@ -314,7 +344,7 @@ CREATE TABLE `rooms` (
 --
 
 INSERT INTO `rooms` (`id`, `room_type`, `rate`, `priority`, `created_at`, `updated_at`, `photopath`) VALUES
-(1, 'Single Room', 1000, 1, '2023-05-10 22:12:45', '2023-05-10 22:12:45', '1721458152_r2.jpg'),
+(1, 'Single Room', 1000, 1, '2023-05-10 22:12:45', '2024-07-26 00:16:35', '1721973695_r2.jpg'),
 (2, 'Deluxe Room', 1500, 2, '2023-05-11 22:57:17', '2023-05-11 22:57:17', 'r5.jpg'),
 (3, 'Double Bed Room', 1050, 3, '2023-05-13 23:39:02', '2023-05-13 23:39:02', '1721457457_r4.jpg'),
 (4, 'Apartment', 1000, 4, '2023-05-17 09:17:30', '2023-05-17 09:17:30', '1721457087_single.jpg'),
@@ -380,6 +410,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `amenities`
+--
+ALTER TABLE `amenities`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `bookings`
@@ -472,6 +508,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `amenities`
+--
+ALTER TABLE `amenities`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `bookings`
 --
 ALTER TABLE `bookings`
@@ -499,13 +541,13 @@ ALTER TABLE `galleries`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`

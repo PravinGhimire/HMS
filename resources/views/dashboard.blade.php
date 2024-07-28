@@ -1,7 +1,24 @@
 @extends('layouts.app')
 
 @section('content')
-
+<style>
+        .card-custom {
+            border-radius: 10px;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .card-custom .icon {
+            font-size: 30px;
+        }
+        .card-custom .value {
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .card-custom .desc {
+            font-size: 14px;
+        }
+    </style>
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-primary">Dashboard</h1>
@@ -9,77 +26,66 @@
 
 <!-- Content Row -->
 <div class="row">
-    <!-- Users Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card bg-gradient-light text-dark shadow h-100">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-9">
-                        <div class="text-uppercase mb-1">Total Users</div>
-                        <!-- <div class="h5 mb-0">{{$totalusers}}</div> -->
-                        <div class="h5 mb-0">19</div>
-
+        <!-- Users Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card-custom" style="background-color: #6a1b9a;">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <i class="icon fas fa-users"></i>
                     </div>
-                    <div class="col-3">
-                        <i class="fas fa-users fa-2x text-primary"></i>
+                    <div class="col-8">
+                        <div class="value">19</div>
+                        <div class="desc">Total Users</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Booking Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card-custom" style="background-color: #e53935;">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <i class="icon fas fa-calendar-check"></i>
+                    </div>
+                    <div class="col-8">
+                        <div class="value">22</div>
+                        <div class="desc">Total Bookings</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Photos Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card-custom" style="background-color: #1e88e5;">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <i class="icon fas fa-image"></i>
+                    </div>
+                    <div class="col-8">
+                        <div class="value">{{$totalgallery}}</div>
+                        <div class="desc">Total Photos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rooms Card -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card-custom" style="background-color: #43a047;">
+                <div class="row">
+                    <div class="col-4 text-center">
+                        <i class="icon fas fa-bed"></i>
+                    </div>
+                    <div class="col-8">
+                        <div class="value">{{$totalrooms}}</div>
+                        <div class="desc">Total Rooms</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Booking Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card bg-gradient-light text-dark shadow h-100">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-9">
-                        <div class="text-uppercase mb-1">Total Bookings</div>
-                        <!-- <div class="h5 mb-0">{{$totalbooking}}</div> -->
-                        <div class="h5 mb-0">22</div>
-                    </div>
-                    <div class="col-3">
-                        <i class="fas fa-calendar-check fa-2x text-success"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Photos Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card bg-gradient-light text-dark shadow h-100">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-9">
-                        <div class="text-uppercase mb-1">Total Photos</div>
-                        <div class="h5 mb-0">{{$totalgallery}}</div>
-                    </div>
-                    <div class="col-3">
-                        <i class="fas fa-image fa-2x text-warning"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Rooms Card -->
-    <div class="col-xl-3 col-md-6 mb-4">
-        <div class="card bg-gradient-light text-dark shadow h-100">
-            <div class="card-body">
-                <div class="row no-gutters align-items-center">
-                    <div class="col-9">
-                        <div class="text-uppercase mb-1">Total Rooms</div>
-                        <div class="h5 mb-0">{{$totalrooms}}</div>
-                    </div>
-                    <div class="col-3">
-                        <i class="fas fa-bed fa-2x text-info"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Charts Row -->
 <div class="row">

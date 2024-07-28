@@ -19,5 +19,6 @@ class Rooms extends Model
         // Check if the number of bookings for this room is less than 5
         return $this->bookings()->count() < 5;
     }
+
     
 }

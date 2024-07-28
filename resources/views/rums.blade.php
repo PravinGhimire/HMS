@@ -153,53 +153,47 @@
 }
 
 .details-section {
-    background: #fff;
     padding: 20px;
+    background-color: #f8f9fa;
     border-radius: 10px;
-    margin-top: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
 }
 
-.details-section h2 {
+h2 {
+    font-size: 1.5rem;
     margin-bottom: 20px;
 }
 
-.details-section p {
-    margin-bottom: 10px;
-}
-
-.details-section strong {
-    font-weight: bold;
-}
-
-.overview-container {
-    margin-bottom: 40px;
-}
-
-.overview-row {
+.overview-grid {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.overview-card {
+    flex: 1 1 calc(33.333% - 20px);
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.overview-card i {
+    font-size: 2rem;
+    color: #007bff;
     margin-bottom: 10px;
 }
 
-.overview-item {
-    background: #f9f9f9;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    flex: 1;
+.overview-card p {
+    font-size: 1rem;
+    color: #333;
 }
 
-.overview-item i {
-    font-size: 24px;
-    color: #007bff;
-    margin-right: 10px;
-}
-
-.overview-item p {
-    margin: 0;
-    font-size: 16px;
+.overview-card:hover {
+    transform: scale(1.05);
 }
 
 footer {
@@ -262,52 +256,47 @@ footer {
             </div>
             <!-- Overview -->
             <div class="details-section overview-container">
-               <h2>Overview</h2>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-ruler-combined"></i>
-                     <p><strong>Room size:</strong> {{ $roomdetail->room_size }} sq m</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-users"></i>
-                     <p><strong>Occupancy:</strong> Up to 4 adults</p>
-                  </div>
-               </div>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-eye"></i>
-                     <p><strong>View:</strong> {{ $roomdetail->view }}</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-smoking-ban"></i>
-                     <p><strong>Smoking:</strong> No smoking</p>
-                  </div>
-               </div>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-utensils"></i>
-                     <p><strong>Room service:</strong> Yes</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-bath"></i>
-                     <p><strong>Bathroom:</strong> Ensuite, with shower and bathtub</p>
-                  </div>
-               </div>
-               <div class="overview-row">
-                  <div class="overview-item">
-                     <i class="fas fa-wifi"></i>
-                     <p><strong>Free Wi-Fi:</strong> Yes</p>
-                  </div>
-                  <div class="overview-item">
-                     <i class="fas fa-tv"></i>
-                     <p><strong>Entertainment:</strong> Flat-screen TV, Cable channels</p>
-                  </div>
-               </div>
+        <h2>Room Overview</h2>
+        <div class="overview-grid">
+            <!-- <div class="overview-card">
+                <i class="fas fa-ruler-combined"></i>
+                <p><strong>Room size:</strong> {{ $roomdetail->room_size }} sq m</p>
+            </div> -->
+            <div class="overview-card">
+                <i class="fas fa-bed"></i>
+                <p><strong>Bed size:</strong> {{ $roomdetail->bed_size }}</p>
             </div>
+            <div class="overview-card">
+                <i class="fas fa-users"></i>
+                <p><strong>Occupancy:</strong> {{ $roomdetail->room_size }} persons</p>
+            </div>
+            <!-- <div class="overview-card">
+                <i class="fas fa-eye"></i>
+                <p><strong>View:</strong> {{ $roomdetail->view }}</p>
+            </div> -->
+            <div class="overview-card">
+                <i class="fas fa-smoking-ban"></i>
+                <p><strong>Smoking:</strong> No smoking</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-utensils"></i>
+                <p><strong>Room service:</strong> 24/7</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-bath"></i>
+                <p><strong>Bathroom:</strong> Ensuite, with shower and bathtub</p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-wifi"></i>
+                <p><strong>Free Wi-Fi</strong> </p>
+            </div>
+            <div class="overview-card">
+                <i class="fas fa-tv"></i>
+                <p><strong>Entertainment:</strong> Flat-screen TV, Cable channels</p>
+            </div>
+        </div>
+    </div>
          </div>
-
-         <!-- Check Availability Section -->
-         
         <!-- Check Availability Section -->
 <div class="col-md-3 container">
     <div class="availability-form">

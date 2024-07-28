@@ -52,22 +52,50 @@
 <!-- About Section -->
 <section class="about my-5" id="about">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5">
-                <div class="titlepage animate__animated animate__fadeInLeft">
-                    <h2>About Us</h2>
-                    <p>Welcome to our hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.</p>
-                    <a class="btn btn-primary" href="/about" role="button">Read More</a>
-                </div>
+        <div class="text-center">
+            <h1 class="display-4">SajiloStay</h1>
+            <p class="lead">At SajiloStay, we blend comfort and style to provide a memorable stay. Located in a peaceful area, our hotel features well-equipped rooms, top-notch amenities, and a friendly atmosphere. </p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <img src="{{ asset('images/about.jpg') }}" class="img-fluid rounded" alt="Poolside View" />
             </div>
-            <div class="col-md-7">
-                <div class="about_img animate__animated animate__fadeInRight">
-                    <figure><img src="{{ asset('images/about.png') }}" class="img-fluid" alt="About Image" /></figure>
-                </div>
+            <div class="col-md-4">
+                <img src="{{ asset('images/receiption.jpg') }}"  class="img-fluid rounded" alt="Hotel Exterior" />
+            </div>
+            <div class="col-md-4">
+                <img src="{{ asset('images/r6.jpg') }}" class="img-fluid rounded" alt="Relaxing by the Pool" />
             </div>
         </div>
     </div>
+    <style>
+        .about {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .display-4 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .lead {
+            font-size: 1.25rem;
+            color: #777;
+            margin-bottom: 40px;
+        }
+        .img-fluid {
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .img-fluid:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </section>
+
+
+
 <!-- Amenities Section -->
 <section class="amenities my-5" id="amenities">
     <div class="container">

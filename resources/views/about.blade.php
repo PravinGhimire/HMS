@@ -8,7 +8,7 @@
    <!-- Mobile metas -->
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Site metas -->
-   <title>EliteStay</title>
+   <title>SajiloStay</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -81,6 +81,86 @@
       .btn-custom:hover {
          transform: scale(1.1);
       }
+
+      .about {
+         padding: 60px 0;
+      }
+
+      .titlepage h2 {
+         font-size: 42px;
+         color: #333;
+         margin-bottom: 20px;
+         text-transform: uppercase;
+         font-weight: bold;
+         letter-spacing: 1.5px;
+         background: linear-gradient(to right, #007bff, #00c6ff);
+         background-clip: text;
+         -webkit-text-fill-color: transparent;
+      }
+
+      .titlepage p {
+         font-size: 16px;
+         line-height: 1.8;
+         margin-bottom: 30px;
+         color: #666;
+      }
+
+      .about_img {
+         position: relative;
+         overflow: hidden;
+         border-radius: 15px;
+         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+         transition: transform 0.5s ease;
+      }
+
+      .about_img img {
+         border-radius: 15px;
+         transition: transform 0.5s ease, filter 0.5s ease;
+      }
+
+      .about_img:hover img {
+         transform: scale(1.1);
+         filter: brightness(0.8);
+      }
+
+      .btn-custom {
+         background: linear-gradient(to right, #007bff, #00c6ff);
+         color: #fff;
+         border: none;
+         padding: 10px 20px;
+         border-radius: 50px;
+         transition: background-color 0.3s, color 0.3s;
+         position: relative;
+         z-index: 2;
+         box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+      }
+
+      .btn-custom:hover {
+         background: linear-gradient(to right, #0056b3, #007bff);
+         color: #fff;
+      }
+
+      .about_img .overlay {
+         position: absolute;
+         bottom: 0;
+         background: rgba(0, 0, 0, 0.5);
+         color: #fff;
+         width: 100%;
+         text-align: center;
+         padding: 10px;
+         font-size: 24px;
+         font-weight: bold;
+         opacity: 0;
+         transition: opacity 0.5s ease;
+      }
+
+      .about_img:hover .overlay {
+         opacity: 1;
+      }
+
+      .container-fluid {
+         padding: 0 50px;
+      }
    </style>
 </head>
 
@@ -111,14 +191,17 @@
          <div class="row align-items-center">
             <div class="col-md-5">
                <div class="titlepage">
-                  <h2 class="animate__animated animate__fadeInLeft">Welcome to EliteStay!</h2>
-                  <p class="margin_0">Welcome to our hotel EliteStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. Our hotel also features a cozy lobby where you can enjoy a cup of coffee or tea, read a book, or connect with friends and family. Our friendly staff is available 24/7 to assist you with any questions or concerns you may have during your stay. Our hotel is located within walking distance to many popular attractions, restaurants, and shops, making it the perfect choice for travelers who want to experience the local culture and explore the city. Thank you for choosing our simple hotel as your home away from home. We look forward to hosting you and ensuring that you have a comfortable and enjoyable stay.</p>
-                  <a href="#" class="btn btn-custom mt-3">Learn More</a>
+                  <h2 class="animate__animated animate__fadeInLeft">Welcome to SajiloStay!</h2>
+                  <p class="margin_0">Welcome to our hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. Our hotel also features a cozy lobby where you can enjoy a cup of coffee or tea, read a book, or connect with friends and family. Our friendly staff is available 24/7 to assist you with any questions or concerns you may have during your stay. Our hotel is located within walking distance to many popular attractions, restaurants, and shops, making it the perfect choice for travelers who want to experience the local culture and explore the city. Thank you for choosing our simple hotel as your home away from home. We look forward to hosting you and ensuring that you have a comfortable and enjoyable stay.</p>
+                  <a class="btn btn-custom" href="/about" role="button">Read More</a>
                </div>
             </div>
             <div class="col-md-7">
                <div class="about_img animate__animated animate__fadeInRight">
-                  <figure><img src="images/about.png" alt="#" /></figure>
+                  <figure>
+                     <img src="images/about.png" alt="About SajiloStay" />
+                     <div class="overlay">SajiloStay</div>
+                  </figure>
                </div>
             </div>
          </div>

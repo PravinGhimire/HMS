@@ -78,7 +78,7 @@
                     <th>Order</th>
                     <th>Description</th>
                     <th>Picture</th>
-                    <th>Room Size</th>
+                    <th>Occupancy</th>
                     <th>Bed Size</th>
                     <th>View</th>
                     <th>Room Type</th>

@@ -67,7 +67,7 @@
                             <a class="nav-link " href="/room">Our Room</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/gallery">Gallery</a>
+                            <a class="nav-link" href="/gallerys">Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/resturant">Restaurant</a>

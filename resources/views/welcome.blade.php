@@ -57,15 +57,17 @@
             <p class="lead">At SajiloStay, we blend comfort and style to provide a memorable stay. Located in a peaceful area, our hotel features well-equipped rooms, top-notch amenities, and a friendly atmosphere.</p>
         </div>
         <div class="row mt-5">
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <img src="{{ asset('images/receiption.jpg') }}" class="img-fluid rounded small-img" alt="Poolside View" />
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <img src="{{ asset('images/about.jpg') }}"  class="img-fluid rounded big-img" alt="Hotel Exterior" />
             </div>
             <div class="col-md-3">
                 <img src="{{ asset('images/r3.jpg') }}" class="img-fluid rounded small-img" alt="Relaxing by the Pool" />
-            </div>
+
+        </div>
+       
         </div>
     </div>
     <style>
@@ -91,17 +93,8 @@
             transform: scale(1.05);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
-        .big-img {
-            height: 100%;
-        }
-        .small-img {
-            height: 80%;
-        }
     </style>
 </section>
-
-
-
 
 <!-- Amenities Section -->
 <section class="amenities my-5" id="amenities">
@@ -184,11 +177,21 @@
 <!-- Testimonials Section -->
 <section class="testimonials my-5" id="testimonials">
     <div class="container">
-        <div class="titlepage text-center animate__animated animate__fadeInUp">
-            <h2>What Our Guests Say</h2>
-            <p>Read feedback from our valued guests about their experiences.</p>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-8">
+                <div class="titlepage ml-3 animate__animated animate__fadeInUp">
+                    <h2>What Our Guests Say</h2>
+                    <p>Read feedback from our valued guests about their experiences.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end text-center">
+                <a href="#reviewForm" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                    <i class="fas fa-pen"></i> Review
+                </a>
+            </div>
         </div>
-        <div class="row">
+
+        <div class="row mt-4">
             <!-- Testimonial 1 -->
             <div class="col-md-4 mb-4">
                 <div class="testimonial-card bg-light p-4 rounded shadow text-center animate__animated animate__fadeInUp">
@@ -231,6 +234,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Add custom CSS for better styling -->
 <style>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container my-5">
 <div class="col-md-7 mx-4">
-    <h2 class="text-center mb-4 mt-8">Available Rooms </h2>
+    <h2 class="text-center mb-4 mt-9">Available Rooms </h2>
 </div>
     @if($availableRooms->isEmpty())
         <div class="alert alert-danger text-center">

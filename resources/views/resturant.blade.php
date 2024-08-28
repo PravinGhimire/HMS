@@ -1,4 +1,3 @@
-// resources/views/resturant.blade.php
 
 <!DOCTYPE html>
 <html lang="en">

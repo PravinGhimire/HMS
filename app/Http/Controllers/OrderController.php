@@ -14,7 +14,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::paginate(10);
+        $orders = Order::where('customer_email', auth()->user()->email)->paginate(10);
         $forms = Booking::all();
 
         return view('orders.index', compact('orders','forms'));

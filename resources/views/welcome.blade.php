@@ -177,11 +177,21 @@
 <!-- Testimonials Section -->
 <section class="testimonials my-5" id="testimonials">
     <div class="container">
-        <div class="titlepage text-center animate__animated animate__fadeInUp">
-            <h2>What Our Guests Say</h2>
-            <p>Read feedback from our valued guests about their experiences.</p>
+        <div class="row justify-content-between align-items-center">
+            <div class="col-md-8">
+                <div class="titlepage ml-3 animate__animated animate__fadeInUp">
+                    <h2>What Our Guests Say</h2>
+                    <p>Read feedback from our valued guests about their experiences.</p>
+                </div>
+            </div>
+            <div class="col-md-4 text-md-end text-center">
+                <a href="#reviewForm" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#reviewModal">
+                    <i class="fas fa-pen"></i> Review
+                </a>
+            </div>
         </div>
-        <div class="row">
+
+        <div class="row mt-4">
             <!-- Testimonial 1 -->
             <div class="col-md-4 mb-4">
                 <div class="testimonial-card bg-light p-4 rounded shadow text-center animate__animated animate__fadeInUp">
@@ -224,6 +234,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Add custom CSS for better styling -->
 <style>

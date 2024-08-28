@@ -16,4 +16,11 @@ class Amenity extends Model
         'icon',
         'color',
     ];
+    // Amenity.php
+
+public function roomdetails()
+{
+    return $this->belongsToMany(Roomdetails::class);
+}
+
 }

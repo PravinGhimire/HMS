@@ -11,8 +11,16 @@
 
     <div class="mb-4">
         <label for="room_type" class="block text-gray-700 text-sm font-bold mb-2">Room Type</label>
-        <input type="text" class="w-full p-2 rounded-lg shadow appearance-none border leading-tight focus:outline-none focus:shadow-outline" name="rate" id="room_type" placeholder="Room Type" value="{{ $rooms->room_type}}" required>
-
+        <select class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="room_type" id="room_type" required>
+            <option value="Single Room" {{ $rooms->room_type == 'Single Room' ? 'selected' : '' }}>Single Room</option>
+            <option value="Deluxe Room" {{ $rooms->room_type == 'Deluxe Room' ? 'selected' : '' }}>Deluxe Room</option>
+            <option value="Double Bed Room" {{ $rooms->room_type == 'Double Bed Room' ? 'selected' : '' }}>Double Bed Room</option>
+            <option value="Suit Room" {{ $rooms->room_type == 'Suit Room' ? 'selected' : '' }}>Suit Room</option>
+            <option value="VIP Room" {{ $rooms->room_type == 'VIP Room' ? 'selected' : '' }}>VIP Room</option>
+            <option value="Luxurious Room" {{ $rooms->room_type == 'Luxurious Room' ? 'selected' : '' }}>Luxurious Room</option>
+            <option value="Apartment" {{ $rooms->room_type == 'Apartment' ? 'selected' : '' }}>Apartment</option>
+            <option value="Family Room" {{ $rooms->room_type == 'Family Room' ? 'selected' : '' }}>Family Room</option>
+        </select>
         @error('room_type')
         <span class="text-red-500">* {{ $message }}</span>
         @enderror
@@ -25,7 +33,15 @@
         <span class="text-red-500">* {{ $message }}</span>
         @enderror
     </div>
+    <div class="mb-4">
+        <label for="guests" class="block text-gray-700 text-sm font-bold mb-2">Guests</label>
+        <input type="number" class="w-full p-2 rounded-lg shadow appearance-none border leading-tight focus:outline-none focus:shadow-outline" name="guests" id="guests" placeholder="Enter Number of Guests" value="{{ $rooms->guests }}" required>
+        @error('guests')
+        <span class="text-red-500">* {{ $message }}</span>
+        @enderror
+    </div>
 
+   
     <div class="mb-4">
         <label for="photopath" class="block text-gray-700 text-sm font-bold mb-2">Current Image</label>
         <img class="w-34 mb-2" src="{{ asset('images/rooms/' . $rooms->photopath) }}" alt="">

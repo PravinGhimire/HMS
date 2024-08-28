@@ -37,6 +37,21 @@
                         <p class="text-red-600 text-sm">* {{ $message }}</p>
                     @enderror
                 </div>
+                <div class="mb-4">
+    <label for="guests" class="block text-gray-700 text-sm font-bold mb-2">Number of Guests</label>
+    <input type="number" name="guests" id="guests" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter number of guests" value="{{ old('guests') }}" required>
+    @error('guests')
+        <p class="text-red-600 text-sm">* {{ $message }}</p>
+    @enderror
+</div>
+
+<div class="mb-4">
+        <label for="services" class="block text-gray-700 text-sm font-bold mb-2">Services</label>
+        <input type="text" class="w-full p-2 rounded-lg shadow appearance-none border leading-tight focus:outline-none focus:shadow-outline" name="services" id="services" placeholder="Enter FontAwesome Icon (e.g., fas fa-wifi)" required>
+        @error('services')
+        <span class="text-red-500">* {{ $message }}</span>
+        @enderror
+    </div>
 
                 <div class="mb-4">
                     <label for="photopath" class="block text-gray-700 text-sm font-bold mb-2">Photo</label>
@@ -74,6 +89,8 @@
                         <th scope="col">Order</th>
                         <th scope="col">Room Category</th>
                         <th scope="col">Rate</th>
+                        <th scope="col">Guests</th>
+                        <th scope="col">Services</th>
                         <th scope="col">Picture</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -84,6 +101,8 @@
                         <td>{{$rooms->priority}}</td>
                         <td>{{$rooms->room_type}}</td>
                         <td>{{$rooms->rate}}</td>
+                        <td>{{$rooms->guests}}</td>
+            <td>{{$rooms->services}}</td>
                         <td><img class="w-24" src="{{asset('images/rooms/'.$rooms->photopath)}}" alt=""></td>
                         <td>
                             <div class="btn-group">

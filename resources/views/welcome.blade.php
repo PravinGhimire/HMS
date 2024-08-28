@@ -24,7 +24,7 @@
         <div class="row justify-content-center">
             <div class="col-md-16">
                 <h2 class="text-center mb-4">Check Room Availability</h2>
-                <form action="{{ route('checkAvailability') }}" method="POST" id="checkAvailabilityForm" class="bg-white p-4 rounded shadow">
+                <form action="{{ route('checkAvailability') }}" method="POST" class="bg-white p-4 rounded shadow">
                     @csrf
                     <div class="row mb-3">
                         <div class="col-md-3">
@@ -36,8 +36,8 @@
                             <input type="date" class="form-control" id="checkout" name="checkout" required>
                         </div>
                         <div class="col-md-3">
-                            <label for="no of people" class="form-label">No of People</label>
-                            <input type="text" class="form-control" id="checkout" name="checkout" required>
+                            <label for="guest" class="form-label">No of Guests</label>
+                            <input type="number" class="form-control" id="guest" min="1" name="guest" required>
                         </div>
                         <div class="col-md-3 d-flex align-items-end">
                             <button type="submit" class="btn btn-primary w-100">Check Availability</button>
@@ -52,22 +52,57 @@
 <!-- About Section -->
 <section class="about my-5" id="about">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-5">
-                <div class="titlepage animate__animated animate__fadeInLeft">
-                    <h2>About Us</h2>
-                    <p>Welcome to our hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi.</p>
-                    <a class="btn btn-primary" href="/about" role="button">Read More</a>
-                </div>
+        <div class="text-center">
+            <h1 class="display-4">SajiloStay</h1>
+            <p class="lead">At SajiloStay, we blend comfort and style to provide a memorable stay. Located in a peaceful area, our hotel features well-equipped rooms, top-notch amenities, and a friendly atmosphere.</p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-3">
+                <img src="{{ asset('images/receiption.jpg') }}" class="img-fluid rounded small-img" alt="Poolside View" />
             </div>
-            <div class="col-md-7">
-                <div class="about_img animate__animated animate__fadeInRight">
-                    <figure><img src="{{ asset('images/about.png') }}" class="img-fluid" alt="About Image" /></figure>
-                </div>
+            <div class="col-md-6">
+                <img src="{{ asset('images/about.jpg') }}"  class="img-fluid rounded big-img" alt="Hotel Exterior" />
+            </div>
+            <div class="col-md-3">
+                <img src="{{ asset('images/r3.jpg') }}" class="img-fluid rounded small-img" alt="Relaxing by the Pool" />
             </div>
         </div>
     </div>
+    <style>
+        .about {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .display-4 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+        .lead {
+            font-size: 1.25rem;
+            color: #777;
+            margin-bottom: 40px;
+        }
+        .img-fluid {
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .img-fluid:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        .big-img {
+            height: 100%;
+        }
+        .small-img {
+            height: 80%;
+        }
+    </style>
 </section>
+
+
+
+
 <!-- Amenities Section -->
 <section class="amenities my-5" id="amenities">
     <div class="container">
@@ -162,7 +197,7 @@
                     </div>
                     <div class="testimonial-author mt-3">
                         <img src="{{ asset('images/guest1.jpg') }}" class="rounded-circle" alt="Guest 1" width="80" height="80">
-                        <h5 class="mt-2">John Doe</h5>
+                        <h5 class="mt-2">Yadav</h5>
                         <p class="text-muted">Regular Guest</p>
                     </div>
                 </div>
@@ -175,7 +210,7 @@
                     </div>
                     <div class="testimonial-author mt-3">
                         <img src="{{ asset('images/guest2.jpg') }}" class="rounded-circle" alt="Guest 2" width="80" height="80">
-                        <h5 class="mt-2">Emily Davis</h5>
+                        <h5 class="mt-2">Sita</h5>
                         <p class="text-muted">First-time Visitor</p>
                     </div>
                 </div>
@@ -188,7 +223,7 @@
                     </div>
                     <div class="testimonial-author mt-3">
                         <img src="{{ asset('images/guest3.jpg') }}" class="rounded-circle" alt="Guest 3" width="80" height="80">
-                        <h5 class="mt-2">Danny Hernz</h5>
+                        <h5 class="mt-2">Nabs</h5>
                         <p class="text-muted">Frequent Traveler</p>
                     </div>
                 </div>

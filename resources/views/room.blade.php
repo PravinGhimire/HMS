@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
     <!-- site metas -->
-    <title>New Era</title>
+    <title>SajiloStay</title>
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -102,9 +102,10 @@
                         </div>
                         <div class="bed_room text-center">
                             <h3>{{ $room->room_type }}</h3>
+                            <p><i class="fas fa-users"></i>({{$room->guests}}) Guests</p>
                             <p>Rate: Nrs. {{ $room->rate }}</p>
                             <div class="amenities mt-3 mb-2">
-                                <p><i class="fas fa-wifi"></i> Free Wi-Fi &nbsp; <i class="fas fa-tv"></i> Cable TV &nbsp; <i class="fas fa-snowflake"></i> Air Conditioning</p>
+                                <p><i class="fas fa-wifi"></i> Free Wi-Fi &nbsp; <i class="fas fa-tv"></i> Cable TV &nbsp; <i class="fas fa-snowflake"></i> AC</p>
                             </div>
                             <a class="book_btn btn btn-success" href="{{ route('rums', $room->id) }}">Book Now</a>
                         </div>

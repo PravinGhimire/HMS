@@ -32,7 +32,6 @@ class PagesController extends Controller
     public function room()
     {
         $rooms = Rooms::all();
-        
         return view('room', compact('rooms'));
     } public function room1()
     {

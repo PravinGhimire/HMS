@@ -44,10 +44,67 @@
             width: 100%;
             bottom: 0;
         }
+
+        .header {
+            width: 100%;
+            background-color: #2D3748;
+            padding: 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img {
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .header h1 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .header nav a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            padding-top: 90px; /* Adjusting padding to accommodate the header */
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 h-full p-14 flex items-center justify-center">
+    <!-- Header -->
+    <header class="header">
+        <div class="header-logo">
+            <h2>SajiloStay</h2>
+        </div>
+        <nav>
+            <a href="{{ url('/') }}">Home</a>
+        </nav>
+    </header>
+
+    <!-- Flip Card -->
     <div class="flip-card w-full max-w-md">
         <div class="flip-card-inner mt-6">
             <!-- Login Form -->
@@ -55,7 +112,7 @@
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="text-center items-center justify-center">
-                        <img src="{{ asset('images/lo.png') }}" class="rounded-full h-32 m-auto mb-1" alt="">
+                        <img src="{{ asset('images/lo.png') }}" class="rounded-full h-32 m-auto mb-1" alt="Logo">
                     </div>
 
                     <div class="mb-4">
@@ -95,7 +152,7 @@
                 <form action="{{ route('register') }}" method="POST">
                     @csrf
                     <div class="text-center items-center justify-center">
-                        <img src="{{ asset('images/looo.png') }}" class="rounded-full h-32 m-auto" alt="">
+                        <img src="{{ asset('images/looo.png') }}" class="rounded-full h-32 m-auto" alt="Logo">
                         <h2 class="text-2xl font-semibold mt-4">Please Register</h2>
                     </div>
 

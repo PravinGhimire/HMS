@@ -27,7 +27,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <p>&copy; 2023 Hotel Management System. All rights reserved. | Designed by YourCompany</p>
+                    <p>&copy; 2024 Hotel Management System. All rights reserved.</p>
                 </div>
             </div>
         </div>

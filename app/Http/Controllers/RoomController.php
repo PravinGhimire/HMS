@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Roomdetails;
 use App\Models\Rooms;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File as FacadesFile;
@@ -28,7 +29,10 @@ class RoomController extends Controller
             'room_type' => 'required',
             'rate' => 'required',
             'photopath' => 'required|image', // Validate as image
-            'priority' => 'required|numeric'
+            'priority' => 'required|numeric',
+            'guests' => 'required|integer',
+        'services' => 'required|string'
+            
         ]);
 
         if ($request->hasFile('photopath')) {
@@ -57,7 +61,9 @@ class RoomController extends Controller
             'room_type' => 'required',
             'rate' => 'required',
             'photopath' => 'nullable|image', // Validate as image
-            'priority' => 'required|numeric'
+            'priority' => 'required|numeric',
+            'guests' => 'required|integer',
+        'services' => 'required|string'
         ]);
 
         if ($request->hasFile('photopath')) {

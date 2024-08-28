@@ -41,7 +41,7 @@ Route::post('{id}/rums/', [PagesController::class, 'rums'])->name('rums');
 Route::get('/gallerys', [PagesController::class, 'gallerys']);
 Route::get('/bookingview', [PagesController::class, 'bookingview'])->name('bookingview');
 Route::get('/resturant', [PagesController::class, 'resturant'])->name('resturant');
-Route::post('/new-route-url', [AvailabilityController::class, 'checkAvailability'])->name('checkAvailability');
+Route::post('/check-Availability', [AvailabilityController::class, 'checkAvailability'])->name('checkAvailability');
 Route::post('/check-availability', [RoomController::class, 'checkAvailability'])->name('availability.check');
 
 Route::post('/room-availability', [RoomDetailsController::class,'checkRoomAvailability'])->name('roomAvailability');

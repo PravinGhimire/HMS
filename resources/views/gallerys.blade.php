@@ -1,83 +1,78 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <!-- basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-   <!-- site metas -->
-   <title>New Era</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- bootstrap css -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <!-- style css -->
-   <link rel="stylesheet" href="css/style.css">
-   <!-- Responsive-->
-   <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
-   <!-- fevicon -->
-   <link rel="icon" href="images/fevicon.png" type="image/gif" />
-   <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-   <!-- Tweaks for older IEs-->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SajiloStay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom Styles */
+        .gallery_section {
+            padding: 50px 0;
+            background-color: #f8f9fa;
+        }
+        .gallery_item {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .gallery_item:hover {
+            transform: translateY(-5px);
+        }
+        .gallery_img {
+            width: 100%;
+            height: 250px; /* Fixed height for uniform image sizes */
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        .gallery_img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Maintain aspect ratio while covering the area */
+            transition: transform 0.3s ease;
+        }
+        .gallery_item:hover .gallery_img img {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<!-- body -->
+<body>
+    <!-- Header -->
+    <header>
+        @include('header')
+    </header>
 
-<body class="main-layout inner_page">
-
-   <!-- header -->
-   <header>
-      @include('header')
-   </header>
-   <!-- end header inner -->
-   <!-- end header -->
-   <div class="back_re">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="title">
-                  <h2>Gallery</h2>
-               </div>
+    <!-- Gallery Section -->
+    <section class="gallery_section">
+        <div class="container">
+            <div class="title mt-5">
+                <h2>Gallery</h2>
             </div>
-         </div>
-      </div>
-   </div>
-   <!-- gallery -->
-   <div class="gallery mb-3">
-      <div class="container">
-
-         <div class="row">
-            @foreach($galleries as $gallery)
-            <div class="col-md-3 col-sm-5 ">
-               <div class="gallery_img">
-                  <figure><img src="{{asset('images/gallery/'.$gallery->photopath)}} " alt="#" /></figure>
-               </div>
+            <div class="row">
+                @foreach($galleries as $gallery)
+                <div class="col-md-4">
+                    <div class="gallery_item mb-3">
+                        <div class="gallery_img">
+                            <img src="{{ asset('images/gallery/' . $gallery->photopath) }}" alt="{{ $gallery->title }}">
+                        </div>
+                    </div>
+                </div>
+                @endforeach
             </div>
-            @endforeach
-         </div>
-      </div>
-   </div>
+        </div>
+    </section>
 
-   <!-- end gallery -->
+    <!-- Footer -->
+    <footer>
+        @include('footer')
+    </footer>
 
-   <!--  footer -->
-   <footer>
-      @include('footer')
-   </footer>
-   <!-- end footer -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-   </script>
-   <!-- sidebar -->
-   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="js/custom.js"></script>
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

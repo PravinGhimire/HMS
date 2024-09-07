@@ -37,7 +37,7 @@ class ResturantController extends Controller
             'food' => 'required|string',
             'quantity' => 'required|string',
             'rate' => 'required|numeric',
-            'photopath' => 'required|mimes:jpg,png',
+            'photopath' => 'required|mimes:jpg,png'
         ]);
 
         if ($request->file('photopath')) {

@@ -16,7 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
           rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- style css -->
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- fevicon -->
     <link rel="icon" href="images/fevicon.png" type="image/gif" />
     <!-- fancybox CSS -->
@@ -26,24 +26,31 @@
           integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        .title {
-           
-         font-size: 3rem;
-            font-weight: bold;/* background-color: #e9ecef; Blue background color */
-            color: black; 
-            /* White text color */
-            padding: 10px 0; /* Padding for top and bottom only */
-            margin: 0; /* Remove margin */
-            border-radius: 5px; /* Rounded corners */
-            text-align: center; /* Center the text */
-        }
+       .about-banner-title {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hotel1.jpg') center/cover;
+            height: 45vh; /* Adjust the height as needed */
+    color: #fff;
+    display: flex;
+    align-items: flex-end; /* Aligns the content at the bottom */
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px; /* Add padding to create some space from the bottom */
+}
+
+.about-banner-title h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
         .check-availability {
-            /* background-color: #e9ecef; Slightly darker background for contrast */
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: -1px;
-            margin-bottom: 5px; /* Overlap with the title */
+            margin-top: 30px; /* Overlap with the banner */
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -56,14 +63,14 @@
 </header>
 <!-- end header inner -->
 <!-- end header -->
-<div class="back_re">
+<section class="about-banner-title">
+        <h2>Our Rooms</h2>
+    </section>
+            <div class="back_re">
     <div class="container">
-        <div class="row">
+        <div class="row"></div>
             <div class="col-md-12">
-                <div class="title mt-5">
-                    <h2>Our Rooms</h2>
-                </div>
-                <div class="check-availability mt-0">
+                <div class="check-availability mt-3">
                     <form id="availabilityForm" method="POST">
                         @csrf
                         <div class="row">
@@ -93,7 +100,7 @@
 <!-- our_room -->
 <div class="our_room">
     <div class="container">
-    <div class="row">
+        <div class="row">
             @foreach($rooms as $room)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="room animate__animated animate__zoomIn">
@@ -102,7 +109,7 @@
                         </div>
                         <div class="bed_room text-center">
                             <h3>{{ $room->room_type }}</h3>
-                            <p><i class="fas fa-users"></i>({{$room->guests}}) Guests</p>
+                            <p><i class="fas fa-users"></i> ({{$room->guests}}) Guests</p>
                             <p>Rate: Nrs. {{ $room->rate }}</p>
                             <div class="amenities mt-3 mb-2">
                                 <p><i class="fas fa-wifi"></i> Free Wi-Fi &nbsp; <i class="fas fa-tv"></i> Cable TV &nbsp; <i class="fas fa-snowflake"></i> AC</p>

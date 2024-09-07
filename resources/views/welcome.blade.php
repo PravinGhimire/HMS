@@ -107,24 +107,16 @@
             <!-- Amenity 1 -->
             @foreach($amenities as $amenity)
             <div class="col-md-4 mb-4">
-                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
-                <td><i class="{{ $amenity->icon }} mb-3" style='color: {{ $amenity->color }};'></i></td>
-                <h4>{{ $amenity->name }}</h4>
-                    <p>{{ $amenity->description }}</p>
-                </div>
-            </div>
+    <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
+        <i class="{{ $amenity->icon }} mb-3" style="color: {{ $amenity->color }};"></i>
+        <h4>{{ $amenity->name }}</h4>
+        <p>{{ $amenity->description }}</p>
+    </div>
+</div>
+
         @endforeach
          
-            <!-- Amenity 6 -->
-            <div class="col-md-4 mb-4">
-                <div class="amenity-card bg-light p-4 rounded shadow animate__animated animate__fadeInUp">
-                    <i class="fas fa-swimming-pool fa-3x mb-3" style="color: #6610f2;"></i>
-                    <h4>Swimming Pool</h4>
-                    <p>Relax and unwind in our beautifully maintained swimming pool.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </section>
 
 <!-- Add custom CSS for better styling -->

@@ -39,6 +39,26 @@
         .gallery_item:hover .gallery_img img {
             transform: scale(1.1);
         }
+
+        /* Banner Section */
+        .gallery-banner {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url('images/banner4.jpg') center  / cover no-repeat;
+            height: 45vh;
+            color: #fff;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .gallery-banner h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 <body>
@@ -47,12 +67,14 @@
         @include('header')
     </header>
 
+    <!-- Banner Section -->
+    <section class="gallery-banner">
+        <h2>Gallery</h2>
+    </section>
+
     <!-- Gallery Section -->
     <section class="gallery_section">
         <div class="container">
-            <div class="title mt-5">
-                <h2>Gallery</h2>
-            </div>
             <div class="row">
                 @foreach($galleries as $gallery)
                 <div class="col-md-4">
@@ -76,4 +98,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

@@ -2,233 +2,273 @@
 <html lang="en">
 
 <head>
-   <!-- Basic -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <!-- Mobile metas -->
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Site metas -->
-   <title>SajiloStay</title>
-   <meta name="keywords" content="">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <!-- Bootstrap CSS -->
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-   <!-- Custom CSS -->
-   <link rel="stylesheet" href="css/style.css">
-   <!-- Responsive CSS -->
-   <link rel="stylesheet" href="css/responsive.css">
-   <!-- Favicon -->
-   <link rel="icon" href="images/fevicon.png" type="image/gif" />
-   <!-- Scrollbar Custom CSS -->
-   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-   <!-- Fancybox CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-   <!-- Font Awesome -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <!-- Animate CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-   <!-- Parallax JS -->
-   <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0/parallax.min.js"></script>
-   <style>
-      .parallax-window {
-         min-height: 400px;
-         background: transparent;
-      }
+    <!-- Basic -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Site metas -->
+    <title>About Us - SajiloStay</title>
+    <meta name="description" content="Learn more about SajiloStay, our mission, our values, and meet our dedicated team.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+            body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+        }
 
-      .about_img {
-         animation: fadeInRight 2s;
-      }
+        .about-banner {
+            position: relative;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hotel1.jpg') center/cover;
+            height: 45vh; /* Adjust the height as needed */
+    color: #fff;
+    display: flex;
+    align-items: flex-end; /* Aligns the content at the bottom */
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px; /* Add padding to create some space from the bottom */
+}
 
-      @keyframes fadeInRight {
-         from {
+.about-banner h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+        .about-section {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            color: #333;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .about-title::after {
+            content: "";
+            width: 50px;
+            height: 4px;
+            background-color: #007bff;
+            display: block;
+            margin: 20px auto;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .about-text {
+            max-width: 600px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .staff-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .staff-title {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .staff-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .staff-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .staff-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            object-fit: cover;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
+        }
+
+        .staff-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .staff-position {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .staff-socials {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .staff-socials a {
+            font-size: 1.5rem;
+            color: #007bff;
+            transition: color 0.3s;
+        }
+
+        .staff-socials a:hover {
+            color: #0056b3;
+        }
+
+        /* Animate section when scrolling */
+        .animate-on-scroll {
             opacity: 0;
-            transform: translateX(50px);
-         }
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
 
-         to {
+        .animate-on-scroll.show {
             opacity: 1;
-            transform: translateX(0);
-         }
-      }
+            transform: translateY(0);
+        }
 
-      .titlepage {
-         animation: fadeInLeft 2s;
-      }
+        .container-fluid {
+            padding: 0 60px;
+        }
 
-      @keyframes fadeInLeft {
-         from {
-            opacity: 0;
-            transform: translateX(-50px);
-         }
-
-         to {
-            opacity: 1;
-            transform: translateX(0);
-         }
-      }
-
-      .btn-custom {
-         background-color: #ff5f6d;
-         background-image: linear-gradient(315deg, #ff5f6d 0%, #ffc371 74%);
-         color: white;
-         border: none;
-         border-radius: 50px;
-         padding: 10px 20px;
-         transition: transform 0.3s;
-      }
-
-      .btn-custom:hover {
-         transform: scale(1.1);
-      }
-
-      .about {
-         padding: 60px 0;
-      }
-
-      .titlepage h2 {
-         font-size: 42px;
-         color: #333;
-         margin-bottom: 20px;
-         text-transform: uppercase;
-         font-weight: bold;
-         letter-spacing: 1.5px;
-         background: linear-gradient(to right, #007bff, #00c6ff);
-         background-clip: text;
-         -webkit-text-fill-color: transparent;
-      }
-
-      .titlepage p {
-         font-size: 16px;
-         line-height: 1.8;
-         margin-bottom: 30px;
-         color: #666;
-      }
-
-      .about_img {
-         position: relative;
-         overflow: hidden;
-         border-radius: 15px;
-         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-         transition: transform 0.5s ease;
-      }
-
-      .about_img img {
-         border-radius: 15px;
-         transition: transform 0.5s ease, filter 0.5s ease;
-      }
-
-      .about_img:hover img {
-         transform: scale(1.1);
-         filter: brightness(0.8);
-      }
-
-      .btn-custom {
-         background: linear-gradient(to right, #007bff, #00c6ff);
-         color: #fff;
-         border: none;
-         padding: 10px 20px;
-         border-radius: 50px;
-         transition: background-color 0.3s, color 0.3s;
-         position: relative;
-         z-index: 2;
-         box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
-      }
-
-      .btn-custom:hover {
-         background: linear-gradient(to right, #0056b3, #007bff);
-         color: #fff;
-      }
-
-      .about_img .overlay {
-         position: absolute;
-         bottom: 0;
-         background: rgba(0, 0, 0, 0.5);
-         color: #fff;
-         width: 100%;
-         text-align: center;
-         padding: 10px;
-         font-size: 24px;
-         font-weight: bold;
-         opacity: 0;
-         transition: opacity 0.5s ease;
-      }
-
-      .about_img:hover .overlay {
-         opacity: 1;
-      }
-
-      .container-fluid {
-         padding: 0 50px;
-      }
-   </style>
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 
-<body class="main-layout">
-   <!-- Header -->
-   <header>
-      @include('header')
-   </header>
-   <!-- End Header -->
+<body>
+    <!-- Header -->
+    <header>
+        @include('header')
+    </header>
 
-   <!-- Banner -->
-   <div class="back_re">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="title">
-                  <h2>About Us</h2>
-               </div>
+    <!-- About Banner -->
+    <section class="about-banner">
+        <h1>About SajiloStay</h1>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <h2 class="about-title">Our Story</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-text animate-on-scroll">
+                        <p>Welcome to SajiloStay, your perfect escape in the city. Our hotel offers a blend of modern comfort and traditional warmth, ensuring every guest experiences the utmost relaxation. Located in a prime area, our hotel is surrounded by cultural landmarks, trendy restaurants, and scenic spots.</p>
+                        <p>At SajiloStay, we believe in delivering personalized services, making sure every guest feels at home. Our beautifully designed rooms and premium amenities cater to travelers of all kinds, ensuring an unforgettable stay.</p>
+                        <a href="/about" class="btn btn-primary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/about.jpg" alt="SajiloStay Interior" class="img-fluid animate-on-scroll" />
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
-   <!-- End Banner -->
+        </div>
+    </section>
 
-   <!-- About -->
-   <div class="about">
-      <div class="container-fluid">
-         <div class="row align-items-center">
-            <div class="col-md-5">
-               <div class="titlepage">
-                  <h2 class="animate__animated animate__fadeInLeft">Welcome to SajiloStay!</h2>
-                  <p class="margin_0">Welcome to our hotel SajiloStay! Our hotel is located in a quiet and peaceful neighborhood, providing a perfect place to rest and relax after a busy day of activities. We offer a range of comfortable rooms to suit your needs, including single, double, and twin rooms, all of which are equipped with essential amenities such as air conditioning, TV, and free Wi-Fi. Our hotel also features a cozy lobby where you can enjoy a cup of coffee or tea, read a book, or connect with friends and family. Our friendly staff is available 24/7 to assist you with any questions or concerns you may have during your stay. Our hotel is located within walking distance to many popular attractions, restaurants, and shops, making it the perfect choice for travelers who want to experience the local culture and explore the city. Thank you for choosing our simple hotel as your home away from home. We look forward to hosting you and ensuring that you have a comfortable and enjoyable stay.</p>
-                  <a class="btn btn-custom" href="/about" role="button">Read More</a>
-               </div>
+    <!-- Staff Section -->
+    <section class="staff-section">
+        <div class="container">
+            <h2 class="staff-title">Meet Our Team</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="staff-card animate-on-scroll">
+                        <img src="images/manager.jpg" alt="Staff 1" class="staff-photo">
+                        <h3 class="staff-name">Hari</h3>
+                        <p class="staff-position">General Manager</p>
+                        <div class="staff-socials">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="staff-card animate-on-scroll">
+                        <img src="images/staff2.jpg" alt="Staff 2" class="staff-photo">
+                        <h3 class="staff-name">Rita </h3>
+                        <p class="staff-position">Head of Guest Services</p>
+                        <div class="staff-socials">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="staff-card animate-on-scroll">
+                        <img src="images/staff1.jpg" alt="Staff 3" class="staff-photo">
+                        <h3 class="staff-name">Ram</h3>
+                        <p class="staff-position">Executive Chef</p>
+                        <div class="staff-socials">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-7">
-               <div class="about_img animate__animated animate__fadeInRight">
-                  <figure>
-                     <img src="images/about.png" alt="About SajiloStay" />
-                     <div class="overlay">SajiloStay</div>
-                  </figure>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-   <!-- End About -->
+        </div>
+    </section>
 
-   <!-- Footer -->
-   <footer>
-      @include('footer')
-   </footer>
-   <!-- End Footer -->
+    <!-- Footer -->
+    <footer>
+        @include('footer')
+    </footer>
 
-   <!-- Bootstrap Bundle JS -->
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-   <!-- Custom JS -->
-   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-   <script src="js/custom.js"></script>
-   <script>
-      // Initialize Parallax
-      document.addEventListener("DOMContentLoaded", function() {
-         var scene = document.querySelector('.parallax-window');
-         if (scene) {
-            var parallaxInstance = new Parallax(scene);
-         }
-      });
-   </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Scroll animation function
+        window.addEventListener('scroll', function () {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            const windowHeight = window.innerHeight;
+
+            elements.forEach(function (el) {
+                const position = el.getBoundingClientRect().top;
+
+                if (position < windowHeight - 100) {
+                    el.classList.add('show');
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

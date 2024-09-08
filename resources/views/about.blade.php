@@ -168,6 +168,46 @@
                 flex-direction: column;
             }
         }
+        .stats-section {
+    background-color: #f8f9fa;
+}
+
+.stats-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* .stats-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+} */
+
+.stat-item {
+    text-align: center;
+    padding: 18px;
+}
+
+.stats-count {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+.stats-label {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.stats-card i {
+    color: #007bff;
+}
+
+
     </style>
 </head>
 
@@ -245,6 +285,35 @@
             </div>
         </div>
     </section>
+<!-- Stats Section -->
+<section class="stats-section py-5 bg-light">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <div class="stats-card bg-white py-4 rounded shadow-sm d-flex justify-content-around align-items-center">
+                    <div class="stat-item">
+                        <i class="fas fa-calendar-check fa-3x mb-2"></i>
+                        <h3 class="stats-count" id="bookings-count">150</h3>
+                        <p class="stats-label">Bookings</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-globe fa-3x mb-2"></i>
+                        <h3 class="stats-count" id="site-visits-count">500</h3>
+                        <p class="stats-label">Site Visits</p>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-comments fa-3x mb-2"></i>
+                        <h3 class="stats-count" id="feedbacks-count">40</h3>
+                        <p class="stats-label">Feedbacks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
     <!-- Footer -->
     <footer>
@@ -268,6 +337,29 @@
                 }
             });
         });
+        // Function to animate counting effect
+    function animateCount(id, endValue) {
+        const element = document.getElementById(id);
+        let startValue = 0;
+        const duration = 2000; // Animation duration in milliseconds
+        const stepTime = Math.abs(Math.floor(duration / endValue));
+        
+        const timer = setInterval(() => {
+            startValue += 1;
+            element.textContent = startValue;
+            if (startValue >= endValue) {
+                clearInterval(timer);
+                element.textContent = endValue; // Ensure the final value is set
+            }
+        }, stepTime);
+    }
+
+    // Example values, replace with dynamic data as needed
+    window.addEventListener('load', () => {
+        animateCount('bookings-count', 150);
+        animateCount('site-visits-count', 499);
+        animateCount('feedbacks-count', 40);
+    });
     </script>
 </body>
 

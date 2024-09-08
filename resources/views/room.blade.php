@@ -112,7 +112,7 @@
                             <p><i class="fas fa-users"></i> ({{$room->guests}}) Guests</p>
                             <p>Rate: Nrs. {{ $room->rate }}</p>
                             <div class="amenities mt-3 mb-2">
-                                <p><i class="fas fa-wifi"></i> Free Wi-Fi &nbsp; <i class="fas fa-tv"></i> Cable TV &nbsp; <i class="fas fa-snowflake"></i> AC</p>
+                                <p><i class="{{$room->services}}" ></i>&nbsp; <i class="fas fa-wifi"></i> Free Wi-Fi &nbsp; <i class="fas fa-tv"></i> Cable TV &nbsp; <i class="fas fa-snowflake"></i> AC</p>
                             </div>
                             <a class="book_btn btn btn-success" href="{{ route('rums', $room->id) }}">Book Now</a>
                         </div>

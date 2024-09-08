@@ -47,7 +47,7 @@
 
 <div class="mb-4">
         <label for="services" class="block text-gray-700 text-sm font-bold mb-2">Services</label>
-        <input type="text" class="w-full p-2 rounded-lg shadow appearance-none border leading-tight focus:outline-none focus:shadow-outline" name="services" id="services" placeholder="Enter FontAwesome Icon (e.g., fas fa-wifi)" required>
+        <input type="text" name="icon" id="icon" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"  required>
         @error('services')
         <span class="text-red-500">* {{ $message }}</span>
         @enderror
@@ -102,7 +102,7 @@
                         <td>{{$rooms->room_type}}</td>
                         <td>{{$rooms->rate}}</td>
                         <td>{{$rooms->guests}}</td>
-            <td>{{$rooms->services}}</td>
+                         <td><i class="{{$rooms->services}}" ></i></td>
                         <td><img class="w-24" src="{{asset('images/rooms/'.$rooms->photopath)}}" alt=""></td>
                         <td>
                             <div class="btn-group">

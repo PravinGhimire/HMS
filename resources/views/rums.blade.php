@@ -12,7 +12,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- Site Metas -->
-   <title>Room Details - New Era</title>
+   <title>Room Details -SajiloStay</title>
    <link rel="icon" type="image/png" href="images/Fauget Hotel.png">
    <meta name="keywords" content="hotel, room, booking, luxury, comfort">
    <meta name="description" content="Discover the luxurious rooms at New Era with top-notch amenities and features. Book your stay with us.">
